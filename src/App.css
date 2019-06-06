@@ -11,16 +11,32 @@
   background-size: cover;
 }
 
+.mainContent span {
+  width: 45%;
+  text-align: center;
+  position: absolute;
+  top: 45px;
+}
+
+.mainContent span p{
+  font-size: 12px;
+}
+
 .mainContent p{
   font-size: 12px;
 }
 
 .logoGigaaa{
+  margin-top: 135px;
   width: 60%;
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
  
+  .mainContent span p{
+    font-size: 22px;
+  }
+
   .mainContent p{
     font-size: 22px;
   }
