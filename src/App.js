@@ -3,8 +3,6 @@ import {} from 'react-router-dom'
 import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
 import LoginForm from './Components/Login/Login';
-import {fadeIn, slideOutUp} from 'react-animations';
-import styled, {keyframes} from 'styled-components'
 
 export default class App extends Component {
   constructor() {
@@ -32,7 +30,6 @@ export default class App extends Component {
       if(phrasesContent.length > 0 && !this.state.addPhrase) {
         phrasesWrapper.innerHTML =  ''
         phrasesContent = phrasesWrapper.innerHTML
-        console.log(phrasesContent)
       }else {
         this.setState({
           addPhrase : true
@@ -68,30 +65,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    if(navigator.userAgent.match(/Android/i)) console.log('android')
-    if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
+    //if(navigator.userAgent.match(/Android/i)) console.log('android')
+    //if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
     this.pharasesTimer("word")
   }
 
   render() {
-
-    console.log(slideOutUp)
-  
-    //let slideOutUp = keyframes`${slideOutUp}`;
-    let fadeInAnimation = keyframes`${slideOutUp}`;
-
-    let FadeInDiv = styled.div`
-      animation: 4.5s ${fadeInAnimation};
-      text-align : center;
-    `;
-
     let loginForm = this.state.montForm ? <LoginForm/> : null
-    let words = this.state.montForm ? (<span><p id="word"></p></span>) : null
-
     return (
       <div className="mainContent">
         <span><p id="word"></p></span>
-
         <img src={background} className="logoGigaaa" alt=""></img>
         {loginForm}
         <p>Tap anywhere on the screen if you're not available to listen</p>

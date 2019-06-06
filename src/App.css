@@ -30,6 +30,6 @@
 .logoGigaaa{
   margin-top: 135px;
   width: 60%;
-  animation : slidein 5s;
+  animation : fadeIn 5s;
 }
 
