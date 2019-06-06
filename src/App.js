@@ -3,7 +3,8 @@ import {} from 'react-router-dom'
 import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
 import LoginForm from './Components/Login/Login';
-
+import {fadeIn} from 'react-animations';
+import styled, {keyframes} from 'styled-components'
 
 export default class App extends Component {
   constructor() {
@@ -77,9 +78,12 @@ export default class App extends Component {
 
   render() {  
     let fadeInAnimation = keyframes`${fadeIn}`;
+    
     let FadeInDiv = styled.div`
-      animation: 1s ${fadeInAnimation}
+      animation: 2s ${fadeInAnimation};
+      text-align : center;
     `;
+
     let loginForm = this.state.montForm ? <LoginForm/> : null
 
     return (
@@ -87,7 +91,9 @@ export default class App extends Component {
         <span >
           <p id="word"></p>
         </span>
-        <img src={background} className="logoGigaaa" alt=""></img>
+        <FadeInDiv>
+          <img src={background} className="logoGigaaa" alt=""></img>
+        </FadeInDiv>
         <p>Tap anywhere on the screen if you're not available to listen</p>
       </div>
     );
