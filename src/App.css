@@ -5,9 +5,9 @@
   align-items: center;
   height: 100vh;
   background-image: url('../public/images/Screen.png');
-  background-position: center center;
+  /*background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
   background-size: cover;
 }
 
@@ -29,20 +29,4 @@
 .logoGigaaa{
   margin-top: 135px;
   width: 60%;
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
- 
-  .mainContent span p{
-    font-size: 22px;
-  }
-
-  .mainContent p{
-    font-size: 22px;
-  }
-
-  .logoGigaaa{
-    width: 30%;
-  }
-
 }

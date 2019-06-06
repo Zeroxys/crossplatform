@@ -15,9 +15,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgray;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*Media Queries Desktop*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-size: cover;
+  }
+
+  .mainContent span p{
+    font-size: 22px;
+  }
+  .mainContent p{
+    font-size: 22px;
+  }
+  .logoGigaaa{
+    width: 30%;
+  }
 }

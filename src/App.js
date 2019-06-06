@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import {} from 'react-router-dom'
 import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
-
+import LoginForm from './Components/Login/Login';
 
 export default class App extends Component {
   constructor() {
@@ -13,12 +14,10 @@ export default class App extends Component {
         'I will be happy to become your new life companion and assist you with all kinds of tasks.',
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
-
-      addPhrase : false
+      addPhrase : false,
+      montForm :  true
     }
-
     this.pharasesTimer = this.pharasesTimer.bind(this);
-
   }
 
 
@@ -41,12 +40,12 @@ export default class App extends Component {
       }
 
       if(this.state.addPhrase) {
-        console.log('agregar una frase')
+        //console.log('agregar una frase')
 
         if(phrasesContent.length < this.state.phrases.length) {
 
           phrasesWrapper.innerHTML = this.state.phrases[counter]
-          console.log('valor --> ', phrasesWrapper.length)
+          //console.log('valor --> ', phrasesWrapper.length)
           phrasesContent = phrasesWrapper.innerHTML
 
         }else {
@@ -59,35 +58,35 @@ export default class App extends Component {
           })
         }
 
-
         if(counter === this.state.phrases.length) {
           counter = 0
+
+          this.setState({
+            montForm : true
+          })
         }
-
-
       }
-
     }, 1200);
 
   }
 
   componentDidMount() {
+    if(navigator.userAgent.match(/Android/i)) console.log('android')
+    if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
     this.pharasesTimer("word")
   }
 
+  render() {  
 
-  render() {
-  
-  
+    let loginForm = this.state.montForm ? <LoginForm/> : null
+
     return (
       <div className="mainContent">
-
         <span >
           <p id="word"></p>
         </span>
-
-
-        <img src={background} className="logoGigaaa" alt=""></img> 
+        <img src={background} className="logoGigaaa" alt=""></img>
+        {loginForm} 
         <p>Tap anywhere on the screen if you're not available to listen</p>
       </div>
     );

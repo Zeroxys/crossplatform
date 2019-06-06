@@ -1,0 +1,23 @@
+.loginForm {
+    width: 80%;
+    height: 20vh;
+    background-color: #fefefe;
+    border-radius: .7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm form{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.loginForm form input{
+    border-style: hidden;
+    border-bottom: 1px solid lightgrey;
+}
+
