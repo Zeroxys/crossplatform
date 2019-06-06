@@ -3,7 +3,7 @@ import {} from 'react-router-dom'
 import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
 import LoginForm from './Components/Login/Login';
-import {fadeIn} from 'react-animations';
+import {fadeIn, slideOutUp} from 'react-animations';
 import styled, {keyframes} from 'styled-components'
 
 export default class App extends Component {
@@ -26,7 +26,7 @@ export default class App extends Component {
     let phrasesWrapper = document.getElementById(id);
     let phrasesContent = phrasesWrapper.innerHTML;
     let counter = 0;
-    
+
     setInterval(() => {
       
       if(phrasesContent.length > 0 && !this.state.addPhrase) {
@@ -40,12 +40,10 @@ export default class App extends Component {
       }
 
       if(this.state.addPhrase) {
-        //console.log('agregar una frase')
 
         if(phrasesContent.length < this.state.phrases.length) {
 
           phrasesWrapper.innerHTML = this.state.phrases[counter]
-          //console.log('valor --> ', phrasesWrapper.length)
           phrasesContent = phrasesWrapper.innerHTML
 
         }else {
@@ -60,7 +58,6 @@ export default class App extends Component {
 
         if(counter === this.state.phrases.length) {
           counter = 0
-
           this.setState({
             montForm : true
           })
@@ -73,27 +70,30 @@ export default class App extends Component {
   componentDidMount() {
     if(navigator.userAgent.match(/Android/i)) console.log('android')
     if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
-    //this.pharasesTimer("word")
+    this.pharasesTimer("word")
   }
 
-  render() {  
-    let fadeInAnimation = keyframes`${fadeIn}`;
-    
+  render() {
+
+    console.log(slideOutUp)
+  
+    //let slideOutUp = keyframes`${slideOutUp}`;
+    let fadeInAnimation = keyframes`${slideOutUp}`;
+
     let FadeInDiv = styled.div`
-      animation: 2s ${fadeInAnimation};
+      animation: 4.5s ${fadeInAnimation};
       text-align : center;
     `;
 
     let loginForm = this.state.montForm ? <LoginForm/> : null
+    let words = this.state.montForm ? (<span><p id="word"></p></span>) : null
 
     return (
       <div className="mainContent">
-        <span >
-          <p id="word"></p>
-        </span>
-        <FadeInDiv>
-          <img src={background} className="logoGigaaa" alt=""></img>
-        </FadeInDiv>
+        <span><p id="word"></p></span>
+
+        <img src={background} className="logoGigaaa" alt=""></img>
+        {loginForm}
         <p>Tap anywhere on the screen if you're not available to listen</p>
       </div>
     );
