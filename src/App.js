@@ -15,7 +15,7 @@ export default class App extends Component {
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
       addPhrase : false,
-      montForm :  true
+      montForm :  false
     }
     this.pharasesTimer = this.pharasesTimer.bind(this);
   }
