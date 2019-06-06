@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import background from '../public/images/LifeIsGigaaa.png'
+import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
+
 
 export default class App extends Component {
   constructor() {
@@ -93,4 +94,5 @@ export default class App extends Component {
   }
 
 }
+
 
