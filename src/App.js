@@ -4,6 +4,7 @@ import background from '../public/images/LifeIsGigaaa.png';
 import './App.css';
 import LoginForm from './Components/Login/Login';
 
+
 export default class App extends Component {
   constructor() {
     super()
@@ -19,8 +20,6 @@ export default class App extends Component {
     }
     this.pharasesTimer = this.pharasesTimer.bind(this);
   }
-
-
 
   pharasesTimer(id) {
     let phrasesWrapper = document.getElementById(id);
@@ -73,11 +72,14 @@ export default class App extends Component {
   componentDidMount() {
     if(navigator.userAgent.match(/Android/i)) console.log('android')
     if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
-    this.pharasesTimer("word")
+    //this.pharasesTimer("word")
   }
 
   render() {  
-
+    let fadeInAnimation = keyframes`${fadeIn}`;
+    let FadeInDiv = styled.div`
+      animation: 1s ${fadeInAnimation}
+    `;
     let loginForm = this.state.montForm ? <LoginForm/> : null
 
     return (
@@ -86,7 +88,6 @@ export default class App extends Component {
           <p id="word"></p>
         </span>
         <img src={background} className="logoGigaaa" alt=""></img>
-        {loginForm} 
         <p>Tap anywhere on the screen if you're not available to listen</p>
       </div>
     );
