@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation : slidein 5s;
+    animation : fadeIn 5s;
 }
 
 .loginForm form{
