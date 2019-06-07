@@ -25,6 +25,11 @@ export default class App extends Component {
     this.setPassword = this.setPassword.bind(this);
     this.showArrow = this.showArrow.bind(this);
     this.showLoginForm = this.showLoginForm.bind(this);
+    this.mountNewAcount = this.mountNewAcount.bind(this);
+  }
+
+  mountNewAcount() {
+    console.log('mount create new acount component ! ');
   }
 
   showLoginForm() {
@@ -120,18 +125,17 @@ export default class App extends Component {
 
     //console.log(Helpers)
 
-    let loginForm = this.state.montForm ? <LoginForm showPassword={this.state.showPassword} setPassword={this.setPassword}/> : null
-    
+    let loginForm = this.state.montForm ? <LoginForm mountNewAcount={this.mountNewAcount} showPassword = {this.state.showPassword} setPassword={this.setPassword}/> : null;
+
     return (
       <div className="mainContent">
         <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
-        {/*<p>Tap anywhere on the screen if you're not available to listen</p>*/}
-
         {loginForm}
         <Footer 
-          showArrow={this.showArrow} 
-          showArrowLogin={this.state.showArrowLogin}
-          showLoginForm={this.showLoginForm}/>
+            showArrow={this.showArrow} 
+            showArrowLogin={this.state.showArrowLogin}
+            showLoginForm={this.showLoginForm}/>
+
       </div>
     );
   }

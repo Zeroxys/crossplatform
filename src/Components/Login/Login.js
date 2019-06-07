@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash, faEye, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import './Login.css';
 
 
 
 export default function LoginForm(props) {
 
-  let [show, setShow] = useState('false')
-
   let eyeIcon = props.showPassword ?  <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>
-
-  console.log(props)
 
   return <div className="loginForm">
     <form>
@@ -38,11 +34,11 @@ export default function LoginForm(props) {
 
     </form>   
     
-    {/*<div className="newAccountContent">
+    <div className="newAccountContent">
       <span className="line"></span>
-      <span>Forgot Your Password?</span>
-      <span>New to gigaaa? Create New Account</span>
-    </div>*/}
+      <p>Forgot Your Password?</p>
+      <p>New to gigaaa? Create New Account <span onClick={() => props.mountNewAcount()}><FontAwesomeIcon icon={faChevronRight}/> </span> </p>
+    </div>
 
   </div>
 }

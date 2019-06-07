@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     animation : fadeIn 5s;
 }
 
@@ -62,12 +63,12 @@
     outline:none;
 }
 
-.line {
-    border:1px solid white;
-
-}
 
 .newAccountContent{
-    border:1px solid gray;
-    width: 80%;
+    border-top: 2px solid white;
+    padding-top: 1em;
+    bottom: 20%;
+    position: absolute;
+    width: 50%;
+
 }
