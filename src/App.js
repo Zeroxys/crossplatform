@@ -144,6 +144,7 @@ export default class App extends Component {
     //console.log(Helpers)
 
     let loginForm = this.state.montForm ? <LoginForm 
+                                              showLoginForm = {this.showLoginForm}
                                               montForgotPassword = {this.state.montForgotPassword}
                                               setForgotPassword = {this.setForgotPassword}
                                               montCreateUser = {this.state.montCreateUser}

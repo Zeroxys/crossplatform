@@ -4,8 +4,6 @@ import { faEyeSlash, faEye, faChevronRight } from '@fortawesome/free-solid-svg-i
 
 export default function ResetPasswordForm (props) {
 
-    let eyeIcon = props.showPassword ?  <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>
-
     return(
         <Fragment>
             <form>
@@ -17,7 +15,7 @@ export default function ResetPasswordForm (props) {
 
             <div className="newAccountContent">
                 <span className="line"></span>
-                <p>Return back to Log-in <span onClick={() => props.mountNewAcount()}><FontAwesomeIcon icon={faChevronRight}/> </span> </p>
+                <p>Return back to Log-in <span onClick={() => props.showLoginForm()}><FontAwesomeIcon icon={faChevronRight}/> </span> </p>
             </div>
 
         </Fragment>
