@@ -1,0 +1,24 @@
+.footerContent{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    width: 90%;
+    height: 20%;
+}
+
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowIcon{
+    position: absolute;
+    width: 100%;
+    animation: fadeIn 2s;
+}
+
+.arrowIcon svg{
+    float: right;
+}

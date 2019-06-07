@@ -53,6 +53,7 @@
 
 
 .loginForm form input{
+    margin-top: 2%;
     border-style: hidden;
     border-bottom: 1px solid lightgrey;
 }

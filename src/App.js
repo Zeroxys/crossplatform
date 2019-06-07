@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {} from 'react-router-dom'
-import background from '../public/images/LifeIsGigaaa.png';
+import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
 import LoginForm from './Components/Login/Login';
-import iconGigaaa from '../public/images/gigaaalogo-kit_big_android_app_icon.png'
+import Footer from './Components/Login/Footer/Footer.js'
 import './App.css';
 //import Helpers from './Helpers/Helpers';
 
@@ -17,19 +17,25 @@ export default class App extends Component {
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
       addPhrase : false,
-      montForm :  true,
-      showPassword : false
+      montForm :  true, // change true for show loginForm
+      showPassword : false,
+      showArrowLogin: false
     }
     this.pharasesTimer = this.pharasesTimer.bind(this);
     this.setPassword = this.setPassword.bind(this);
+    this.showArrow = this.showArrow.bind(this);
+  }
+
+  showArrow() {
+    this.setState( (prevState) => {
+      return {
+        showArrowLogin : prevState.showArrowLogin = true
+      }
+    })
   }
 
   setPassword(e) {
-
     let el = document.getElementById('password')
-
-    console.log(el)
-
     this.setState( (prevState) => {
       return {
         showPassword : !prevState.showPassword
@@ -106,17 +112,14 @@ export default class App extends Component {
     //console.log(Helpers)
 
     let loginForm = this.state.montForm ? <LoginForm showPassword={this.state.showPassword} setPassword={this.setPassword}/> : null
+    
     return (
       <div className="mainContent">
-        <img src={background} className="logoGigaaa" alt=""></img>
+        <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
         {/*<p>Tap anywhere on the screen if you're not available to listen</p>*/}
 
         {loginForm}
-
-        <div className="iconContent">
-          <img src={iconGigaaa} className="iconGigaaa" alt=""></img>
-        </div>
-
+        <Footer showArrow={this.showArrow} showArrowLogin={this.state.showArrowLogin}/>
       </div>
     );
   }

@@ -27,8 +27,6 @@ export default function LoginForm(props) {
           </label>
           <input id="password" type={props.showPassword ? "text" : "password"}/>
 
-
-
         <div className="checkContent">
           <input id="checkRemember" type="checkbox" name="Remember" value="Remember"/>
           <span className="checkmark"></span>
