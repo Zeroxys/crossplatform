@@ -11,6 +11,8 @@ export default function ResetPasswordForm (props) {
             <form>
                 <label htmlFor="username">E-mail</label>
                 <input id="username" type="text"/>
+
+                <input type="submit" value="Reset Password"></input>
             </form>
 
             <div className="newAccountContent">
