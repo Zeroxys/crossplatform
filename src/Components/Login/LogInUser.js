@@ -27,7 +27,7 @@ export default function LogInUser(props) {
 
             <div className="newAccountContent">
             <span className="line"></span>
-            <p>Forgot Your Password?</p>
+            <p onClick={ () => props.setForgotPassword() }>Forgot Your Password?</p>
             <p>New to gigaaa? Create New Account <span onClick={() => props.mountNewAcount()}><FontAwesomeIcon icon={faChevronRight}/> </span> </p>
             </div>
 
