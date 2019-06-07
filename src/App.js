@@ -17,13 +17,22 @@ export default class App extends Component {
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
       addPhrase : false,
-      montForm :  true, // change true for show loginForm
+      montForm :  false, // change true for show loginForm
       showPassword : false,
       showArrowLogin: false
     }
     this.pharasesTimer = this.pharasesTimer.bind(this);
     this.setPassword = this.setPassword.bind(this);
     this.showArrow = this.showArrow.bind(this);
+    this.showLoginForm = this.showLoginForm.bind(this);
+  }
+
+  showLoginForm() {
+    this.setState( (prevState) => {
+      return {
+        montForm : prevState.montForm = true
+      }
+    })
   }
 
   showArrow() {
@@ -119,7 +128,10 @@ export default class App extends Component {
         {/*<p>Tap anywhere on the screen if you're not available to listen</p>*/}
 
         {loginForm}
-        <Footer showArrow={this.showArrow} showArrowLogin={this.state.showArrowLogin}/>
+        <Footer 
+          showArrow={this.showArrow} 
+          showArrowLogin={this.state.showArrowLogin}
+          showLoginForm={this.showLoginForm}/>
       </div>
     );
   }

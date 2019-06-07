@@ -13,7 +13,7 @@ export default function Footer (props){
             <div className="iconContainer" onClick={() => props.showArrow()}>
                 <img src={iconGigaaa} className="iconGigaaa" alt=""/>
             </div>
-            <div className={ props.showArrowLogin ? "arrowIcon" : ""}>
+            <div className={ props.showArrowLogin ? "arrowIcon" : ""} onClick={ () => props.showLoginForm() }>
                 {showArrow}
             </div>
         </div>
