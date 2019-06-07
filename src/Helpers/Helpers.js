@@ -43,10 +43,5 @@ export default class Helpers {
 
   }*/ 
 
-  loginForm() {
-    return 
-      <h1>Something....</h1>
-    )
-  }  
 
 }
