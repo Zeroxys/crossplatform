@@ -1,14 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
 import './Login.css';
 
-export default function LoginForm() {
+
+
+export default function LoginForm(props) {
+
+  let [show, setShow] = useState('false')
+
+  let eyeIcon = props.showPassword ?  <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>
+
+  console.log(props)
+
   return <div className="loginForm">
     <form>
         <label htmlFor="username">Username / Email</label>
         <input id="username" type="text"/>
 
-        <label htmlFor="password">Password</label>
-        <input id="password" type="text"/>
+
+          <label htmlFor="password">
+            Password 
+            <span className="passwordEye" onClick={(e) => props.setPassword(e)}>
+              {eyeIcon}
+            </span>
+          </label>
+          <input id="password" type={props.showPassword ? "text" : "password"}/>
+
+
 
         <div className="checkContent">
           <input id="checkRemember" type="checkbox" name="Remember" value="Remember"/>

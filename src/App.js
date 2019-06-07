@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {} from 'react-router-dom'
 import background from '../public/images/LifeIsGigaaa.png';
-import './App.css';
 import LoginForm from './Components/Login/Login';
+import iconGigaaa from '../public/images/gigaaalogo-kit_big_android_app_icon.png'
+import './App.css';
+//import Helpers from './Helpers/Helpers';
 
 export default class App extends Component {
   constructor() {
@@ -15,17 +17,45 @@ export default class App extends Component {
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
       addPhrase : false,
-      montForm :  false
+      montForm :  true,
+      showPassword : false
     }
     this.pharasesTimer = this.pharasesTimer.bind(this);
+    this.setPassword = this.setPassword.bind(this);
+  }
+
+  setPassword(e) {
+
+    let el = document.getElementById('password')
+
+    console.log(el)
+
+    this.setState( (prevState) => {
+      return {
+        showPassword : !prevState.showPassword
+      }
+    })
   }
 
   pharasesTimer(id) {
-    let phrasesWrapper = document.getElementById(id);
-    let phrasesContent = phrasesWrapper.innerHTML;
+    //let phrasesWrapper = document.getElementById(id);
+    //let phrasesContent = phrasesWrapper.innerHTML;
     let counter = 0;
 
-    setInterval(() => {
+
+    setInterval( () => {
+      
+      if(!this.state.addPhrase) {
+        this.state.phrases.map(el => {
+        })
+      }else{
+        this.state.phrases.map(el => {
+        })
+      }
+
+    }, 1200)
+
+    /*setInterval(() => {
       
       if(phrasesContent.length > 0 && !this.state.addPhrase) {
         phrasesWrapper.innerHTML =  ''
@@ -60,24 +90,33 @@ export default class App extends Component {
           })
         }
       }
-    }, 1200);
+    }, 1200);*/
 
   }
 
   componentDidMount() {
     //if(navigator.userAgent.match(/Android/i)) console.log('android')
     //if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
+
     this.pharasesTimer("word")
   }
 
   render() {
-    let loginForm = this.state.montForm ? <LoginForm/> : null
+
+    //console.log(Helpers)
+
+    let loginForm = this.state.montForm ? <LoginForm showPassword={this.state.showPassword} setPassword={this.setPassword}/> : null
     return (
       <div className="mainContent">
-        <span><p id="word"></p></span>
         <img src={background} className="logoGigaaa" alt=""></img>
+        {/*<p>Tap anywhere on the screen if you're not available to listen</p>*/}
+
         {loginForm}
-        <p>Tap anywhere on the screen if you're not available to listen</p>
+
+        <div className="iconContent">
+          <img src={iconGigaaa} className="iconGigaaa" alt=""></img>
+        </div>
+
       </div>
     );
   }

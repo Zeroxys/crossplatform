@@ -1,13 +1,12 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   background-image: url('../public/images/Screen.png');
-  /*background-position: center center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;*/
   background-size: cover;
 }
 
@@ -19,17 +18,30 @@
 }
 
 .mainContent span p{
-  font-size: 12px;
+  font-size: 1em;
   animation : fadeIn 5s;
 }
 
 .mainContent p{
-  font-size: 12px;
+  font-size: 1em;
 }
 
 .logoGigaaa{
-  margin-top: 135px;
-  width: 60%;
+  width: 50%;
   animation : fadeIn 5s;
+}
+
+.iconGigaaa{
+  border-radius: 100%;
+  bottom: 0;
+  animation: shadow-pulse 1.4s;
+  animation-iteration-count: infinite;
+}
+
+.iconContent{
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 

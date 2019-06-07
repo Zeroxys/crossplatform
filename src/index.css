@@ -23,6 +23,11 @@ code {
     monospace;
 }
 
+input, select, textarea {
+  color :#293059;
+  font-weight: 500;
+}
+
 #root{
   display: flex;
   justify-content: center;
@@ -31,25 +36,86 @@ code {
 
 
 /*Media Queries Desktop*/
+
+@media (min-width: 1281px) {
+  
+
+  .mainContent {
+    width: 50%;
+  }
+  .mainContent span p{
+    font-size: 1em!important;
+  }
+  .mainContent p{
+    font-size: 1em!important;
+  }
+  .logoGigaaa{
+
+  }  
+}
+
 @media (min-width: 1025px) and (max-width: 1280px) {
 
   .mainContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-size: cover;
+    width: 50%;
   }
   .mainContent span p{
-    font-size: 22px;
+    font-size: 1em!important;
   }
   .mainContent p{
-    font-size: 22px;
+    font-size: 1em!important;
   }
   .logoGigaaa{
     width: 30%;
   }
 }
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .logoGigaaa{
+    width: 30%!important;
+  }
+
+  .mainContent span p{
+    font-size: 1.5em!important;
+  }
+  .mainContent p{
+    font-size: 1.5em!important;
+  }
+
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+}
+
 
 /*Keyframes*/
 @keyframes slidein {
@@ -73,4 +139,20 @@ code {
     opacity: 1;
   }
 }
+
+@keyframes shadow-pulse
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(39, 221, 207, 0.2);
+      width: 17%;
+  }
+  50% {
+    width: 19%;
+  }
+  100% {
+      box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+      width: 17%;
+  }
+}
+
 
