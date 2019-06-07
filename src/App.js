@@ -18,6 +18,7 @@ export default class App extends Component {
       ],
       addPhrase : false,
       montForm :  false, // change true for show loginForm
+      montCreateUser : false, // change true for show createUserform
       showPassword : false,
       showArrowLogin: false
     }
@@ -29,7 +30,12 @@ export default class App extends Component {
   }
 
   mountNewAcount() {
-    console.log('mount create new acount component ! ');
+    this.setState( (prevState) => {
+      return {
+        montCreateUser : prevState.montCreateUser = true
+      }
+    })
+    console.log(this.state.montCreateUser);
   }
 
   showLoginForm() {
@@ -125,7 +131,11 @@ export default class App extends Component {
 
     //console.log(Helpers)
 
-    let loginForm = this.state.montForm ? <LoginForm mountNewAcount={this.mountNewAcount} showPassword = {this.state.showPassword} setPassword={this.setPassword}/> : null;
+    let loginForm = this.state.montForm ? <LoginForm 
+                                              montCreateUser = {this.state.montCreateUser}
+                                              mountNewAcount={this.mountNewAcount} 
+                                              showPassword = {this.state.showPassword} 
+                                              setPassword={this.setPassword}/> : null;
 
     return (
       <div className="mainContent">

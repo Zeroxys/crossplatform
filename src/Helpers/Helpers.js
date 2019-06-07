@@ -1,6 +1,8 @@
+import React from 'react'
+
 export default class Helpers {
 
-  timer() {
+  /*timer() {
 
     setInterval(() => {
       
@@ -39,5 +41,12 @@ export default class Helpers {
       }
     }, 1200);
 
+  }*/ 
+
+  loginForm() {
+    return 
+      <h1>Something....</h1>
+    )
   }  
+
 }
