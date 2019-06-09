@@ -1,5 +1,5 @@
 .loginForm {
-    width: 80%;
+    width: 60%;
     padding: 20px;
     background-color: #fefefe;
     border-radius: .7em;
@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation : fadeIn 5s;
+    animation: fadeIn 5s;
+    position: absolute;
+    top: 30%;
 }
 
 .loginForm form{
@@ -68,8 +70,15 @@
 .newAccountContent{
     border-top: 2px solid white;
     padding-top: 1em;
-    bottom: 20%;
+    bottom: -90%;
     position: absolute;
     width: 50%;
+}
 
+.newAccountContentReset{
+    border-top: 2px solid white;
+    padding-top: 1em;
+    bottom: -130%;
+    position: absolute;
+    width: 70%;
 }

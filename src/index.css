@@ -52,6 +52,9 @@ input, select, textarea {
   .logoGigaaa{
 
   }  
+  .loginForm {
+    width: 30%!important;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -67,6 +70,9 @@ input, select, textarea {
   }
   .logoGigaaa{
     width: 30%;
+  }
+  .loginForm {
+    width: 30%!important;
   }
 }
 
@@ -84,6 +90,16 @@ input, select, textarea {
   .mainContent p{
     font-size: 1.5em!important;
   }
+
+  .loginForm {
+    width: 30%!important;
+  }
+
+  .newAccountContent{
+    bottom: -110%!important;
+    position: absolute;
+    width: 500px!important;
+}
 
 }
 
@@ -113,6 +129,14 @@ input, select, textarea {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+  .newAccountContent {
+    border-top: 2px solid white;
+    padding-top: 1em;
+    bottom: -162%;
+    position: absolute;
+    width: 70%!important;
+}
 
 }
 

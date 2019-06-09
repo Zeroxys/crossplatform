@@ -9,6 +9,7 @@ import './App.css';
 export default class App extends Component {
   constructor() {
     super()
+    
     this.state = {
       phrases : [
         'I have something to tell you.',
@@ -23,6 +24,7 @@ export default class App extends Component {
       showPassword : false,
       showArrowLogin: false
     }
+
     this.pharasesTimer = this.pharasesTimer.bind(this);
     this.setPassword = this.setPassword.bind(this);
     this.showArrow = this.showArrow.bind(this);
@@ -51,9 +53,10 @@ export default class App extends Component {
   }
 
   showLoginForm() {
+    console.log('Regresas al logeo')
     this.setState( (prevState) => {
       return {
-        montForm : prevState.montForm = true
+        montForm : !prevState.montForm
       }
     })
   }
@@ -150,16 +153,24 @@ export default class App extends Component {
                                               montCreateUser = {this.state.montCreateUser}
                                               mountNewAcount={this.mountNewAcount} 
                                               showPassword = {this.state.showPassword} 
-                                              setPassword={this.setPassword}/> : null;
+                                              setPassword={this.setPassword}/> : 
+                                              
+                                              <Footer 
+                                                showArrow={this.showArrow} 
+                                                showArrowLogin={this.state.showArrowLogin}
+                                                showLoginForm={this.showLoginForm}/>;
+
+
 
     return (
       <div className="mainContent">
         <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
         {loginForm}
-        <Footer 
+
+        {/*<Footer 
             showArrow={this.showArrow} 
             showArrowLogin={this.state.showArrowLogin}
-            showLoginForm={this.showLoginForm}/>
+        showLoginForm={this.showLoginForm}/>*/}
 
       </div>
     );

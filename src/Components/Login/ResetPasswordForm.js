@@ -13,7 +13,7 @@ export default function ResetPasswordForm (props) {
                 <input type="submit" value="Reset Password"></input>
             </form>
 
-            <div className="newAccountContent">
+            <div className="newAccountContentReset">
                 <span className="line"></span>
                 <p>Return back to Log-in <span onClick={() => props.showLoginForm()}><FontAwesomeIcon icon={faChevronRight}/> </span> </p>
             </div>
