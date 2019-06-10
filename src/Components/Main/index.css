@@ -1,9 +1,9 @@
 .interfaceContent{
+  background-color: #fefefe;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border:1px solid red;
   width: 50%;
   height: 100vh;
   position: relative;

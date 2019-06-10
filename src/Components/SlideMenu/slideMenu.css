@@ -1,0 +1,59 @@
+.sliderContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+}
+
+.slideMenuContent{
+    border:1px solid red,
+}
+
+.burgerIcon {
+    position: absolute;
+    /* height: 100vh; */
+    z-index: 9999;
+    top: 0;
+    color: black;
+    width: 100%;
+}
+
+.burgerIcon  svg{
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.slideAnimation {
+    position: absolute;
+    width: 25%;
+    z-index: 9;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+    animation: slidein 2s forwards;
+}
+
+.Line{
+    display: block;
+    border:1px solid white;
+    margin: 15px 0 15px 0;
+    width: 100%;
+}
+
+.linksContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 40vh;
+}

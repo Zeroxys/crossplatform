@@ -145,12 +145,12 @@ input, select, textarea {
 @keyframes slidein {
   from {
     opacity: 0;
-    margin-bottom: 100%;
+    margin-left: -400px;
   }
 
   to {
-    opacity: 1;
-    margin-bottom: 0%;
+    opacity:1;
+    margin-left: -130px;
   }
 }
 
@@ -175,6 +175,23 @@ input, select, textarea {
   }
   100% {
       box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+      width: 17%;
+  }
+}
+
+
+@keyframes voiceChangeColors
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(39, 221, 207, 0.2);
+      width: 17%;
+  }
+  50% {
+    width: 19%;
+    box-shadow: 0 0 0 35px rgb(41,48,89,0.3);
+  }
+  100% {
+      box-shadow: 0 0 0 35px rgb(41,48,89,0.5);
       width: 17%;
   }
 }

@@ -11,7 +11,7 @@ export default function Menu(props) {
         <FontAwesomeIcon icon={faHome}/>
         <FontAwesomeIcon icon={faUser}/>
 
-        <img src={iconGigaaa} className="iconGigaaa" alt=""/>
+          <img ref={props.customRef} src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/>
 
         <FontAwesomeIcon icon={faComment}/>
         <FontAwesomeIcon icon={faBorderStyle}/>
