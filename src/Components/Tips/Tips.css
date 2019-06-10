@@ -1,0 +1,89 @@
+.TipsMainContent{
+    background-image: url('../../../public/images/TipsBack.png');
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+    color : #293059;
+}
+
+.Tips2MainContent{
+    background-image: url('../../../public/images/TipsBack2.png');
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+    color : #293059;
+}
+
+.Tips3MainContent{
+    background-image: url('../../../public/images/TipsBack3.png');
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+    color : #293059;
+}
+
+.Tips4MainContent{
+    background-image: url('../../../public/images/TipsBack4.png');
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    color:white;
+    background-color: #293059;
+    height: 100vh;
+    color : #293059;
+}
+
+.infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.infoContainer h2{
+    width: 150px;
+}
+
+
+.subtitle{
+    color : #A6A8BA;
+    width: 240px;
+}
+
+.Musica{
+    width: 20%;
+}
+
+.infoTips{
+    border-radius: 10px;
+    border:1px solid lightgray;
+    color : #293059;
+    width: 80%;
+    padding: 2%;
+}

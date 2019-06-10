@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import './slideMenu.css';
@@ -14,16 +15,20 @@ export default function(props) {
                                             Add Device <FontAwesomeIcon icon={faPlusCircle}/>
                                         </section>
                                         <section className="linksContainer">
-                                            <span className="Line"> </span>
-                                            <p>Routines</p>
-                                            <p>gigaaa Service Store</p>
-                                            <p>Wallet</p>
-                                            <p>Tips & Tutorials</p>
-                                            <span className="Line"></span>
-                                            <p>Activity</p>
-                                            <p>Settings</p>
-                                            <p>Help & Feedback</p>
-                                            <p>About</p>
+                                            
+
+                                                <span className="Line"> </span>
+                                                <p>Routines</p>
+                                                <p>gigaaa Service Store</p>
+                                                <p>Wallet</p>
+                                                <Link to="/Tips">Tips & Tutorials</Link>
+                                                <span className="Line"></span>
+                                                <p>Activity</p>
+                                                <p>Settings</p>
+                                                <p>Help & Feedback</p>
+                                                <p>About</p>
+                                            
+
                                         </section>
                                     </div>) : ''
 
