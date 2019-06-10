@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {} from 'react-router-dom'
 import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
 import LoginForm from './Components/Login/Login';
-import Footer from './Components/Login/Footer/Footer.js'
+import Footer from './Components/Footer/Footer.js'
 import './App.css';
+
 //import Helpers from './Helpers/Helpers';
 
 export default class App extends Component {
@@ -54,6 +55,7 @@ export default class App extends Component {
 
   showLoginForm() {
     console.log('Regresas al logeo')
+    console.log('must show the loginForm', this.state.montForm)
     this.setState( (prevState) => {
       return {
         montForm : !prevState.montForm
@@ -139,7 +141,7 @@ export default class App extends Component {
     //if(navigator.userAgent.match(/Android/i)) console.log('android')
     //if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
 
-    this.pharasesTimer("word")
+    //this.pharasesTimer("word")
   }
 
   render() {

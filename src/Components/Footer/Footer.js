@@ -1,5 +1,5 @@
 import React from 'react'
-import iconGigaaa from '../../../../public/images/gigaaalogoIcon.png'
+import iconGigaaa from '../../../public/images/gigaaalogoIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import './Footer.css'
