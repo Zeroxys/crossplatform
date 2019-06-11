@@ -9,7 +9,7 @@ export default function Tips () {
                 <h2>Ask About Anything</h2>
                 <p className="subtitle">Access information easily, get instant advice and tips</p>
 
-                <img src={After} className="Musica"></img>
+                <img src={After} className="Musica" alt=""></img>
 
                 <p className="infoTips">"Different ways to tie a tie."</p>
                 <p className="infoTips">"How do I prepare a Bloody Mary?</p>

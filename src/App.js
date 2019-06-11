@@ -5,7 +5,7 @@ import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js'
 import './App.css';
 
-//import Helpers from './Helpers/Helpers';
+import Helpers from './Helpers/Helpers';
 
 export default class App extends Component {
   constructor() {
@@ -32,6 +32,10 @@ export default class App extends Component {
     this.showLoginForm = this.showLoginForm.bind(this);
     this.mountNewAcount = this.mountNewAcount.bind(this);
     this.setForgotPassword = this.setForgotPassword.bind(this);
+
+    //Helpers
+    this.helpers = new Helpers()
+
   }
 
 
@@ -138,8 +142,67 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    //if(navigator.userAgent.match(/Android/i)) console.log('android')
-    //if(navigator.userAgent.match(/Windows/i)) console.log('Windows')
+
+    this.helpers.apiFetch('api/v1/auth/login', 'POST', {
+      email: 'miguelzavalac@gmail.com' || this.state.email,
+      password: 'password' || this.state.password  
+    })
+      .then( (responseJson) => {
+
+        console.log('response ------->', responseJson)
+
+          if (responseJson.success === true) {
+              //TODO perform server-side login after registration
+              console.log('funciona --->',responseJson)
+
+          } else {
+
+              this.setState({
+                  isLoading: false,
+                  validationErrors: responseJson.errors
+              });
+          }
+
+      })
+      .catch((error) => {
+          console.error('Error ---> ',error);
+      });
+
+
+    /*
+    this.helpers.apiFetch('api/v1/auth/signup', 'POST', {
+      email: 'miguelzavalac@gmail.com' || this.state.email,
+      password: 'password' || this.state.password,
+      password_confirmation: 'password' || this.state.password,
+      username: 'Miguel' || this.state.username
+    }).then(async (responseJson) => {
+        if (responseJson.success === true) {
+            //TODO perform server-side login after registration
+            //_signInAsync.call(this)
+            console.log('funciona')
+
+        } else {
+
+            this.setState({
+                isLoading: false,
+                validationErrors: responseJson.errors
+            });
+        }
+      })
+      .catch((error) => {
+          this.setState({
+              isLoading: false,
+              text: JSON.stringify(error)
+          });
+
+          console.error(error);
+      });*/
+
+
+    /*axios.post('https://api.gigaaa.link/api/v1/auth/login', {
+      email:'miguelzavalac@gmail.com',
+      password : 'password'
+    }).then(res => console.log(Res)).catch(err => console.log(err))*/
 
     //this.pharasesTimer("word")
   }

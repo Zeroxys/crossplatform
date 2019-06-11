@@ -9,7 +9,7 @@ export default function Tips () {
                 <h2>Manage Your Entire Smart Home</h2>
                 <p className="subtitle">Simplify the control of your devices in one.</p>
 
-                <img src={Hogar} className="Musica"></img>
+                <img src={Hogar} className="Musica" alt=""></img>
 
                 <p className="infoTips">"Set volume to 6 on smart TV."</p>
                 <p className="infoTips">"Switch on the kitchen heater."</p>

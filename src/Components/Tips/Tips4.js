@@ -9,7 +9,7 @@ export default function Tips () {
                 <h2>Boost Your Social Life</h2>
                 <p className="subtitle">Explore activities nearby, meet people and chat safely</p>
 
-                <img src={Fiesta} className="Musica"></img>
+                <img src={Fiesta} className="Musica" alt=""></img>
 
                 <p className="infoTips">"Create a GIG called Salsa Night for May 20 in Madrid"</p>
                 <p className="infoTips">"Search for GIG's about basketball on June 8th"</p>
