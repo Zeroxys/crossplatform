@@ -23,7 +23,17 @@ export default class App extends Component {
       montCreateUser : false, // change true for show createUserform
       montForgotPassword : false, // change true for show createUserform
       showPassword : false,
-      showArrowLogin: false
+      showArrowLogin: false,
+
+
+      //When the user login
+      user : {
+        name : null,
+        password : null,
+        password_confirmation: null,
+        email : null
+      }
+
     }
 
     this.pharasesTimer = this.pharasesTimer.bind(this);
@@ -168,49 +178,9 @@ export default class App extends Component {
           console.error('Error ---> ',error);
       });
 
-
-    /*
-    this.helpers.apiFetch('api/v1/auth/signup', 'POST', {
-      email: 'miguelzavalac@gmail.com' || this.state.email,
-      password: 'password' || this.state.password,
-      password_confirmation: 'password' || this.state.password,
-      username: 'Miguel' || this.state.username
-    }).then(async (responseJson) => {
-        if (responseJson.success === true) {
-            //TODO perform server-side login after registration
-            //_signInAsync.call(this)
-            console.log('funciona')
-
-        } else {
-
-            this.setState({
-                isLoading: false,
-                validationErrors: responseJson.errors
-            });
-        }
-      })
-      .catch((error) => {
-          this.setState({
-              isLoading: false,
-              text: JSON.stringify(error)
-          });
-
-          console.error(error);
-      });*/
-
-
-    /*axios.post('https://api.gigaaa.link/api/v1/auth/login', {
-      email:'miguelzavalac@gmail.com',
-      password : 'password'
-    }).then(res => console.log(Res)).catch(err => console.log(err))*/
-
-    //this.pharasesTimer("word")
   }
 
   render() {
-
-    //console.log(Helpers)
-
     let loginForm = this.state.montForm ? <LoginForm 
                                               showLoginForm = {this.showLoginForm}
                                               montForgotPassword = {this.state.montForgotPassword}
@@ -225,18 +195,10 @@ export default class App extends Component {
                                                 showArrowLogin={this.state.showArrowLogin}
                                                 showLoginForm={this.showLoginForm}/>;
 
-
-
     return (
       <div className="mainContent">
         <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
         {loginForm}
-
-        {/*<Footer 
-            showArrow={this.showArrow} 
-            showArrowLogin={this.state.showArrowLogin}
-        showLoginForm={this.showLoginForm}/>*/}
-
       </div>
     );
   }

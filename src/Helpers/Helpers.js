@@ -71,6 +71,7 @@ export default class Helpers {
             return response.json();
         })
         .catch((error) => {
+            return error
             console.log('error helpers --->',error);
         });
   }
