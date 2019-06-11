@@ -3,7 +3,7 @@ import SlideMenu from '../SlideMenu';
 import Drawer from 'rc-drawer'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 import './index.css'
 
 
@@ -36,12 +36,12 @@ export default class Main extends Component {
   render(){
     return (
       <Fragment>
-          <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
-          <div className="interfaceContent">
+          <div className="burgerIcon" onClick={() => this.closeSlide()}>
+              <FontAwesomeIcon icon={faBars} size="2x"/>
+          </div>
 
-            <div className="burgerIcon" onClick={() => this.closeSlide()}>
-                <FontAwesomeIcon icon={faBars} size="2x"/>
-            </div>
+          <div className="interfaceContent">
+          <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <h1>Home</h1>
             <Menu></Menu>
           </div>

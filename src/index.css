@@ -143,7 +143,16 @@ input, select, textarea {
 
 /*Keyframes*/
 @keyframes slidein {
-  from {
+
+  from{
+    transform : translateX(-160%);
+  }
+
+  to {
+      transform : translateX(-50%);
+  }
+
+  /*from {
     opacity: 0;
     margin-left: -400px;
   }
@@ -151,7 +160,7 @@ input, select, textarea {
   to {
     opacity:1;
     margin-left: -130px;
-  }
+  }*/
 }
 
 @keyframes fadeIn {

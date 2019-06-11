@@ -10,29 +10,25 @@ export default function(props) {
 
     console.log('is open', props.isOpen)
 
-    let slideMenu = props.isOpen ? (<div ref={props.slideRef} className={props.isOpen ? "slideAnimation":"sliderContent"}>
-                                        <section className="slideMenuContent">
-                                            Add Device <FontAwesomeIcon icon={faPlusCircle}/>
-                                        </section>
-                                        <section className="linksContainer">
-                                            
+    let slider = props.isOpen ? (
+        <div ref={props.slideRef} className={props.isOpen ? "slideAnimation":"sliderContent"}>
+            <section className="slideMenuContent">
+                Add Device <FontAwesomeIcon icon={faPlusCircle}/>
+            </section>
+            <section className="linksContainer">
+                    <span className="Line"> </span>
+                    <p>Routines</p>
+                    <p>gigaaa Service Store</p>
+                    <p>Wallet</p>
+                    <Link to="/Tips">Tips & Tutorials</Link>
+                    <span className="Line"></span>
+                    <p>Activity</p>
+                    <p>Settings</p>
+                    <p>Help & Feedback</p>
+                    <p>About</p>
+            </section>
+        </div>) : null
 
-                                                <span className="Line"> </span>
-                                                <p>Routines</p>
-                                                <p>gigaaa Service Store</p>
-                                                <p>Wallet</p>
-                                                <Link to="/Tips">Tips & Tutorials</Link>
-                                                <span className="Line"></span>
-                                                <p>Activity</p>
-                                                <p>Settings</p>
-                                                <p>Help & Feedback</p>
-                                                <p>About</p>
-                                            
-
-                                        </section>
-                                    </div>) : ''
-
-
-    return (<Fragment>{slideMenu}</Fragment>)
+    return <Fragment>{slider}</Fragment>
 
 }

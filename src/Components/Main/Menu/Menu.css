@@ -3,9 +3,9 @@
   justify-content: space-around;
   align-items: center; 
   background-color: #fefefe;
-  position: absolute;
   bottom: 0;
   width: 100%;
+  position: absolute;
   height: 5vh;
   border-top: 1px solid gray;
 }

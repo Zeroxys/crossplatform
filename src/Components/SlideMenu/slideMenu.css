@@ -1,46 +1,32 @@
-.sliderContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 25%;
-    color:white;
-    background-color: #293059;
-    height: 100vh;
-}
 
-.slideMenuContent{
-    border:1px solid red,
-}
-
-.burgerIcon {
-    position: absolute;
-    /* height: 100vh; */
-    z-index: 9999;
-    top: 0;
-    color: black;
-    width: 100%;
-}
-
-.burgerIcon  svg{
-    float: left;
-    margin-top: 5%;
-    margin-left: 5%;
-}
 
 .slideAnimation {
     position: absolute;
-    width: 25%;
-    z-index: 9;
-    overflow: hidden;
+    translate: -130%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     flex-direction: column;
+    width: 50%;
     color:white;
     background-color: #293059;
     height: 100vh;
     animation: slidein 2s forwards;
+    z-index: 9;
+}
+
+.burgerIcon {
+    color: black;
+    float: left;
+    z-index: 99999;
+}
+
+.burgerIcon  svg{
+    position: absolute;
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    top:0;
 }
 
 .Line{
