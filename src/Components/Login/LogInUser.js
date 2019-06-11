@@ -10,7 +10,7 @@ export default function LogInUser(props) {
                 
                 <label htmlFor="username">Username / Email</label>
 
-                <input id="username" type="text" onChange={props.userSetLogIn}/>
+                <input id="username" type="text" value={props.user} onChange={props.userSetLogIn}/>
 
                 <label htmlFor="password">
                     Password 
@@ -19,14 +19,14 @@ export default function LogInUser(props) {
                     </span>
                 </label>
 
-                <input id="password" type={props.showPassword ? "text" : "password"} />
+                <input id="password" type={props.showPassword ? "text" : "password"} value={props.password}  onChange={props.userSetPassword}/>
                 <div className="checkContent">
                 <input id="checkRemember" type="checkbox" name="Remember" value="Remember"/>
                 <span className="checkmark"></span>
                 <label htmlFor="checkRemember">Remember</label>
                 </div>
 
-                <input onClick={(e) => props.userLogIn(e)} type="submit" value="Sign In"></input>
+                <input onClick={(e) => props.sendFormLogIn(e)} type="submit" value="Sign In"></input>
             </form>
 
             <div className="newAccountContent">

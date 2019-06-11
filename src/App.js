@@ -30,11 +30,11 @@ export default class App extends Component {
 
 
       //When the user login
-      name : [],
+      name : '',
+      password : ''
 
     }
     
-
     // =====Methods===== //
     this.pharasesTimer = this.pharasesTimer.bind(this);
     this.setPassword = this.setPassword.bind(this);
@@ -45,6 +45,7 @@ export default class App extends Component {
 
     // === Form === //
     this.userSetLogIn = this.userSetLogIn.bind(this);
+    this.userSetPassword = this.userSetPassword.bind(this);
 
     //Helpers
     this.helpers = new Helpers()
@@ -53,13 +54,29 @@ export default class App extends Component {
 
   userSetLogIn(e) {
     e.persist()
-    e.preventDefault();
+    let value = e.target.value
     this.setState( prevState => {
       return {
-        name : prevState.name = e.target.value
+        name : prevState.name = value
       }
     });
   }
+
+  userSetPassword(e) {
+    e.persist()
+    let value = e.target.value
+    this.setState( prevState => {
+      return {
+        password : prevState.password = value
+      }
+    });
+  }
+
+  sendFormLogIn(e){
+    e.preventDefault();
+    console.log(this.state.password)
+  }
+
 
   setForgotPassword() {
     this.setState( (prevState) => {
@@ -165,8 +182,6 @@ export default class App extends Component {
 
   componentDidMount() {
 
-    console.log(this.state.name)
-
     this.helpers.apiFetch('api/v1/auth/login', 'POST', {
       email: 'miguelzavalac@gmail.com' || this.state.email,
       password: 'password' || this.state.password  
@@ -195,9 +210,13 @@ export default class App extends Component {
   }
 
   render() {
-    let loginForm = this.state.montForm ? <LoginForm 
-                                              user={this.state.user}
+    let loginForm = this.state.montForm ? <LoginForm
+                                              user = {this.state.user}
+                                              password = {this.state.password}
+                                              sendFormLogIn = {this.sendFormLogIn}
+                                              userSetPassword={this.userSetPassword}
                                               userSetLogIn = {this.userSetLogIn}
+
                                               showLoginForm = {this.showLoginForm}
                                               montForgotPassword = {this.state.montForgotPassword}
                                               setForgotPassword = {this.setForgotPassword}

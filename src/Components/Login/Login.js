@@ -7,7 +7,6 @@ import './Login.css';
 
 export default function LoginForm(props) {
   
-  console.log('LOgin --->', props)
   var formType = ''
 
   if(props.montCreateUser) {
@@ -20,6 +19,9 @@ export default function LoginForm(props) {
   }else{  
       formType = <LogInUser
                     user = {props.user}
+                    password = {props.password}
+                    sendFormLogIn = {props.sendFormLogIn}
+                    userSetPassword = {props.userSetPassword}
                     userSetLogIn = {props.userSetLogIn}
                     setForgotPassword = {props.setForgotPassword}
                     showPassword={props.showPassword} 
