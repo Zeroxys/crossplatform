@@ -18,7 +18,9 @@ export default function LoginForm(props) {
       formType = <ResetPasswordForm
                     showLoginForm = {props.showLoginForm}/>
   }else{  
-      formType = <LogInUser 
+      formType = <LogInUser
+                    user = {props.user}
+                    userSetLogIn = {props.userSetLogIn}
                     setForgotPassword = {props.setForgotPassword}
                     showPassword={props.showPassword} 
                     setPassword={props.setPassword}  

@@ -7,6 +7,9 @@ import './App.css';
 
 import Helpers from './Helpers/Helpers';
 
+//https://github.com/kidjp85/react-id-swiper <------ check swiper
+
+
 export default class App extends Component {
   constructor() {
     super()
@@ -27,15 +30,12 @@ export default class App extends Component {
 
 
       //When the user login
-      user : {
-        name : null,
-        password : null,
-        password_confirmation: null,
-        email : null
-      }
+      name : [],
 
     }
+    
 
+    // =====Methods===== //
     this.pharasesTimer = this.pharasesTimer.bind(this);
     this.setPassword = this.setPassword.bind(this);
     this.showArrow = this.showArrow.bind(this);
@@ -43,11 +43,23 @@ export default class App extends Component {
     this.mountNewAcount = this.mountNewAcount.bind(this);
     this.setForgotPassword = this.setForgotPassword.bind(this);
 
+    // === Form === //
+    this.userSetLogIn = this.userSetLogIn.bind(this);
+
     //Helpers
     this.helpers = new Helpers()
 
   }
 
+  userSetLogIn(e) {
+    e.persist()
+    e.preventDefault();
+    this.setState( prevState => {
+      return {
+        name : prevState.name = e.target.value
+      }
+    });
+  }
 
   setForgotPassword() {
     this.setState( (prevState) => {
@@ -153,6 +165,8 @@ export default class App extends Component {
 
   componentDidMount() {
 
+    console.log(this.state.name)
+
     this.helpers.apiFetch('api/v1/auth/login', 'POST', {
       email: 'miguelzavalac@gmail.com' || this.state.email,
       password: 'password' || this.state.password  
@@ -182,6 +196,8 @@ export default class App extends Component {
 
   render() {
     let loginForm = this.state.montForm ? <LoginForm 
+                                              user={this.state.user}
+                                              userSetLogIn = {this.userSetLogIn}
                                               showLoginForm = {this.showLoginForm}
                                               montForgotPassword = {this.state.montForgotPassword}
                                               setForgotPassword = {this.setForgotPassword}
