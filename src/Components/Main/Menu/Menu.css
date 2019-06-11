@@ -11,9 +11,11 @@
 }
 
 .iconGigaaaVoice {
+  background-color: white;
   position: absolute;
   border-radius: 100%;
-  bottom: 0;
+  bottom: 12px;
+  border-bottom: 2px solid gray;
   animation: shadow-pulse 1.4s;
   animation-iteration-count: infinite;
 }
