@@ -46,6 +46,7 @@ export default class App extends Component {
     // === Form === //
     this.userSetLogIn = this.userSetLogIn.bind(this);
     this.userSetPassword = this.userSetPassword.bind(this);
+    this.sendFormLogIn = this.sendFormLogIn.bind(this);
 
     //Helpers
     this.helpers = new Helpers()
@@ -69,12 +70,12 @@ export default class App extends Component {
       return {
         password : prevState.password = value
       }
-    });
+    })
   }
 
   sendFormLogIn(e){
     e.preventDefault();
-    console.log(this.state.password)
+    console.log(this.state.password, this.state.name)
   }
 
 
@@ -124,8 +125,6 @@ export default class App extends Component {
   }
 
   pharasesTimer(id) {
-    //let phrasesWrapper = document.getElementById(id);
-    //let phrasesContent = phrasesWrapper.innerHTML;
     let counter = 0;
 
 
@@ -140,43 +139,6 @@ export default class App extends Component {
       }
 
     }, 1200)
-
-    /*setInterval(() => {
-      
-      if(phrasesContent.length > 0 && !this.state.addPhrase) {
-        phrasesWrapper.innerHTML =  ''
-        phrasesContent = phrasesWrapper.innerHTML
-      }else {
-        this.setState({
-          addPhrase : true
-        })
-      }
-
-      if(this.state.addPhrase) {
-
-        if(phrasesContent.length < this.state.phrases.length) {
-
-          phrasesWrapper.innerHTML = this.state.phrases[counter]
-          phrasesContent = phrasesWrapper.innerHTML
-
-        }else {
-          if(counter < this.state.phrases.length) {
-            counter++
-          }
-
-          this.setState({
-            addPhrase : false
-          })
-        }
-
-        if(counter === this.state.phrases.length) {
-          counter = 0
-          this.setState({
-            montForm : true
-          })
-        }
-      }
-    }, 1200);*/
 
   }
 

@@ -6,7 +6,7 @@ export default function LogInUser(props) {
     let eyeIcon = props.showPassword ?  <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>
     return (
         <Fragment>
-            <form>
+            <form onSubmit= {props.sendFormLogIn}>
                 
                 <label htmlFor="username">Username / Email</label>
 
@@ -26,7 +26,7 @@ export default function LogInUser(props) {
                 <label htmlFor="checkRemember">Remember</label>
                 </div>
 
-                <input onClick={(e) => props.sendFormLogIn(e)} type="submit" value="Sign In"></input>
+                <input type="submit" value="Sign In"></input>
             </form>
 
             <div className="newAccountContent">
