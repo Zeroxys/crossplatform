@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import App from './App.js'
 import Main from './Components/Main'
-import Tips from './Components/Tips/Tips'
+import Tips from './Components/Tips'
 import Tips2 from './Components/Tips/Tips2'
 import Tips3 from './Components/Tips/Tips3'
 import Tips4 from './Components/Tips/Tips4'

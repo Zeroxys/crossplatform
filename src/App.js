@@ -75,7 +75,34 @@ export default class App extends Component {
 
   sendFormLogIn(e){
     e.preventDefault();
-    console.log(this.state.password, this.state.name)
+
+    this.helpers.apiFetch('api/v1/auth/login', 'POST', {
+      email: this.state.name,
+      password: this.state.password  
+    })
+      .then( (responseJson) => {
+
+        console.log('response ------->', responseJson)
+
+          if (responseJson.success === true) {
+              //TODO perform server-side login after registration
+              console.log('funciona --->',responseJson)
+
+          } else {
+
+              this.setState({
+                  isLoading: false,
+                  validationErrors: responseJson.errors
+              });
+          }
+
+      })
+      .catch((error) => {
+          console.error('Error ---> ',error);
+      });
+
+
+
   }
 
 
@@ -143,31 +170,6 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-
-    this.helpers.apiFetch('api/v1/auth/login', 'POST', {
-      email: 'miguelzavalac@gmail.com' || this.state.email,
-      password: 'password' || this.state.password  
-    })
-      .then( (responseJson) => {
-
-        console.log('response ------->', responseJson)
-
-          if (responseJson.success === true) {
-              //TODO perform server-side login after registration
-              console.log('funciona --->',responseJson)
-
-          } else {
-
-              this.setState({
-                  isLoading: false,
-                  validationErrors: responseJson.errors
-              });
-          }
-
-      })
-      .catch((error) => {
-          console.error('Error ---> ',error);
-      });
 
   }
 
