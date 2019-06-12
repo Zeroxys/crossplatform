@@ -1,10 +1,11 @@
 import React from 'react';
-import Swiper from 'react-id-swiper/lib/ReactIdSwiper';
-import { Pagination, Navigation } from 'swiper/dist/js/swiper.esm'
-import Tips from './Tips'
-import Tips2 from './Tips2'
-import Tips3 from './Tips3'
-import Tips4 from './Tips4'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Pagination, Navigation } from 'swiper/dist/js/swiper.esm';
+import Tips from './Tips';
+import Tips2 from './Tips2';
+import Tips3 from './Tips3';
+import Tips4 from './Tips4';
 
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -33,18 +34,24 @@ export default function TipsSwiper () {
 
     circle : {
       borderRadius : '50%', 
-      width:15, 
-      height:15, 
+      width:10, 
+      height:10, 
       backgroundColor:'#293059', 
       border:'none'
     },
 
-    arrow : {
+    arrowContent : {
       position: 'absolute',
       bottom : '2%',
       width : '80%',
       display : 'flex',
       justifyContent : 'flex-end',
+    },
+
+    arrow : {
+      color: '#293059',
+      backgroundColor: 'transparent',
+      border: 'none',
     }
   }
 
@@ -65,8 +72,8 @@ export default function TipsSwiper () {
             <Slide index={3}><Tips4></Tips4></Slide>
           </Slider>
 
-          <div style={dots.arrow}>
-            <ButtonNext>Next</ButtonNext>
+          <div style={dots.arrowContent}>
+            <ButtonNext style={dots.arrow}> <FontAwesomeIcon icon={faChevronRight} size="2x"/> </ButtonNext>
           </div>
 
           <div style={dots.content}>
@@ -75,6 +82,11 @@ export default function TipsSwiper () {
             <Dot slide={2} style={dots.circle}></Dot>
             <Dot slide={3} style={dots.circle}></Dot>
           </div>
+
+          <div style={{positio:'absolute'}}>
+            <p style={{color : 'red'}}>SKIP</p>
+          </div>
+
         </div>
 
   </CarouselProvider>)
