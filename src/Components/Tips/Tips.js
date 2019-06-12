@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import Musica from '../../../public/images/musica.png';
-import {CSSTransition} from 'react-transition-group'
 import './Tips.css'
 
 export default function Tips () {

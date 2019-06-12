@@ -5,9 +5,8 @@ import Tips from './Tips'
 import Tips2 from './Tips2'
 import Tips3 from './Tips3'
 import Tips4 from './Tips4'
-import { useSwipeable, Swipeable } from 'react-swipeable'
 
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
@@ -42,7 +41,10 @@ export default function TipsSwiper () {
 
     arrow : {
       position: 'absolute',
-      top : 50
+      bottom : '2%',
+      width : '80%',
+      display : 'flex',
+      justifyContent : 'flex-end',
     }
   }
 
