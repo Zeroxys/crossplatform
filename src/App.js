@@ -2,7 +2,13 @@ import React, {Component} from 'react';
 import {} from 'react-router-dom'
 import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
 import LoginForm from './Components/Login/Login';
-import Footer from './Components/Footer/Footer.js'
+import Footer from './Components/Footer/Footer.js';
+import Main from './Components/Main'
+import {
+  Redirect,
+  withRouter
+} from "react-router-dom";
+
 import './App.css';
 
 import Helpers from './Helpers/Helpers';
@@ -28,6 +34,7 @@ export default class App extends Component {
       showPassword : false,
       showArrowLogin: false,
 
+      isLogin : false,
 
       //When the user login
       name : '',
@@ -73,35 +80,28 @@ export default class App extends Component {
     })
   }
 
+
   sendFormLogIn(e){
     e.preventDefault();
 
     this.helpers.apiFetch('api/v1/auth/login', 'POST', {
       email: this.state.name,
-      password: this.state.password  
+      password: this.state.password
     })
       .then( (responseJson) => {
-
-        console.log('response ------->', responseJson)
-
-          if (responseJson.success === true) {
-              //TODO perform server-side login after registration
-              console.log('funciona --->',responseJson)
-
-          } else {
-
-              this.setState({
-                  isLoading: false,
-                  validationErrors: responseJson.errors
-              });
+           if(!responseJson.message) {
+            console.log('api response --->', responseJson)
+            this.setState(prevState => {
+              return {
+                isLogin : prevState.isLogin = true
+              }
+            })
+          }else {
+            console.log('api error --->', responseJson) 
           }
 
+          console.log(this.state.isLogin)
       })
-      .catch((error) => {
-          console.error('Error ---> ',error);
-      });
-
-
 
   }
 
@@ -174,7 +174,9 @@ export default class App extends Component {
   }
 
   render() {
+
     let loginForm = this.state.montForm ? <LoginForm
+                                              isLogin = {this.state.isLogin}
                                               user = {this.state.user}
                                               password = {this.state.password}
                                               sendFormLogIn = {this.sendFormLogIn}
@@ -193,8 +195,8 @@ export default class App extends Component {
                                                 showArrow={this.showArrow} 
                                                 showArrowLogin={this.state.showArrowLogin}
                                                 showLoginForm={this.showLoginForm}/>;
-
-    return (
+                                          
+    return this.state.isLogin ? <Redirect to={'/user'}></Redirect> : (
       <div className="mainContent">
         <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
         {loginForm}

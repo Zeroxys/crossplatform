@@ -1,12 +1,22 @@
 import React, {Fragment} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEyeSlash, faEye, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash, faEye, faChevronRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
+
+
+import {
+    Route,
+    Link,
+    Redirect,
+    withRouter
+  } from "react-router-dom";
 
 export default function LogInUser(props) {
     let eyeIcon = props.showPassword ?  <FontAwesomeIcon icon={faEyeSlash}/> : <FontAwesomeIcon icon={faEye}/>
+    let isLogin = props.isLogin ?  <FontAwesomeIcon icon={faSpinner} spin/> : <input type="submit" value="Sign In" onClick={props.sendFormLogIn}></input>
+
     return (
         <Fragment>
-            <form onSubmit= {props.sendFormLogIn}>
+            <form>
                 
                 <label htmlFor="username">Username / Email</label>
 
@@ -26,7 +36,7 @@ export default function LogInUser(props) {
                 <label htmlFor="checkRemember">Remember</label>
                 </div>
 
-                <input type="submit" value="Sign In"></input>
+                {isLogin}
             </form>
 
             <div className="newAccountContent">

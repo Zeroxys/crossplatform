@@ -18,6 +18,7 @@ export default function LoginForm(props) {
                     showLoginForm = {props.showLoginForm}/>
   }else{  
       formType = <LogInUser
+                    isLogin = {props.isLogin}
                     user = {props.user}
                     password = {props.password}
                     sendFormLogIn = {props.sendFormLogIn}
