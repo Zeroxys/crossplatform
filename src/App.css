@@ -45,3 +45,9 @@
   align-items: center; 
 }
 
+
+.chatInput {
+  bottom:12%;
+  position: absolute;
+  animation: chatSlideUp 1.4s forwards;
+}

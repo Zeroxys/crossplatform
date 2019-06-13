@@ -3,6 +3,7 @@ import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import soundfile from '../../../public/sounds/mic_error.mp3';
+import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
 import './index.css'
 
@@ -15,6 +16,7 @@ export default class Main extends Component {
     }
 
     this.pressOnVoice = this.pressOnVoice.bind(this);
+    this.textInput =  false;
   }
 
 
@@ -27,15 +29,24 @@ export default class Main extends Component {
   }
 
   pressOnVoice(e) {
-    console.log('whith e.target --> ', e.target)
-
     e.target.classList.add('iconGigaaaAnimation')
+
+    this.setState(prevState => {
+      return {
+        textInput : prevState.textInput = true
+      }
+    })
+
+    console.log('must show a text input')
 
     let audio = new Audio(soundfile)
     audio.play()
   }  
 
   render(){
+
+    let chatInput = this.state.textInput ? <ChatInput/> : null;
+
     return (
       <Fragment>
           <div className="burgerIcon" onClick={() => this.closeSlide()}>
@@ -45,6 +56,11 @@ export default class Main extends Component {
           <div className="interfaceContent">
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <h1>Home</h1>
+          
+          <div>
+            {chatInput}
+          </div>  
+
             <Menu pressOnVoice={this.pressOnVoice}></Menu>
           </div>
 
