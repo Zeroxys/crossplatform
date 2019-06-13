@@ -12,13 +12,19 @@
 }
 
 .iconGigaaaVoice {
+  width: 18%;
   background-color: white;
   position: absolute;
   border-radius: 100%;
   bottom: 12px;
   border-bottom: 2px solid gray;
+  /*animation: shadow-pulse 1.4s;
+  animation-iteration-count: infinite;*/
+}
+
+.iconGigaaaAnimation {
   animation: shadow-pulse 1.4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite
 }
 
 .iconGigaaaVoiceChanger {
