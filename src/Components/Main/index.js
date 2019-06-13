@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Menu from './Menu/Menu';
 import './index.css'
 
@@ -36,7 +36,7 @@ export default class Main extends Component {
     return (
       <Fragment>
           <div className="burgerIcon" onClick={() => this.closeSlide()}>
-              <FontAwesomeIcon icon={faBars} size="2x"/>
+              <FontAwesomeIcon icon={faChevronLeft} size="2x"/>
           </div>
 
           <div className="interfaceContent">
