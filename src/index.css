@@ -202,7 +202,7 @@ input, select, textarea {
 @keyframes shadow-pulse
 {
   0% {
-      box-shadow: 0 0 0 0px rgba(39, 221, 207, 0.2);
+      box-shadow: 0 0 0 0px rgba(39, 221, 207, 2);
       width: 17%;
   }
   50% {
