@@ -15,7 +15,6 @@ export default class Main extends Component {
       closeSlide : false,
     }
 
-
     this.pressOnVoice = this.pressOnVoice.bind(this);
     this.voiceRef = React.createRef();    
     this.slideRef = React.createRef();
@@ -31,19 +30,8 @@ export default class Main extends Component {
   }
 
   pressOnVoice(e) {
-    //this.voiceRef.current.className = "iconGigaaaVoiceChanger"
-    console.log('voice')
-
-    console.log(Sound.status.PLAYING)
-    console.log(soundfile)
-
-    return <Sound 
-              volume={100}
-              url={soundfile}
-              playStatus={Sound.status.PLAYING}
-              playFromPosition={300}
-              onLoading={ () => console.log('loading')}
-              onPlaying={() => console.log('playing')} />
+    let audio = new Audio(soundfile)
+    audio.play()
   }  
 
   render(){
