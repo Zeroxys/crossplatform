@@ -55,7 +55,9 @@ export default function TipsSwiper (props) {
       color: '#292F58',
       position: 'absolute',
       bottom: '2%',
-      display: 'flex'
+      display: 'flex',
+      justifyContent : 'flex-start',
+      width : '90%'
     }
   }
 
@@ -81,21 +83,20 @@ export default function TipsSwiper (props) {
             <Slide index={3}><Tips4></Tips4></Slide>
           </Slider>
 
-          <div style={dots.arrowContent}>
-            <ButtonNext style={dots.arrow}> <FontAwesomeIcon icon={faChevronRight} size="2x"/> </ButtonNext>
-          </div>
+            <div style={dots.arrowContent}>
+              <ButtonNext style={dots.arrow}> <FontAwesomeIcon icon={faChevronRight} size="2x"/> </ButtonNext>
+            </div>
 
-          <div style={dots.content}>
-            <Dot slide={0} style={dots.circle}> </Dot>
-            <Dot slide={1} style={dots.circle}></Dot>
-            <Dot slide={2} style={dots.circle}></Dot>
-            <Dot slide={3} style={dots.circle}></Dot>
-          </div>
+            <div style={dots.content}>
+              <Dot slide={0} style={dots.circle}> </Dot>
+              <Dot slide={1} style={dots.circle}></Dot>
+              <Dot slide={2} style={dots.circle}></Dot>
+              <Dot slide={3} style={dots.circle}></Dot>
+            </div>
 
-          <div style={dots.skip}>
-            <Link to="/user"><p style={{color : '#292F58', fontWeight:'bold'}}>SKIP</p></Link>
-          </div>
-
+            <div style={dots.skip}>
+              <Link to="/user"><p style={{color : '#292F58', fontWeight:'bold'}}>SKIP</p></Link>
+            </div>
         </div>
 
   </CarouselProvider>)
