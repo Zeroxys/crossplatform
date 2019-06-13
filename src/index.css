@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+a{
+  text-decoration: none;
+}
+
 p{
   text-align: center;
   color: white;
@@ -142,6 +146,28 @@ input, select, textarea {
 
 
 /*Keyframes*/
+
+@keyframes slideUp {
+
+  from{
+    transform : translateY(-160%);
+  }
+
+  to {
+      transform : translateY(-0%);
+  }
+
+  /*from {
+    opacity: 0;
+    margin-left: -400px;
+  }
+
+  to {
+    opacity:1;
+    margin-left: -130px;
+  }*/
+}
+
 @keyframes slidein {
 
   from{

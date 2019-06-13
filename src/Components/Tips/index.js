@@ -1,26 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { Pagination, Navigation } from 'swiper/dist/js/swiper.esm';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+
 import Tips from './Tips';
 import Tips2 from './Tips2';
 import Tips3 from './Tips3';
 import Tips4 from './Tips4';
+import Modal from '../../Components/Pages/Modal'
 
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot} from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonNext, Dot} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { whileStatement } from '@babel/types';
 
 
-export default function TipsSwiper () {
+export default function TipsSwiper (props) {
 
-  const params = {
-    modules: [Pagination, Navigation],
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  }
+  let [showModal, setModal] = useState(false)
 
   let dots = {
     content : {
@@ -52,10 +49,22 @@ export default function TipsSwiper () {
       color: '#293059',
       backgroundColor: 'transparent',
       border: 'none',
+    },
+
+    skip : {
+      color: '#292F58',
+      position: 'absolute',
+      bottom: '2%',
+      display: 'flex'
     }
   }
 
 
+  function modal() {
+    setModal(!showModal)
+  }
+
+  let viewModal = showModal ? <Modal/> : null;
 
   return (
     <CarouselProvider
@@ -83,8 +92,8 @@ export default function TipsSwiper () {
             <Dot slide={3} style={dots.circle}></Dot>
           </div>
 
-          <div style={{positio:'absolute'}}>
-            <p style={{color : 'red'}}>SKIP</p>
+          <div style={dots.skip}>
+            <Link to="/user"><p style={{color : '#292F58', fontWeight:'bold'}}>SKIP</p></Link>
           </div>
 
         </div>

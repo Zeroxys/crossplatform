@@ -1,20 +1,10 @@
 import React, {Component} from 'react';
-import {} from 'react-router-dom'
 import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
-import Main from './Components/Main'
-import {
-  Redirect,
-  withRouter
-} from "react-router-dom";
-
+import {Redirect, withRouter} from "react-router-dom";
 import './App.css';
-
 import Helpers from './Helpers/Helpers';
-
-//https://github.com/kidjp85/react-id-swiper <------ check swiper
-
 
 export default class App extends Component {
   constructor() {

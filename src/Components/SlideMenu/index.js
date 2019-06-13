@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import './slideMenu.css';
@@ -20,7 +20,7 @@ export default function(props) {
                     <p>Routines</p>
                     <p>gigaaa Service Store</p>
                     <p>Wallet</p>
-                    <Link to="/Tips">Tips & Tutorials</Link>
+                    <Link to="/Tips"><p>Tips & Tutorials</p></Link>
                     <span className="Line"></span>
                     <p>Activity</p>
                     <p>Settings</p>
