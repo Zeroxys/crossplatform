@@ -26,7 +26,8 @@ export default function TipsSwiper (props) {
       bottom: '2%',
       display: 'flex',
       justifyContent: 'space-around',
-      alignItems: 'center'  
+      alignItems: 'center',
+      zIndex : '99999'
     },
 
     circle : {
@@ -49,6 +50,7 @@ export default function TipsSwiper (props) {
       color: '#293059',
       backgroundColor: 'transparent',
       border: 'none',
+      zIndex:'99999'
     },
 
     skip : {
