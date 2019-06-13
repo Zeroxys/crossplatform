@@ -33,8 +33,9 @@ export default function LogInUser(props) {
                 <div className="checkContent">
                 <input id="checkRemember" type="checkbox" name="Remember" value="Remember"/>
                 <span className="checkmark"></span>
-                <label >{props.errorMessage}</label>                
                 <label htmlFor="checkRemember">Remember</label>
+
+                <label style ={{color :'red', display:'block'}}>{props.errorMessage}</label>
                 </div>
 
                 {isLogin}
