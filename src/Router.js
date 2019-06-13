@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import App from './App.js';
 import Main from './Components/Main';
 import Tips from './Components/Tips';
+import notFound from './Components/Pages/notFound'
 
 export default function Rooter () {
   return  (
@@ -10,6 +11,7 @@ export default function Rooter () {
         <Route path="/" exact component={App} />
         <Route path="/user" exact component={Main} />
         <Route path="/Tips" exact component={Tips}/>
+        <Route component={notFound} />
     </Router>
   )
 }

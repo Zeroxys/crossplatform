@@ -26,6 +26,7 @@ export default function(props) {
                     <p>Settings</p>
                     <p>Help & Feedback</p>
                     <p>About</p>
+                    <Link to="/"><p>Log Out</p></Link>
             </section>
         </div>) : null
 

@@ -28,7 +28,9 @@ export default class App extends Component {
 
       //When the user login
       name : '',
-      password : ''
+      password : '',
+
+      errorMessage : '',
 
     }
     
@@ -87,7 +89,12 @@ export default class App extends Component {
               }
             })
           }else {
-            console.log('api error --->', responseJson) 
+            console.log('api error --->', responseJson)
+            this.setState( prevState => {
+              return {
+                errorMessage : prevState.errorMessage = responseJson.message
+              }
+            })
           }
 
           console.log(this.state.isLogin)
@@ -172,6 +179,8 @@ export default class App extends Component {
                                               sendFormLogIn = {this.sendFormLogIn}
                                               userSetPassword={this.userSetPassword}
                                               userSetLogIn = {this.userSetLogIn}
+                                              errorMessage = {this.state.errorMessage}
+
 
                                               showLoginForm = {this.showLoginForm}
                                               montForgotPassword = {this.state.montForgotPassword}
