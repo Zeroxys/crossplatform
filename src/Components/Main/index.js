@@ -3,6 +3,7 @@ import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import soundfile from '../../../public/sounds/mic_error.mp3';
+import SpeechRecognition from "react-speech-recognition";
 import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
 import './index.css'
@@ -60,7 +61,6 @@ export default class Main extends Component {
           <div>
             {chatInput}
           </div>  
-
             <Menu pressOnVoice={this.pressOnVoice}></Menu>
           </div>
 
