@@ -11,7 +11,7 @@ export default function Rooter () {
         <Route path="/" exact component={App} />
         <Route path="/user" exact component={Main} />
         <Route path="/Tips" exact component={Tips}/>
-        <Route component={notFound} />
+        { /*<Route component={notFound} /> */ }
     </Router>
   )
 }

@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react';
 import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import soundfile from '../../../public/sounds/mic_error.mp3';
+import Sound from 'react-sound';
 import Menu from './Menu/Menu';
 import './index.css'
 
@@ -29,7 +31,19 @@ export default class Main extends Component {
   }
 
   pressOnVoice(e) {
-    this.voiceRef.current.className = "iconGigaaaVoiceChanger"
+    //this.voiceRef.current.className = "iconGigaaaVoiceChanger"
+    console.log('voice')
+
+    console.log(Sound.status.PLAYING)
+    console.log(soundfile)
+
+    return <Sound 
+              volume={100}
+              url={soundfile}
+              playStatus={Sound.status.PLAYING}
+              playFromPosition={300}
+              onLoading={ () => console.log('loading')}
+              onPlaying={() => console.log('playing')} />
   }  
 
   render(){
@@ -42,7 +56,7 @@ export default class Main extends Component {
           <div className="interfaceContent">
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <h1>Home</h1>
-            <Menu></Menu>
+            <Menu pressOnVoice = {this.pressOnVoice}></Menu>
           </div>
 
       </Fragment>
