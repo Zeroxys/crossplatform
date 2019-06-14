@@ -6,6 +6,7 @@ import soundfile from '../../../public/sounds/mic_error.mp3';
 import SpeechRecognition from "react-speech-recognition";
 import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
+import Speech from 'react-speech';
 import './index.css'
 
 
@@ -31,6 +32,8 @@ export default class Main extends Component {
 
   pressOnVoice(e) {
     e.target.classList.add('iconGigaaaAnimation')
+
+    console.log(Speech)
 
     this.setState(prevState => {
       return {
@@ -58,6 +61,8 @@ export default class Main extends Component {
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <h1>Home</h1>
           
+
+            <Speech text="I have the default settings" />,
           <div>
             {chatInput}
           </div>  
