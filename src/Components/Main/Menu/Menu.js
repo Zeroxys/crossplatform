@@ -19,7 +19,7 @@ export default function Menu(props) {
 
           <img src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/>
 
-        <FontAwesomeIcon style={styles} icon={faComment}/>
+        <FontAwesomeIcon style={styles} icon={faComment}></FontAwesomeIcon>
 
         <img style={{width : '5%'}} src={devicesImage} onClick={(e) => props.pressOnVoice(e)} className="" alt=""/>
       </nav>

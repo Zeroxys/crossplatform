@@ -47,7 +47,24 @@
 
 
 .chatInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   bottom:12%;
   position: absolute;
   animation: chatSlideUp 1.4s forwards;
+}
+
+.chatInput input {
+  border:1px solid red;
+  width: 80%;
+  border-style: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.formTypeHere{
+  display: flex;
+  justify-content: center;
+  flex: .8;
 }

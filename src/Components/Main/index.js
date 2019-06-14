@@ -3,11 +3,13 @@ import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import soundfile from '../../../public/sounds/mic_error.mp3';
-import SpeechRecognition from "react-speech-recognition";
 import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
-import Speech from 'react-speech';
+import SpeechRecognition from "react-speech-recognition";
 import './index.css'
+
+
+// https://medium.com/@amanda.k.hussey/a-basic-tutorial-on-how-to-incorporate-speech-recognition-with-react-6dff9763cea5 --> speech check
 
 
 export default class Main extends Component {
@@ -31,17 +33,34 @@ export default class Main extends Component {
   }
 
   pressOnVoice(e) {
+
+    const SpeechRecognition = window.webkitSpeechRecognition || SpeechRecognition 
+    const recognition = new SpeechRecognition()
+
+    recognition.continous = true
+    recognition.interimResults = true
+    recognition.lang = 'en-US'
+
+    recognition.start()
+
+    recognition.onresult = e => {
+      console.log(e)
+
+      console.log('asdsadsad')
+  }
+
     e.target.classList.add('iconGigaaaAnimation')
+    /*recognition.continous = true
+    recognition.interimResults = true
+    recognition.lang = 'en-US'*/
 
-    console.log(Speech)
-
+    //recognition.start()
     this.setState(prevState => {
       return {
         textInput : prevState.textInput = true
       }
     })
 
-    console.log('must show a text input')
 
     let audio = new Audio(soundfile)
     audio.play()
@@ -61,8 +80,6 @@ export default class Main extends Component {
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <h1>Home</h1>
           
-
-            <Speech text="I have the default settings" />,
           <div>
             {chatInput}
           </div>  
