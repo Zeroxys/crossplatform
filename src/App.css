@@ -68,3 +68,43 @@
   justify-content: center;
   flex: .8;
 }
+
+.speech {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.speech-bubble {
+  padding:8px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  position: relative;
+  border: 2px solid #52FFEC;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 30%;
+	width: 0;
+	height: 0;
+  border: 20px solid transparent;
+	border-right-color: #52FFEC;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.speech-bubble p{
+  font-weight: 600;
+  color : #292F58;
+}

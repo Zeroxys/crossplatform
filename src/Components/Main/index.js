@@ -3,6 +3,7 @@ import SlideMenu from '../SlideMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import soundfile from '../../../public/sounds/mic_error.mp3';
+import Chat from './ChatRoom/Chat'
 import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
 import SpeechRecognition from "react-speech-recognition";
@@ -78,7 +79,8 @@ export default class Main extends Component {
 
           <div className="interfaceContent">
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
-            <h1>Home</h1>
+
+            <Chat></Chat>
           
           <div>
             {chatInput}
