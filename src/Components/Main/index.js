@@ -92,7 +92,7 @@ export default class Main extends Component {
 
   render(){
 
-    let chatInput = this.state.textInput ? <ChatInput text={this.state.chatText}/> : null;
+    let chatInput = this.state.textInput ? <ChatInput onChange={this.pressOnVoice} text={this.state.chatText}/> : null;
 
     return (
       <Fragment>
