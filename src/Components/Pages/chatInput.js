@@ -13,10 +13,7 @@ export default function chatInput (props) {
 
                 <input placeholder="Type here..." defaultValue={props.text}/>
                 
-                <div>
                     <input style={{backgroundColor : 'transparent'}} type="button" value=""></input>
-                    <FontAwesomeIcon icon={faChevronRight} color="red" size="1x"/>
-                </div>
             </div>
         </form>
     )
