@@ -190,6 +190,17 @@ input, select, textarea {
 }
 
 
+@keyframes slideUp {
+  from{
+
+    transform : translateY(-160%);
+  }
+  to {
+      transform : translateY(-  0%);
+  }
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -9,7 +9,10 @@ const styles = {
         flexDirection : 'column',
         justifyContent : 'center',
         width: '100%',
-        height : '10%'
+        height : '10%',
+        position : 'absolute',
+        zIndex: 99999,
+        top:0
     }
 }
 

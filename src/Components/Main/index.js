@@ -8,6 +8,7 @@ import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
 import InternetStatus from '../internetStatus/internetStatus'
 import { Offline, Online } from "react-detect-offline";
+import Feedback from '../Feedback/Feedback';
 import './index.css'
 
 
@@ -114,7 +115,11 @@ export default class Main extends Component {
           <div className="interfaceContent">
           <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
           
-          <Online>Only shown when you're online</Online>
+          <Online>
+
+            <Feedback></Feedback>
+
+          </Online>
           <Offline><InternetStatus/></Offline>
 
             <Chat></Chat>
