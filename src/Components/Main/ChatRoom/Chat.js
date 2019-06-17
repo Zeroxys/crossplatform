@@ -10,7 +10,7 @@ export default function Chat (props) {
         <div className="speech">
             {isUser}
             <div className="speech-bubble">
-                <p>It is equal to 627.</p>
+                <p>is equal to 6</p>
             </div>
         </div>
     )

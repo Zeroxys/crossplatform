@@ -18,6 +18,8 @@ export default class Main extends Component {
     super()
     this.state = {
       closeSlide : false,
+      listening : false,
+      chatText : ''
     }
 
     this.pressOnVoice = this.pressOnVoice.bind(this);
@@ -33,7 +35,8 @@ export default class Main extends Component {
     })
   }
 
-  pressOnVoice(e) {
+  handleListen(){
+
 
     const SpeechRecognition = window.webkitSpeechRecognition || SpeechRecognition 
     const recognition = new SpeechRecognition()
@@ -41,35 +44,55 @@ export default class Main extends Component {
     recognition.continous = true
     recognition.interimResults = true
     recognition.lang = 'en-US'
+    
 
     recognition.start()
 
-    recognition.onresult = e => {
-      console.log(e)
+    let finalTranscript = ''
 
-      console.log('asdsadsad')
+    recognition.onresult = e => {
+      console.log(e.resultIndex)
+      console.log(e.results)
+
+      let interimTranscript = ''
+
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const transcript = e.results[i][0].transcript;
+        
+        console.log(transcript)
+
+        this.setState( prevState => {
+          return {
+            chatText : prevState.chatText = transcript
+          }
+        })
+
+        if (e.results[i].isFinal) finalTranscript += transcript + ' ';
+        else interimTranscript += transcript;
+      }
+
+
+    }
   }
 
-    e.target.classList.add('iconGigaaaAnimation')
-    /*recognition.continous = true
-    recognition.interimResults = true
-    recognition.lang = 'en-US'*/
+  pressOnVoice(e) {
 
-    //recognition.start()
     this.setState(prevState => {
       return {
+        listening : prevState.listening = true,
         textInput : prevState.textInput = true
       }
     })
 
-
+    e.target.classList.add('iconGigaaaAnimation')
     let audio = new Audio(soundfile)
     audio.play()
+    this.handleListen()
   }  
 
   render(){
 
-    let chatInput = this.state.textInput ? <ChatInput/> : null;
+    let chatInput = this.state.textInput ? <ChatInput text={this.state.chatText}/> : null;
 
     return (
       <Fragment>
