@@ -101,14 +101,12 @@ export default class Main extends Component {
           </div>
 
           <div className="interfaceContent">
-          <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
-
+            <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
             <Chat></Chat>
-          
-          <div>
-            {chatInput}
-          </div>  
-            <Menu pressOnVoice={this.pressOnVoice}></Menu>
+            <div>
+              {chatInput}
+            </div>  
+              <Menu pressOnVoice={this.pressOnVoice}></Menu>
           </div>
 
       </Fragment>

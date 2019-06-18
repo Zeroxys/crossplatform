@@ -32,16 +32,30 @@ input, select, textarea {
   font-weight: 500;
 }
 
-#root{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /*Media Queries Desktop*/
+/* Laptop */
+
+@media (min-width: 769px) {
+  #root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 769px) {
+  #root{
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    width: 100%;
+  }
+}
 
 @media (min-width: 1281px) {
-  
 
   .mainContent {
     width: 50%;
@@ -78,8 +92,6 @@ input, select, textarea {
     width: 30%!important;
   }
 }
-
-
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -122,8 +134,6 @@ input, select, textarea {
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-
-
 }
 
 /* 
@@ -139,7 +149,8 @@ input, select, textarea {
     bottom: -162%;
     position: absolute;
     width: 70%!important;
-}
+  }
+  
 
 }
 

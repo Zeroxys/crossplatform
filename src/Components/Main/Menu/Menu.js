@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faComment, faBorderStyle } from '@fortawesome/free-solid-svg-icons';
 import iconGigaaa from '../../../../public/images/gigaaalogoIcon.png'
@@ -21,7 +22,9 @@ export default function Menu(props) {
 
         <FontAwesomeIcon style={styles} icon={faComment}></FontAwesomeIcon>
 
-        <img style={{width : '5%'}} src={devicesImage} onClick={(e) => props.pressOnVoice(e)} className="" alt=""/>
+        <Link to = "/user/device" className = "footer_link" >
+          <img src = { devicesImage } className = "footer_icons"  />
+        </Link>
       </nav>
     </Fragment>
   )

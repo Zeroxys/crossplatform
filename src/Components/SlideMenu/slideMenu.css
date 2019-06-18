@@ -43,3 +43,11 @@
     align-items: flex-start;
     height: 40vh;
 }
+
+@media (min-width: 1281px) {
+
+    .slideAnimation{
+      width: 25%;
+      margin-left: -25%;
+    }
+}

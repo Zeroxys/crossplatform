@@ -10,6 +10,19 @@ export default function(props) {
 
     console.log('is open', props.isOpen)
 
+    const list_1 = [
+        'Routines',
+        'gigaaa Service Store',
+        'Wallet'
+    ]
+
+    const list_2 = [
+        'Activity',
+        'Settings',
+        'Help & Feedback',
+        'About'
+    ]
+
     let slider = props.isOpen ? (
         <div ref={props.slideRef} className={props.isOpen ? "slideAnimation":"sliderContent"}>
             <section className="slideMenuContent">
@@ -17,15 +30,14 @@ export default function(props) {
             </section>
             <section className="linksContainer">
                     <span className="Line"> </span>
-                    <p>Routines</p>
-                    <p>gigaaa Service Store</p>
-                    <p>Wallet</p>
+                    {
+                        list_1.map( item => <p key = { item } > { item } </p> )
+                    }
                     <Link to="/Tips"><p>Tips & Tutorials</p></Link>
                     <span className="Line"></span>
-                    <p>Activity</p>
-                    <p>Settings</p>
-                    <p>Help & Feedback</p>
-                    <p>About</p>
+                    {
+                        list_2.map( item => <p key = { item } > { item } </p> )
+                    }
                     <Link to="/"><p>Log Out</p></Link>
             </section>
         </div>) : null
