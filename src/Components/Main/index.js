@@ -6,7 +6,9 @@ import soundfile from '../../../public/sounds/mic_error.mp3';
 import Chat from './ChatRoom/Chat'
 import ChatInput from '../Pages/chatInput'
 import Menu from './Menu/Menu';
-import SpeechRecognition from "react-speech-recognition";
+import InternetStatus from '../internetStatus/internetStatus'
+import { Offline, Online } from "react-detect-offline";
+import Feedback from '../Feedback/Feedback';
 import './index.css'
 
 
@@ -19,11 +21,14 @@ export default class Main extends Component {
     this.state = {
       closeSlide : false,
       listening : false,
-      chatText : ''
+      chatText : '', 
+      internetOff : 'false'
     }
 
+
+    // == Methods == //
     this.pressOnVoice = this.pressOnVoice.bind(this);
-    this.textInput =  false;
+    this.sendAudio =  this.sendAudio.bind(this);
   }
 
 
@@ -90,9 +95,16 @@ export default class Main extends Component {
     this.handleListen()
   }  
 
+  sendAudio(e) {
+    e.preventDefault()
+
+    console.log(e)
+
+  }
+
   render(){
 
-    let chatInput = this.state.textInput ? <ChatInput onChange={this.pressOnVoice} text={this.state.chatText}/> : null;
+    let chatInput = this.state.textInput ? <ChatInput text={this.state.chatText} sendAudio={this.sendAudio} /> : null;
 
     return (
       <Fragment>
@@ -101,12 +113,20 @@ export default class Main extends Component {
           </div>
 
           <div className="interfaceContent">
-            <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
+          <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
+          
+          <Online>
+
+            <Feedback></Feedback>
+
+          </Online>
+          <Offline><InternetStatus/></Offline>
+
             <Chat></Chat>
-            <div>
-              {chatInput}
-            </div>  
-              <Menu pressOnVoice={this.pressOnVoice}></Menu>
+          <div>
+            {chatInput}
+          </div>  
+            <Menu pressOnVoice={this.pressOnVoice}></Menu>
           </div>
 
       </Fragment>

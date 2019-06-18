@@ -1,0 +1,32 @@
+.feedbackContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+    animation: slideUp 3s forwards;
+    z-index: 99999;
+    flex-direction: column;
+}
+
+.feedbackInstructions{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+}
+
+.feedbackContainer p {
+    color :#292F58
+}
+
+.comments {
+    height: 166px;
+    width: 252px;
+}
+
+.voiceImage {
+    width: 25%;
+}

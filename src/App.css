@@ -56,15 +56,15 @@
   animation: chatSlideUp 1.4s forwards;
 }
 
-.chatInput input {
-  width: 80%;
+.chatInput input[type="text"] {
+  width: 45%;
   border-style: none;
   border-bottom: 1px solid lightgray;
 }
 
 .formTypeHere{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex: .8;
 }
 
