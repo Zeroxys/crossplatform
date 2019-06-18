@@ -23,7 +23,6 @@ export default class Feedback extends Component {
                 close : prevState.close = true
              }
         })
-        console.log('close --->', this.state.close)
     }
 
     
@@ -34,15 +33,16 @@ export default class Feedback extends Component {
 
         return (
             <div className={`feedbackContainer ${animate} `}>
-                <div onClick={() => this.setClose()}>
+                <div onClick={() => this.setClose()} className="closeFeedback">
                     <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
                 </div>
+
                 <div className="feedbackInstructions">
                     <h3>Give Feedback</h3>
                     <p>Your opinion is important to us. This way, we can keep
                         improving our app
                     </p>
-                    <p>Please select your feedback category below</p>
+                    <p>Please select your feedback category below.</p>
                 </div>
 
                 <div>

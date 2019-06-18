@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import './feedback.css'
@@ -9,10 +9,10 @@ export default function Sliders (props) {
     
     let chekboxs = props.checkContent.map( (el, i) => {
         return (
-            <div key={i}>
-                <input type="checkbox" value="asd" />
+            <span style={{display:"block"}} key={i}>
+                <input type="checkbox" value="" />
                 <label>{el}</label>
-            </div>
+            </span>
         )
     }) 
 
@@ -24,7 +24,9 @@ export default function Sliders (props) {
             <div onClick={() =>  setArrow(true) } >
                 {content}
             </div>
-            {chekboxs}
+            <div className="checkContent"> 
+                {chekboxs} 
+            </div>
         </div>
     )
 } 
