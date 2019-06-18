@@ -73,19 +73,23 @@
   top: 10%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  height: 130%;
 }
 
 .speech-bubble {
   padding:8px;
   margin-left: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 55%;
+  width: 70%;
   position: relative;
   border: 2px solid #52FFEC;
-	border-radius: .4em;
+  border-radius: .4em;
+  float: left;
+  overflow-y: auto;
 }
 
 .speech-bubble:after {

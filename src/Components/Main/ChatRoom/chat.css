@@ -1,0 +1,46 @@
+.speech_image{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+br{
+    clear: both;
+}
+
+.text_left{
+    float: left;
+}
+
+.text_left p {
+    text-align: left;
+}
+
+.speech_image_sport_container{
+    align-items: flex-start;
+}
+
+.speech_image_sport{
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    /* filter: grayscale(70%); */
+}
+
+.speech_image_sport_text{
+    color: #fff;
+    text-align: left !important;
+    margin-top: -11%;
+}
+
+@media (max-width: 768px){
+    .speech_image_sport{
+        height: 150px;
+    }
+}
+
+@media(min-width: 769px){
+    .speech_image_sport{
+        height: 150px;
+    }
+}
