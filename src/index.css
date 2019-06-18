@@ -254,6 +254,21 @@ input, select, textarea {
   }
 }
 
+@keyframes voicePulse
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(41, 87, 88, 2);
+      width: 10%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+      box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+      width: 10%;
+  }
+}
+
 
 @keyframes voiceChangeColors
 {
