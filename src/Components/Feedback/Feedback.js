@@ -85,13 +85,18 @@ export default class Feedback extends Component {
 
                 </div>    
 
-                <p>Please elaborate your feedback by commenting below! <span>*required</span></p>    
+                <p>Please elaborate your feedback by commenting below! <span className="required">*required</span></p>    
                     
                 <div className="voiceCommand">
-                    <img src={voice} className="voiceImage"/>
-                    <p>Give feedback via voice-command</p>
-                    <textarea className="comments" name="textarea"></textarea>
-                    <input type="submit" value="Submit"></input>
+                    <div className="voiceInstructions">
+                        <img src={voice} className="voiceImage"/>
+                        <p>Give feedback via voice-command</p>
+                    </div>
+
+                    <div className="commentsContent">
+                        <textarea className="comments" name="textarea" placeholder="Or Type here..."/>
+                        <input className="commentSubmit" type="submit" value="Submit"></input>
+                    </div>
                 </div>
             </div>
         )

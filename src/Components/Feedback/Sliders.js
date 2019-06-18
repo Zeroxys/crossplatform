@@ -11,7 +11,7 @@ export default function Sliders (props) {
         return (
             <span style={{display:"block"}} key={i}>
                 <input type="checkbox" value="" />
-                <label>{el}</label>
+                <label className="labelText">{el}</label>
             </span>
         )
     }) 
@@ -25,7 +25,7 @@ export default function Sliders (props) {
             <div className="titleContent" >
                 <h4>{props.title}</h4>
                 
-                <span onClick={() =>  setArrow(true) }>
+                <span onClick={() =>  setArrow(true)}>
                     {content}
                 </span>
 

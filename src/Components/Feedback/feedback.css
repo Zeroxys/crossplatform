@@ -19,7 +19,7 @@
     width: 100%;
     border-bottom: 1px solid lightgrey;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 35px;
 }
 
 
@@ -44,6 +44,17 @@
     display: flex;
 }
 
+.titleContent h4{
+    color :#292F58;
+    display: flex;
+}
+
+.labelText{
+    color :#292F58;
+    display: flex;
+}
+
+
 .feedbackContainer p {
     color :#292F58;
     text-align: start;
@@ -55,9 +66,54 @@
 
 .comments {
     height: 166px;
-    width: 252px;
+    width: 90%;
+    border-radius: 10px;
+    resize: none;
+    padding:10px;
 }
 
 .voiceImage {
-    width: 25%;
+    width: 15%;
+    height: 15%;
+}
+
+.voiceCommand{
+
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.voiceInstructions{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto auto;
+}
+
+.commentSubmit{
+    border: none;
+    background-color: #292F58;
+    color: white;
+    width: 130px;
+    height: 37px;
+    border-radius: 7px;
+
+}
+
+.commentsContent {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 340px;
+}
+
+.required{
+    font-size: 10px;
+    color: red;
 }
