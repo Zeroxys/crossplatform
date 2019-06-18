@@ -117,7 +117,7 @@ export default class Main extends Component {
           
           <Online>
 
-            <Feedback></Feedback>
+            {/* <Feedback></Feedback> */}
 
           </Online>
           <Offline><InternetStatus/></Offline>

@@ -10,17 +10,18 @@ export default function(props) {
 
     console.log('is open', props.isOpen)
 
-    const list_1 = [
-        'Routines',
-        'gigaaa Service Store',
-        'Wallet'
-    ]
-
-    const list_2 = [
-        'Activity',
-        'Settings',
-        'Help & Feedback',
-        'About'
+    let id = 0;
+    const menu = [
+        { id:id++, text: 'Routines', to: '/user' },
+        { id:id++, text: 'gigaaa Service Store', to: '/user' },
+        { id:id++, text: 'Wallet', to: '/user' },
+        { id:id++, text: 'Tips & Tutorials', to: '/Tips', line:true },
+        { id:id++, text: 'Activity', to: '/user' },
+        { id:id++, text: 'Settings', to: '/user' },
+        { id:id++, text: 'Help & Feedback', to: '/user' },
+        { id:id++, text: 'About', to: '/user' },
+        { id:id++, text: 'Feedback', to: '/feedback' },
+        { id:id++, text: 'Log Out', to: '/' },
     ]
 
     let slider = props.isOpen ? (
@@ -31,14 +32,8 @@ export default function(props) {
             <section className="linksContainer">
                     <span className="Line"> </span>
                     {
-                        list_1.map( item => <p key = { item } > { item } </p> )
+                        menu.map( item => <Link key = { item.id } to = { item.to } style = { { color: '#FFFFFF' } } > { item.text } { item.line ? <span className = "Line"/> : '' } </Link> )
                     }
-                    <Link to="/Tips"><p>Tips & Tutorials</p></Link>
-                    <span className="Line"></span>
-                    {
-                        list_2.map( item => <p key = { item } > { item } </p> )
-                    }
-                    <Link to="/"><p>Log Out</p></Link>
             </section>
         </div>) : null
 
