@@ -168,6 +168,9 @@ export default class App extends Component {
 
   componentDidMount() {
 
+    //If user Login
+    console.log(window.localStorage)
+
   }
 
   render() {
