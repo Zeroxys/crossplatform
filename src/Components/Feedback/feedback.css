@@ -40,13 +40,16 @@
     text-align: start;
 }
 
+.titleContent{
+    display: flex;
+}
+
 .feedbackContainer p {
     color :#292F58;
     text-align: start;
 }
 
 .checkContent {
-    border:1px solid red;
 }
 
 .comments {

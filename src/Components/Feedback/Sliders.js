@@ -17,16 +17,24 @@ export default function Sliders (props) {
     }) 
 
     let content = showArrow ?  <FontAwesomeIcon icon={faAngleUp} color="#292F58" size="1x"/> : <FontAwesomeIcon icon={faAngleDown} color="#292F58" size="1x"/> 
+    let showContents = showArrow ? "block" : "none"
 
     return (
         <div>
-            <h4>{props.title}</h4>
-            <div onClick={() =>  setArrow(true) } >
-                {content}
+            
+            <div className="titleContent" >
+                <h4>{props.title}</h4>
+                
+                <span onClick={() =>  setArrow(true) }>
+                    {content}
+                </span>
+
             </div>
-            <div className="checkContent"> 
+
+            <div className="checkContent" style={{display : showContents}} > 
                 {chekboxs} 
             </div>
+
         </div>
     )
 } 
