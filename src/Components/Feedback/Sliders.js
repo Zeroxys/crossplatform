@@ -20,7 +20,7 @@ export default function Sliders (props) {
     let showContents = showArrow ? "block" : "none"
 
     return (
-        <div>
+        <Fragment>
             
             <div className="titleContent" >
                 <h4>{props.title}</h4>
@@ -35,6 +35,6 @@ export default function Sliders (props) {
                 {chekboxs} 
             </div>
 
-        </div>
+        </Fragment>
     )
 } 

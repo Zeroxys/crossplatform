@@ -45,43 +45,43 @@ export default class Feedback extends Component {
                     <p>Please select your feedback category below.</p>
                 </div>
 
-                <div>
+                <div className="checkboxMainContent">
 
-                <Sliders title="I´ve encountered a technical issue..."
-                    checkContent={[
-                        'The Service crashed',
-                        'A Wrong service was triggered',
-                        'The functionality is not working as it should',
-                        'other'
-                    ]}/>
+                    <Sliders title="I´ve encountered a technical issue..."
+                        checkContent={[
+                            'The Service crashed',
+                            'A Wrong service was triggered',
+                            'The functionality is not working as it should',
+                            'other'
+                        ]}/>
 
-                <Sliders title="I´ve encountered a content issue..."
-                    checkContent={[
-                        'Content is missing',
-                        'Wrong content is displayed',
-                        'Report false information',
-                        'Report copyrigth infrigement',
-                        'other'
-                    ]}/>
+                    <Sliders title="I´ve encountered a content issue..."
+                        checkContent={[
+                            'Content is missing',
+                            'Wrong content is displayed',
+                            'Report false information',
+                            'Report copyrigth infrigement',
+                            'other'
+                        ]}/>
 
-                <Sliders title="I´ve got a question about..."
-                    checkContent={[
-                        'the gigaaa Assistant',
-                        'Services',
-                        'Verticals',
-                        'Forms',
-                        'Other'
-                    ]}/>
+                    <Sliders title="I´ve got a question about..."
+                        checkContent={[
+                            'the gigaaa Assistant',
+                            'Services',
+                            'Verticals',
+                            'Forms',
+                            'Other'
+                        ]}/>
 
-                <Sliders title="I´ve got a question about..."
-                    checkContent={[
-                        'Features & Functions',
-                        'UX/UI Design',
-                        'Services',
-                        'Verticals',
-                        'Forms',
-                        'Other'
-                    ]}/>
+                    <Sliders title="I´ve got a question about..."
+                        checkContent={[
+                            'Features & Functions',
+                            'UX/UI Design',
+                            'Services',
+                            'Verticals',
+                            'Forms',
+                            'Other'
+                        ]}/>
 
                 </div>    
 
