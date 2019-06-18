@@ -7,9 +7,9 @@ export default function Sliders (props) {
 
     let [showArrow, setArrow] = useState(false)
     
-    let chekboxs = props.checkContent.map(el => {
+    let chekboxs = props.checkContent.map( (el, i) => {
         return (
-            <div>
+            <div key={i}>
                 <input type="checkbox" value="asd" />
                 <label>{el}</label>
             </div>

@@ -1,20 +1,42 @@
 import React, {Component} from 'react';
-import Sliders from './Sliders'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import voice from '../../../public/images/mic.png'
+import Sliders from './Sliders';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import voice from '../../../public/images/mic.png';
 import './feedback.css'
 
 export default class Feedback extends Component {
 
     constructor(props) {
         super()
+        
+        this.state = {
+            close : false
+        }
+
+        this.setClose = this.setClose.bind(this);
     }
 
+    setClose() {
+        this.setState(prevState => {
+            return {
+                close : prevState.close = true
+             }
+        })
+        console.log('close --->', this.state.close)
+    }
+
+    
+
     render () {
+
+        let animate = this.state.close ? "feedbackUp" : "asd"
+
         return (
-            <div className="feedbackContainer">
-                <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
+            <div className={`feedbackContainer ${animate} `}>
+                <div onClick={() => this.setClose()}>
+                    <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
+                </div>
                 <div className="feedbackInstructions">
                     <h3>Give Feedback</h3>
                     <p>Your opinion is important to us. This way, we can keep

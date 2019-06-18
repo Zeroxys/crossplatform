@@ -22,6 +22,13 @@ body {
   background-color: lightgray;
 }
 
+body::-webkit-scrollbar {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  width: 2px;
+  height: 2px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -208,6 +215,16 @@ input, select, textarea {
   }
   to {
       transform : translateY(-  0%);
+  }
+}
+
+@keyframes slideDown {
+  from{
+
+    transform : translateY(-0%);
+  }
+  to {
+      transform : translateY(-160%);
   }
 }
 
