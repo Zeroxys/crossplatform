@@ -105,6 +105,20 @@
   border: 2px solid #52FFEC;
   border-radius: .4em;
   float: left;
+  
+}
+.container_speech{
+  padding:8px;
+  margin-left: 10px;
+  display: block;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 55%;
+  width: 70%;
+  position: relative;
+  border: 2px solid #52FFEC;
+  border-radius: .4em;
+  float: left;
   overflow-y: auto;
 }
 

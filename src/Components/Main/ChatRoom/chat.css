@@ -24,7 +24,7 @@ br{
     height: 100px;
     width: 100%;
     border-radius: 10px;
-    /* filter: grayscale(70%); */
+    filter: grayscale(70%);
 }
 
 .speech_image_sport_text{
