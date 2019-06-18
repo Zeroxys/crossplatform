@@ -59,13 +59,29 @@
 .chatInput input[type="text"] {
   width: 45%;
   border-style: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #D6D7DA;
 }
 
 .formTypeHere{
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex: .8;
+}
+
+.typeHere {
+  width : 90%;
+  border:none;
+  color: #D6D7DA;
+  border-bottom: 2px solid lightgray;
+}
+
+.typeHereSubmit {
+  margin-top: 15px;
+  color: #D6D7DA;
+  font-size: 35px;
+  border:none;
+  background-color: transparent;  
 }
 
 .speech {
