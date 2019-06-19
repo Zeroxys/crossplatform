@@ -15,28 +15,35 @@ export default function Chat (props) {
             <div className="speech-bubble">
                 {
                     // For books
-                    json.map( item => <p>
-                        <img key = { item.id } src = { item.image } className = "speech_image" />
-                        <p className = "text_left">
-                            <p> <strong> { item.type_title } - { item.id } </strong> </p>
-                            <p> { item.author } - { item.title } - { item.text } </p>
-                        </p>
-                        <br/>
-                        <p>&nbsp;</p>
-                    </p>)
+                    json.map( item => <div class="speech_image_book_container">
+                        <img src= { item.image } className = "speech_image_book" />
+                        <div class="speech_image_book_text">
+                            <p> { item.type_title } </p>
+                            <p> { item.author } - { item.title } </p>
+                            <p> { item.text } </p>
+                        </div>
+                  </div>)
                 }
                 {/* {
                     // For sports
-                    json.map( item => <p className = "speech_image_sport_container" >
-                        <img key = { item.id } src = { item.image } className = "speech_image_sport" />
-                        <div className = "speech_image_sport_text">
-                            <h3> { item.title_sport } </h3>
-                            <div> { item.date } </div>
-                            <div> { item.place } </div>
-                            <p>&nbsp;</p>
+                    json.map( item => <div class="speech_image_sport_container">
+                        <img src= { item.image } className = "speech_image_sport" />
+                        <div class="speech_image_sport_text">
+                            <p> { item.title_sport } </p>
+                            <p> { item.date } </p>
+                            <p> { item.place } </p>
                         </div>
-                    </p> )
-                } */}
+                  </div>) } */}
+                  {/* {
+                    // For sports
+                    json.map( item => <div class="speech_image_video_container">
+                        <img src= { item.video_image } className = "speech_image_video" />
+                        <div class="speech_image_video_text">
+                            <p> <h3> { item.video_provider } </h3> </p>
+                            <p> <h5> { item.video_author } - { item.video_title } </h5> </p>
+                            <p> <i style = { { color: '#A6A8BA', fontSize: '25' } } > { item.video_date } </i> </p>
+                        </div>
+                  </div>) } */}
             </div>
         </div>
     )

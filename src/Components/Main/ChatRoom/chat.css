@@ -1,36 +1,74 @@
-.speech_image{
-    width: 25%;
-    height: 100%;
-    float: left;
+/* books */
+.speech_image_book_container{
+    /* align-items: flex-start; */
+    position: relative;
 }
 
-br{
-    clear: both;
+.speech_image_book{
+    /* height: 100px; */
+    width: 30%;
+    border-radius: 10px;
+    /* filter: grayscale(70%); */
 }
 
-.text_left{
-    float: left;
+.speech_image_book_text{
+    position: absolute;
+    bottom: 70%;
+    /* left: 16px; */
+    margin-left: 45%;
 }
 
-.text_left p {
+.speech_image_book_text p{
     text-align: left;
 }
 
+/* videos */
 .speech_image_sport_container{
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    position: relative;
 }
 
 .speech_image_sport{
     height: 100px;
     width: 100%;
     border-radius: 10px;
-    filter: grayscale(70%);
+    /* filter: grayscale(70%); */
 }
 
 .speech_image_sport_text{
-    color: #fff;
-    text-align: left !important;
-    margin-top: -11%;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+}
+
+.speech_image_sport_text p{
+    text-align: left;
+    color: #ffffff;
+}
+
+/* video */
+.speech_image_video_container{
+    /* align-items: flex-start; */
+    position: relative;
+}
+
+.speech_image_video{
+    height: 100px;
+    width: 55%;
+    border-radius: 10px;
+    /* filter: grayscale(70%); */
+}
+
+.speech_image_video_text{
+    position: absolute;
+    bottom: 35%;
+    /* left: 16px; */
+    margin-left: 60%;
+}
+
+.speech_image_video_text p{
+    text-align: left;
 }
 
 @media (max-width: 768px){

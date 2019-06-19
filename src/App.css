@@ -85,12 +85,12 @@
 }
 
 .speech {
-  position: absolute;
+  position: relative ;
   top: 10%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 130%;
+  /* height: 130%; */
 }
 
 .speech-bubble {
@@ -99,24 +99,23 @@
   display: block;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 55%;
   width: 70%;
   position: relative;
   border: 2px solid #52FFEC;
   border-radius: .4em;
   float: left;
-  
+  margin-bottom: 5%;
 }
 .container_speech{
-  padding:8px;
-  margin-left: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 55%;
-  width: 70%;
+  margin-top: 5%;
+  height: 75%;
+  /* width: 90%; */
   position: relative;
-  border: 2px solid #52FFEC;
+  /* border: 2px solid #52FFEC; */
   border-radius: .4em;
   float: left;
   overflow-y: auto;
