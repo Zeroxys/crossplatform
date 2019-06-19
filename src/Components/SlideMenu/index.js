@@ -38,7 +38,7 @@ export default function(props) {
                     {
                         list_2.map( item => <p key = { item } > { item } </p> )
                     }
-                    <Link to="/"><p>Log Out</p></Link>
+                    <Link to="/" onClick={(e) => props.logout(e)}><p>Log Out</p></Link>
             </section>
         </div>) : null
 

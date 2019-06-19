@@ -29,6 +29,7 @@ export default class Main extends Component {
     // == Methods == //
     this.pressOnVoice = this.pressOnVoice.bind(this);
     this.sendAudio =  this.sendAudio.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
 
@@ -102,6 +103,19 @@ export default class Main extends Component {
 
   }
 
+
+  logout(e) {
+    e.preventDefault()
+    console.log(window.localStorage.getItem('user'))
+
+    window.localStorage.removeItem( 'user' );
+
+    if(!window.localStorage.getItem('user')) {
+      window.location.href = '/'
+    }
+  }
+
+
   render(){
 
     let chatInput = this.state.textInput ? <ChatInput text={this.state.chatText} sendAudio={this.sendAudio} /> : null;
@@ -113,7 +127,9 @@ export default class Main extends Component {
           </div>
 
           <div className="interfaceContent">
-          <SlideMenu isOpen={this.state.closeSlide}></SlideMenu>
+          <SlideMenu 
+            logout = {this.logout}
+            isOpen={this.state.closeSlide}/>
           
           <Online>
 

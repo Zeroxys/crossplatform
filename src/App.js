@@ -83,7 +83,11 @@ export default class App extends Component {
     })
       .then( (responseJson) => {
            if(!responseJson.message) {
-            console.log('api response --->', responseJson)
+            //console.log('api response --->', responseJson)
+
+            //Set localStorage
+            window.localStorage.setItem('user', JSON.stringify(responseJson))
+
             this.setState(prevState => {
               return {
                 isLogin : prevState.isLogin = true
@@ -169,8 +173,15 @@ export default class App extends Component {
 
   componentDidMount() {
 
-    //If user Login
-    console.log(window.localStorage)
+    //If user set LocalStorage
+    if(window.localStorage.getItem('user')) {
+      window.location.href= '/user'
+      return <Redirect to={'/user'}></Redirect>
+    }
+
+    console.log(window.localStorage.getItem('user'))
+
+    //window.localStorage.removeItem( 'user' );
 
   }
 
