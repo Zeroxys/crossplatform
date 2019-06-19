@@ -9,7 +9,7 @@
     flex-direction: column;
     animation: fadeIn 5s;
     position: absolute;
-    top: 30%;
+    top: 40%;
 }
 
 .loginForm form{

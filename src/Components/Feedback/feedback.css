@@ -42,6 +42,7 @@
 
 .titleContent{
     display: flex;
+    margin-bottom: 5px;
 }
 
 .titleContent h4{
@@ -52,6 +53,7 @@
 .labelText{
     color :#292F58;
     display: flex;
+    margin-bottom: 5px;
 }
 
 
@@ -62,7 +64,7 @@
 
 .checkboxMainContent {
     width: 90%;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 20px 60px;
 }
 
 .comments {

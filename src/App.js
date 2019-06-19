@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
+//import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
+import logoLifeIsGigaaa from '../public/images/LifeIsGigaaa.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
 import {Redirect, withRouter} from "react-router-dom";
