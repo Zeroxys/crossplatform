@@ -6,10 +6,15 @@ import './index.css'
 const index = ( props ) => {
     return (
         <div className="interfaceContent">
-            <ul id="ejm2">
-                <li><a>Smart Home</a></li>
-                <li><a>All devices</a></li>
-            </ul>
+
+            <div className="deviceContent">
+                <ul className="deviceMenu">
+                    <li><a>Smart Home</a></li>
+                    <li><a>All devices</a></li>
+                </ul>
+            </div>
+
+
             <Menu/>
         </div>
     );

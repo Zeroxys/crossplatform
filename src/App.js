@@ -171,7 +171,7 @@ export default class App extends Component {
 
   }
 
-  componentDidMount() {
+  componentWillMount() {
 
     //If user set LocalStorage
     if(window.localStorage.getItem('user')) {

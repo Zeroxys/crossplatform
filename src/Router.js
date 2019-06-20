@@ -9,6 +9,7 @@ import notFound from './Components/Pages/notFound'
 export default function Rooter () {
   return  (
     <Router>
+
         <Route path="/" exact component={App} />
         <Route path="/user" exact component={Main} />
         <Route path = "/user/device" component = { Device } />
