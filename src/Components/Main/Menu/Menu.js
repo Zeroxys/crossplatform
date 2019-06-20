@@ -16,7 +16,10 @@ export default function Menu(props) {
   return(
     <Fragment>
       <nav className="menuContent">
-        <FontAwesomeIcon  style={styles} icon={faHome}/>
+        <Link to = "/user">
+          <FontAwesomeIcon  style={styles} icon={faHome}/>
+        </Link>
+        
         <FontAwesomeIcon style={styles} icon={faUser}/>
 
           <Offline><img src={voiceOff} className="iconGigaaaVoice" alt=""/></Offline>

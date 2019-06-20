@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import voice from '../../../public/images/mic.png';
 import './feedback.css'
+import Menu from '../Main/Menu/Menu';
 
 export default class Feedback extends Component {
 
@@ -32,7 +33,7 @@ export default class Feedback extends Component {
         let animate = this.state.close ? "feedbackUp" : "asd"
 
         return (
-            <div className={`feedbackContainer ${animate} `}>
+            <div className={`feedbackContainer ${animate}`}>
                 <div onClick={() => this.setClose()} className="closeFeedback">
                     <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
                 </div>

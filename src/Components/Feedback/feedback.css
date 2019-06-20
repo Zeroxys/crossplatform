@@ -1,4 +1,5 @@
 .feedbackContainer{
+    position: absolute;
     overflow: scroll;
     display: flex;
     align-items: center;
