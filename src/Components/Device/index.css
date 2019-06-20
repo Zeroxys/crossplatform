@@ -1,4 +1,37 @@
-ul#ejm2 li {
-    position: relative;
+li {
+    display: inline-block;
+    /* background: #00945f; */
+    /* border-bottom: 1px solid #016e39; */
+    margin: 0;
+    padding: 10px 20px;
+}
+  
+ul {
+  margin-top: 15%;
+  list-style-type: none;
+}
+ul#className li {
+  display:inline-block;
+  width: auto;
+}
 
+ul > li::before{
+  content: "";
+    width: 22%;
+    height: 3px;
+    background: #A6A8BA;
+    color: #A6A8BA;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: -2%;
+}
+
+ul > li.active{
+  /* background: #52FFEC; */
+  color: #292F58;
+}
+
+ul > li.active::before{
+  /* background: #52FFEC; */
+  background: #52FFEC;
 }

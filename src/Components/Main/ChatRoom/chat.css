@@ -71,6 +71,27 @@
     text-align: left;
 }
 
+.like_coment{
+    background-color: #ffffff;
+    /* border: 2px solid #52FFEC; */
+    position: absolute;
+    /* border-radius: 100%; */
+    width: 5%;
+    height: 25px;
+    margin-left: 75%;
+}
+
+.dislike_coment{
+    background-color: #ffffff;
+    /* border: 2px solid #FF155A; */
+    position: absolute;
+    border-radius: 100%;
+    width: 5%;
+    height: 25px;
+    margin-left: 85%;
+}
+
+
 @media (max-width: 768px){
     .speech_image_book_text{
         bottom: 70%;

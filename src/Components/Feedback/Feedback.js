@@ -4,37 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import voice from '../../../public/images/mic.png';
 import './feedback.css'
-import Menu from '../Main/Menu/Menu';
 
-export default class Feedback extends Component {
+export default function ( { closefeedback, feedbackClass } ){
 
-    constructor(props) {
-        super()
-        
-        this.state = {
-            close : false
-        }
-
-        this.setClose = this.setClose.bind(this);
-    }
-
-    setClose() {
-        this.setState(prevState => {
-            return {
-                close : prevState.close = true
-             }
-        })
-    }
-
-    
-
-    render () {
-
-        let animate = this.state.close ? "feedbackUp" : "asd"
+        // let animate = this.state.close ? "feedbackUp" : "asd"
 
         return (
-            <div className={`feedbackContainer ${animate}`}>
-                <div onClick={() => this.setClose()} className="closeFeedback">
+            <div className={`feedbackContainer ${feedbackClass}`}>
+                <div onClick={ closefeedback } className="closeFeedback">
                     <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
                 </div>
 
@@ -102,4 +79,3 @@ export default class Feedback extends Component {
             </div>
         )
     }
-}
