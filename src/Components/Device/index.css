@@ -22,3 +22,13 @@ list-style: none;
     color: #292F58;
     font-size: 1.1em;
 }
+
+ul > li.active{
+  /* background: #52FFEC; */
+  color: #292F58;
+}
+
+ul > li.active::before{
+  /* background: #52FFEC; */
+  background: #52FFEC;
+}

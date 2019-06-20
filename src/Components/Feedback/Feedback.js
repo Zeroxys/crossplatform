@@ -8,89 +8,14 @@ import './feedback.css'
 import Menu from '../Main/Menu/Menu';
 import { throwStatement } from '@babel/types';
 
-export default class Feedback extends Component {
+export default function ( { closefeedback, feedbackClass } ){
 
-    constructor(props) {
-        super()
-        
-        this.state = {
-            close : false,
-            micListen : true
-        }
-
-        this.setClose = this.setClose.bind(this);
-        this.setMic = this.setMic.bind(this);
-    }
-
-    setClose() {
-        this.setState(prevState => {
-            return {
-                close : prevState.close = true
-             }
-        })
-    }
-
-    setMic(e) {
-        console.log('click')
-        this.setState( prevState => {
-            return  {
-                micListen : prevState.micListen = false
-            }
-        })
-
-        this.handleListen()
-        console.log(this.state.micListen)
-    }
-
-    handleListen(){
-
-        console.log('aqui')
-
-        const SpeechRecognition = window.webkitSpeechRecognition || SpeechRecognition 
-        const recognition = new SpeechRecognition()
-    
-        recognition.continous = true
-        recognition.interimResults = true
-        recognition.lang = 'en-US'
-        
-    
-        recognition.start()
-    
-        let finalTranscript = ''
-    
-        recognition.onresult = e => {
-          console.log(e.resultIndex)
-          console.log(e.results)
-    
-          let interimTranscript = ''
-    
-          for (let i = e.resultIndex; i < e.results.length; i++) {
-            const transcript = e.results[i][0].transcript;
-            
-            console.log(transcript)
-    
-            this.setState( prevState => {
-              return {
-                chatText : prevState.chatText = transcript
-              }
-            })
-    
-            if (e.results[i].isFinal) finalTranscript += transcript + ' ';
-            else interimTranscript += transcript;
-          }
-    
-    
-        }
-      }
-
-    render () {
-
+        // let animate = this.state.close ? "feedbackUp" : "asd"
         let animate = this.state.close ? "feedbackUp" : "asd"
         let micImage = this.state.micListen ? <img src={voiceTill} className="voiceImage" onClick={ (e) => this.setMic(e)}/> : <img src={voice} className="voiceImage2" />
-
         return (
-            <div className={`feedbackContainer ${animate}`}>
-                <div onClick={() => this.setClose()} className="closeFeedback">
+            <div className={`feedbackContainer ${feedbackClass}`}>
+                <div onClick={ closefeedback } className="closeFeedback">
                     <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
                 </div>
 
@@ -158,4 +83,3 @@ export default class Feedback extends Component {
             </div>
         )
     }
-}
