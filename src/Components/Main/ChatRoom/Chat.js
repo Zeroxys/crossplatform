@@ -18,9 +18,9 @@ export default function Chat (props) {
                     json.map( item => <div class="speech_image_book_container">
                         <img src= { item.image } className = "speech_image_book" />
                         <div class="speech_image_book_text">
-                            <p> { item.type_title } </p>
-                            <p> { item.author } - { item.title } </p>
-                            <p> { item.text } </p>
+                            <p> <h3> { item.type_title } </h3> </p>
+                            <p> <h4> { item.author } - { item.title } </h4> </p>
+                            <p> <h4> { item.text } </h4> </p>
                         </div>
                   </div>)
                 }

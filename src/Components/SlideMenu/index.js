@@ -18,9 +18,8 @@ export default function(props) {
         { id:id++, text: 'Tips & Tutorials', to: '/Tips', line:true },
         { id:id++, text: 'Activity', to: '/user' },
         { id:id++, text: 'Settings', to: '/user' },
-        { id:id++, text: 'Help & Feedback', to: '/user' },
+        { id:id++, text: 'Help & Feedback', to: '/user', action: props.openfeedback },
         { id:id++, text: 'About', to: '/user' },
-        { id:id++, text: 'Feedback', to: '/feedback' },
         { id:id++, text: 'Log Out', to: '/' },
     ]
 
@@ -32,8 +31,9 @@ export default function(props) {
             <section className="linksContainer">
                     <span className="Line"> </span>
                     {
-                        menu.map( item => <Link key = { item.id } to = { item.to } style = { { color: '#FFFFFF' } } > { item.text } { item.line ? <span className = "Line"/> : '' } </Link> )
+                        menu.map( item => <Link key = { item.id } to = { item.to } style = { { color: '#FFFFFF' } } onClick = { item.action ? item.action : null } > { item.text } { item.line ? <span className = "Line"/> : '' } </Link> )
                     }
+                    {/* <Link to = "/user" onClick = { props.openfeedback } >custom</Link> */}
             </section>
         </div>) : null
 

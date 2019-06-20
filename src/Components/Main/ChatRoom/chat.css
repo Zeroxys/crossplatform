@@ -6,16 +6,16 @@
 
 .speech_image_book{
     /* height: 100px; */
-    width: 30%;
+    width: 20%;
     border-radius: 10px;
     /* filter: grayscale(70%); */
 }
 
 .speech_image_book_text{
     position: absolute;
-    bottom: 70%;
+    bottom: 50%;
     /* left: 16px; */
-    margin-left: 45%;
+    margin-left: 25%;
 }
 
 .speech_image_book_text p{
@@ -69,6 +69,24 @@
 
 .speech_image_video_text p{
     text-align: left;
+}
+
+@media (max-width: 768px){
+    .speech_image_book_text{
+        bottom: 70%;
+    }
+}
+
+@media (max-width: 426px){
+    .speech_image_book_text{
+        bottom: 50%;
+    }
+}
+
+@media (max-width: 320px){
+    .speech_image_book_text{
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 768px){

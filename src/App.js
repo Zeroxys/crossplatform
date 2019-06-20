@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
+//import logoLifeIsGigaaa from '../public/images/gigaaalogo_white.png';
+import logoLifeIsGigaaa from '../public/images/LifeIsGigaaa.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
 import {Redirect, withRouter} from "react-router-dom";
@@ -82,7 +83,11 @@ export default class App extends Component {
     })
       .then( (responseJson) => {
            if(!responseJson.message) {
-            console.log('api response --->', responseJson)
+            //console.log('api response --->', responseJson)
+
+            //Set localStorage
+            window.localStorage.setItem('user', JSON.stringify(responseJson))
+
             this.setState(prevState => {
               return {
                 isLogin : prevState.isLogin = true
@@ -167,6 +172,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+
+    //If user set LocalStorage
+    if(window.localStorage.getItem('user')) {
+      window.location.href= '/user'
+      return <Redirect to={'/user'}></Redirect>
+    }
+
+    console.log(window.localStorage.getItem('user'))
+
+    //window.localStorage.removeItem( 'user' );
 
   }
 
