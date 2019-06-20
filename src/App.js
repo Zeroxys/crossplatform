@@ -4,6 +4,10 @@ import logoLifeIsGigaaa from '../public/images/LifeIsGigaaa.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
 import {Redirect, withRouter} from "react-router-dom";
+
+// show only one time WelcomeComponent
+import Welcome from './Components/Welcome/Welcome'
+
 import './App.css';
 import Helpers from './Helpers/Helpers';
 
@@ -24,6 +28,8 @@ export default class App extends Component {
       montForgotPassword : false, // change true for show createUserform
       showPassword : false,
       showArrowLogin: false,
+
+      welcomeComponent : false,
 
       isLogin : false,
 
@@ -182,6 +188,14 @@ export default class App extends Component {
     console.log(window.localStorage.getItem('user'))
   }
 
+  componentDidMount() {
+    window.localStorage.getItem('welcome')
+  }
+
+  componentWillUnmount() {
+    console.log('adios welcome')
+  }
+
   render() {
 
     let loginForm = this.state.montForm ? <LoginForm
@@ -209,10 +223,14 @@ export default class App extends Component {
                                           
     return this.state.isLogin ? <Redirect to={'/user'}></Redirect> : (
       <div className="mainContent">
-        <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
+        <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""/>
         {loginForm}
       </div>
     );
+
+
+    // return <Welcome></Welcome>
+
   }
 
 }

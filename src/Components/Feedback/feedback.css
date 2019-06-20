@@ -79,10 +79,18 @@
 .voiceImage {
     width: 15%;
     height: 15%;
+    animation : 2s micPulse infinite;
+    border-radius: 50%;
+}
+
+.voiceImage2 {
+    width: 15%;
+    height: 15%;
+    animation : 2s micPulse2 infinite;
+    border-radius: 50%;
 }
 
 .voiceCommand{
-
     width: 90%;
     display: flex;
     justify-content: center;
@@ -92,7 +100,7 @@
 }
 
 .voiceInstructions{
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;

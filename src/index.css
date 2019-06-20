@@ -287,3 +287,25 @@ input, select, textarea {
 }
 
 
+
+@keyframes micPulse
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(82, 255, 236, .3);
+      
+  }
+  100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes micPulse2
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(41, 47, 88, .3);
+      
+  }
+  100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
