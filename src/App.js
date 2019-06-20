@@ -180,9 +180,6 @@ export default class App extends Component {
     }
 
     console.log(window.localStorage.getItem('user'))
-
-    //window.localStorage.removeItem( 'user' );
-
   }
 
   render() {
