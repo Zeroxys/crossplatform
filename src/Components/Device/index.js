@@ -8,15 +8,15 @@ import './index.css'
 const index = ( props ) => {
     return (
         <div className="interfaceContent">
-            <ul id="title_smart">
-                <li className = "active" ><a>Smart Home</a></li>
-                <li className = "" ><a>All devices</a></li>
-            </ul>
 
-            <div className = "icon_add_device">
-                <FontAwesomeIcon icon={faHome} size = "9x" />
-                <button className = "button_add_home" > + Add Home </button>
+            <div className="deviceContent">
+                <ul className="deviceMenu">
+                    <li><a>Smart Home</a></li>
+                    <li><a>All devices</a></li>
+                </ul>
             </div>
+
+
             <Menu/>
         </div>
     );

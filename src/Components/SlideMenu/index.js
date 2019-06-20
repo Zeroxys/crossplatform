@@ -20,7 +20,7 @@ export default function(props) {
         { id:id++, text: 'Settings', to: '/user' },
         { id:id++, text: 'Help & Feedback', to: '/user', action: props.openfeedback },
         { id:id++, text: 'About', to: '/user' },
-        { id:id++, text: 'Log Out', to: '/' },
+        { id:id++, text: 'Log Out', to: '/', action: props.logout },
     ]
 
     let slider = props.isOpen ? (

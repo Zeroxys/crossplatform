@@ -30,12 +30,12 @@ export default function Chat (props) {
             <div className="speech-bubble" onClick = { () => setShow_likes( !show_likes) } >
                 {
                     // For books
-                    json.map( item => <div class="speech_image_book_container">
+                    json.map( (item, i) => <div key={i} className="speech_image_book_container">
                         <img src= { item.image } className = "speech_image_book" />
-                        <div class="speech_image_book_text">
-                            <p> <h3> { item.type_title } </h3> </p>
-                            <p> <h4> { item.author } - { item.title } </h4> </p>
-                            <p> <h4> { item.text } </h4> </p>
+                        <div className="speech_image_book_text">
+                            <h3> { item.type_title } </h3>
+                            <h4> { item.author } - { item.title } </h4> 
+                             <h4> { item.text } </h4> 
                         </div>
                   </div>)
                 }

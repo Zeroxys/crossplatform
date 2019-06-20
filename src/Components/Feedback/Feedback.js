@@ -5,10 +5,24 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import voice from '../../../public/images/mic.png';
 import './feedback.css'
 
-export default function ( { closefeedback, feedbackClass } ){
+// export default function ( { closefeedback, feedbackClass } ){
+export default class extends Component{
 
-        // let animate = this.state.close ? "feedbackUp" : "asd"
+    constructor(props) {
+        super( props )
+        
+        this.state = {
+            close : false,
+            micListen : true
+        }
 
+        // this.setClose = this.setClose.bind(this);
+        // this.setMic = this.setMic.bind(this);
+    }
+
+    render(){
+        // let animate = this.props.feedbackClass ? "feedbackUp" : "asd"
+        const { closefeedback, feedbackClass } = this.props
         return (
             <div className={`feedbackContainer ${feedbackClass}`}>
                 <div onClick={ closefeedback } className="closeFeedback">
@@ -79,3 +93,4 @@ export default function ( { closefeedback, feedbackClass } ){
             </div>
         )
     }
+}

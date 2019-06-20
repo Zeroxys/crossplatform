@@ -171,7 +171,7 @@ export default class App extends Component {
 
   }
 
-  componentDidMount() {
+  componentWillMount() {
 
     //If user set LocalStorage
     if(window.localStorage.getItem('user')) {
@@ -180,9 +180,6 @@ export default class App extends Component {
     }
 
     console.log(window.localStorage.getItem('user'))
-
-    //window.localStorage.removeItem( 'user' );
-
   }
 
   render() {
