@@ -15,23 +15,12 @@ ul#className li {
   width: auto;
 }
 
-ul > li::before{
-  content: "";
-    width: 22%;
-    height: 3px;
-    background: #A6A8BA;
-    color: #A6A8BA;
-    position: absolute;
-    margin-top: 4%;
-    margin-left: -2%;
+ul.deviceMenu > li > a{
+  border-bottom: 2px solid #A6A8BA;
+  color: #A6A8BA;
 }
 
-ul > li.active{
-  /* background: #52FFEC; */
+ul.deviceMenu > li > a.active{
+  border-bottom: 2px solid #52FFEC;
   color: #292F58;
-}
-
-ul > li.active::before{
-  /* background: #52FFEC; */
-  background: #52FFEC;
 }

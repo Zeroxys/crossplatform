@@ -23,7 +23,9 @@ export default function Menu(props) {
         <FontAwesomeIcon style={styles} icon={faUser}/>
 
           <Offline><img src={voiceOff} className="iconGigaaaVoice" alt=""/></Offline>
-          <Online><img src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/></Online>
+          <Online>
+            <img src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/>
+          </Online>
 
         <FontAwesomeIcon style={styles} icon={faComment}></FontAwesomeIcon>
 

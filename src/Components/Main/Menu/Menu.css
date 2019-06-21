@@ -1,14 +1,13 @@
 .menuContent{
+  border-top: 1px solid rgba(150,150,150,0.2);
   display: flex;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;
   background-color: #fefefe;
   bottom: 0;
   width: 100%;
   position: absolute;
   height: 5vh;
-  /*border-top: 1px solid gray;*/
-  box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.6);
 }
 
 .iconGigaaaVoice {
@@ -17,7 +16,7 @@
   position: absolute;
   border-radius: 100%;
   bottom: 12px;
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid rgba(150,150,150,0.8);
   /*animation: shadow-pulse 1.4s;
   animation-iteration-count: infinite;*/
 }
