@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 import logoLifeIsGigaaa from '../public/images/LifeIsGigaaa.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
-import {Redirect, withRouter} from "react-router-dom";
-
-// show only one time WelcomeComponent
-import Welcome from './Components/Welcome/Welcome'
+import {Redirect} from "react-router-dom";
 
 import './App.css';
 import Helpers from './Helpers/Helpers';
@@ -227,9 +224,6 @@ export default class App extends Component {
         {loginForm}
       </div>
     );
-
-
-    // return <Welcome></Welcome>
 
   }
 
