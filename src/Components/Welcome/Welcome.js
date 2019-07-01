@@ -6,8 +6,14 @@ import './Welcome.css'
 
 export default function Welcome() {
 
-    let [volume, volumeSet] = useState(false)
+    let phrases = [
+        'I have something to tell you.',
+        'Hi, I am gigaaa Assistant.',
+        'I will be happy to become your new life companion and assist you with all kinds of tasks.',
+        "All you have to do is speak to me. First, let's see what I can do for you."
+      ];
 
+    let [volume, volumeSet] = useState(false)
     let volumeIcon = volume ? <img src={volumeOff}/> : <img src={volumeUp}/>
 
     return (

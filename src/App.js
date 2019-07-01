@@ -5,6 +5,8 @@ import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
 import {Redirect} from "react-router-dom";
 
+// Tips and tutorials must be show the first time
+
 import './App.css';
 import Helpers from './Helpers/Helpers';
 
@@ -20,7 +22,7 @@ export default class App extends Component {
         "All you have to do is speak to me. First, let's see what I can do for you."
       ],
       addPhrase : false,
-      montForm :  false, // change true for show loginForm
+      montForm :  true, // change true for show loginForm
       montCreateUser : false, // change true for show createUserform
       montForgotPassword : false, // change true for show createUserform
       showPassword : false,
