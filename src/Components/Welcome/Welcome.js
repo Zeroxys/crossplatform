@@ -4,6 +4,8 @@ import volumeOff from '../../../public/images/volume_off.png'
 import volumeUp from '../../../public/images/volume_up.png'
 import './Welcome.css'
 
+
+
 export default function Welcome() {
 
     let phrases = [
@@ -15,6 +17,18 @@ export default function Welcome() {
 
     let [volume, volumeSet] = useState(false)
     let volumeIcon = volume ? <img src={volumeOff}/> : <img src={volumeUp}/>
+
+
+    function timer() {
+        if(i <= _self.state.words.length) {
+          ++i
+          console.log(_self.state.words[i])
+  
+          _self.setState({word : _self.state.words[i]})
+  
+          setTimeout(timer, 3000);
+        }
+    }
 
     return (
         <div className="welcomeContent" onClick={ () => volumeSet(!volume) }>
