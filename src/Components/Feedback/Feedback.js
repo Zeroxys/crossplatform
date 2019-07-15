@@ -3,18 +3,89 @@ import Sliders from './Sliders';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import voice from '../../../public/images/mic.png';
+import voiceTill from '../../../public/images/mic_till.png';
 import './feedback.css'
+import Menu from '../Main/Menu/Menu';
+import { throwStatement } from '@babel/types';
 
-// export default function ( { closefeedback, feedbackClass } ){
-export default class extends Component{
+export default class Feedback extends Component {
 
     constructor(props) {
-        super( props )
+        super()
         
         this.state = {
             close : false,
             micListen : true
         }
+
+        this.setClose = this.setClose.bind(this);
+        this.setMic = this.setMic.bind(this);
+    }
+
+    setClose() {
+        this.setState(prevState => {
+            return {
+                close : prevState.close = true
+             }
+        })
+    }
+
+    setMic(e) {
+        console.log('click')
+        this.setState( prevState => {
+            return  {
+                micListen : prevState.micListen = false
+            }
+        })
+
+        this.handleListen()
+        console.log(this.state.micListen)
+    }
+
+    handleListen(){
+        
+
+        const SpeechRecognition = window.webkitSpeechRecognition || SpeechRecognition 
+        const recognition = new SpeechRecognition()
+    
+        recognition.continous = true
+        recognition.interimResults = true
+        recognition.lang = 'en-US'
+        
+    
+        recognition.start()
+    
+        let finalTranscript = ''
+    
+        recognition.onresult = e => {
+          console.log(e.resultIndex)
+          console.log(e.results)
+    
+          let interimTranscript = ''
+    
+          for (let i = e.resultIndex; i < e.results.length; i++) {
+            const transcript = e.results[i][0].transcript;
+            
+            console.log(transcript)
+    
+            this.setState( prevState => {
+              return {
+                chatText : prevState.chatText = transcript
+              }
+            })
+    
+            if (e.results[i].isFinal) finalTranscript += transcript + ' ';
+            else interimTranscript += transcript;
+          }
+    
+    
+        }
+      }
+
+    render () {
+
+        let animate = this.state.close ? "feedbackUp" : "asd"
+        let micImage = this.state.micListen ? <img src={voiceTill} className="voiceImage" onClick={ (e) => this.setMic(e)}/> : <img src={voice} className="voiceImage2" />
 
         // this.setClose = this.setClose.bind(this);
         // this.setMic = this.setMic.bind(this);
@@ -24,8 +95,8 @@ export default class extends Component{
         // let animate = this.props.feedbackClass ? "feedbackUp" : "asd"
         const { closefeedback, feedbackClass } = this.props
         return (
-            <div className={`feedbackContainer ${feedbackClass}`}>
-                <div onClick={ closefeedback } className="closeFeedback">
+            <div className={`feedbackContainer ${animate}`}>
+                <div onClick={() => this.setClose()} className="closeFeedback">
                     <FontAwesomeIcon icon={faTimes} color="#292F58" size="1x"/>
                 </div>
 
@@ -81,7 +152,7 @@ export default class extends Component{
                     
                 <div className="voiceCommand">
                     <div className="voiceInstructions">
-                        <img src={voice} className="voiceImage"/>
+                        {micImage}
                         <p>Give feedback via voice-command</p>
                     </div>
 

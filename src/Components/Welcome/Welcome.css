@@ -1,0 +1,45 @@
+.welcomeContent {
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    background-image: url('../../../public/images//Screen.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+.welcomeLogo {
+    width:50%;
+}
+
+.volumeSettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.volumeSettings img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+
+.textContent {
+    width : 80%;
+    font-size: 14px;
+}
+
+
+.welcomePhrases{
+    font-size:14px;
+    margin: 0px 25% 0 25%;
+}

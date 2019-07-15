@@ -4,17 +4,29 @@ import App from './App.js';
 import Main from './Components/Main';
 import Tips from './Components/Tips';
 import Device from './Components/Device';
-import notFound from './Components/Pages/notFound'
+import Welcome from './Components/Welcome/Welcome'
 
 export default function Rooter () {
-  return  (
-    <Router>
 
-        <Route path="/" exact component={App} />
-        <Route path="/user" exact component={Main} />
-        <Route path = "/user/device" component = { Device } />
-        <Route path="/Tips" exact component={Tips}/>
-        { /*<Route component={notFound} /> */ }
-    </Router>
-  )
+  if(window.localStorage.getItem('welcome')) {
+    
+    window.localStorage.setItem('welcome', true)
+    return (
+      <Router>
+        <Route path="/" exact component={Welcome} />
+      </Router>
+    )
+
+  } else {
+    return  (
+      <Router>
+          <Route path="/" exact component={App} />
+          <Route path="/welcome" exact component={App} />
+          <Route path="/user" exact component={Main} />
+          <Route path = "/user/device" component = { Device } />
+          <Route path="/Tips" exact component={Tips}/>
+      </Router>
+    )
+
+  }
 }
