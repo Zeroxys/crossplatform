@@ -29,7 +29,7 @@ export default function Menu(props) {
 
         <FontAwesomeIcon style={styles} icon={faComment}></FontAwesomeIcon>
 
-        <Link to = "/user/device" className = "footer_link" >
+        <Link to = "/user/device/smart-home" className = "footer_link" >
           <img src = { devicesImage } className = "footer_icons"  />
         </Link>
       </nav>
