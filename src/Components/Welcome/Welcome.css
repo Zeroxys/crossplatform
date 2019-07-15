@@ -17,18 +17,29 @@
 }
 
 .volumeSettings {
-    position:relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
 }
 
 .volumeSettings img{
-    width: 6%;
+    display: block;
+    width: 20px;
+    height: 20px;
     position: absolute;
+    top: 0;
+    left: 100px;
 }
 
 .textContent {
-    width : 50%;
+    width : 80%;
+    font-size: 14px;
 }
 
+
+.welcomePhrases{
+    font-size:14px;
+    margin: 0px 25% 0 25%;
+}

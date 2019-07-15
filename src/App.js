@@ -15,12 +15,6 @@ export default class App extends Component {
     super()
     
     this.state = {
-      phrases : [
-        'I have something to tell you.',
-        'Hi, I am gigaaa Assistant.',
-        'I will be happy to become your new life companion and assist you with all kinds of tasks.',
-        "All you have to do is speak to me. First, let's see what I can do for you."
-      ],
       addPhrase : false,
       montForm :  true, // change true for show loginForm
       montCreateUser : false, // change true for show createUserform
@@ -35,7 +29,6 @@ export default class App extends Component {
       //When the user login
       name : '',
       password : '',
-
       errorMessage : '',
 
     }
