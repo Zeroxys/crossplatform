@@ -6,12 +6,11 @@ import voice from '../../../public/images/mic.png';
 import voiceTill from '../../../public/images/mic_till.png';
 import './feedback.css'
 import Menu from '../Main/Menu/Menu';
-import { throwStatement } from '@babel/types';
 
 export default class Feedback extends Component {
 
     constructor(props) {
-        super()
+        super(props)
         
         this.state = {
             close : false,
@@ -23,6 +22,7 @@ export default class Feedback extends Component {
     }
 
     setClose() {
+        console.log('se cierra')
         this.setState(prevState => {
             return {
                 close : prevState.close = true

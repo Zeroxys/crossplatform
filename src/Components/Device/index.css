@@ -1,34 +1,56 @@
-.deviceContent{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start
+li {
+    display: inline-block;
+    /* background: #00945f; */
+    /* border-bottom: 1px solid #016e39; */
+    margin: 0;
+    padding: 10px 20px;
+}
+  
+ul {
+  margin-top: 15%;
+  list-style-type: none;
+}
+ul#className li {
+  display:inline-block;
+  width: auto;
 }
 
-.deviceMenu {
-    display: flex;
-    position: absolute;
-    justify-content: space-around;
-    width: 100%;
-    top:5%;
+ul.deviceMenu > li > a{
+  border-bottom: 2px solid #A6A8BA;
+  color: #A6A8BA;
 }
 
-.deviceMenu li{
-list-style: none;
-}
-
-.deviceMenu a{
-    font-weight: bold;
-    color: #292F58;
-    font-size: 1.1em;
-}
-
-ul > li.active{
-  /* background: #52FFEC; */
+ul.deviceMenu > li > a.active{
+  border-bottom: 2px solid #52FFEC;
   color: #292F58;
 }
 
-ul > li.active::before{
-  /* background: #52FFEC; */
-  background: #52FFEC;
+.deviceMenu{
+  margin-top: 0%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text{
+  width: 100%;
+  text-align: center;
+  color: #292F58;
+  padding-top: 5%;
+}
+
+.information_div{
+  margin-top: 5%;
+  border-radius: 5px;
+  background-color: #F4F4F6;
+  /* border: 1px darkslategrey solid; */
+  align-items: center;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.information_div > p{
+  margin-top: 5%;
+  color: #292F58;
+  margin-left: 10%;
+  width: 80%;
 }

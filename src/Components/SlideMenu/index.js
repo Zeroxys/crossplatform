@@ -31,7 +31,7 @@ export default function(props) {
             <section className="linksContainer">
                     <span className="Line"> </span>
                     {
-                        menu.map( item => <Link key = { item.id } to = { item.to } style = { { color: '#FFFFFF' } } onClick = { item.action ? item.action : null } > { item.text } { item.line ? <span className = "Line"/> : '' } </Link> )
+                        menu.map( item => <Link key = { item.id } to = { item.to } style = { { color: '#FFFFFF' } } onClick = { item.action ? e => item.action(e) : null } > { item.text } { item.line ? <span className = "Line"/> : '' } </Link> )
                     }
                     {/* <Link to = "/user" onClick = { props.openfeedback } >custom</Link> */}
             </section>

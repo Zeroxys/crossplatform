@@ -3,6 +3,7 @@ import iconGigaaa from '../../../../public/images/gigaaalogoIcon.png'
 import like_coment from '../../../../public/images/like_coment.png'
 import dislike_coment from '../../../../public/images/dislike_coment.png'
 import './chat.css'
+import Feedback from '../../Feedback/Feedback';
 
 export default function Chat (props) {
 
@@ -13,21 +14,24 @@ export default function Chat (props) {
     const [show_likes, setShow_likes] = useState(false)
     const [like, setLike] = useState('#52FFEC')
     const [dislike, setDislike] = useState('#FF155A')
+    const [feedBack, setFeedback] = useState(false)
 
     const dar_like = () => {
         setLike('#52FFEC')
         setDislike('#A6A8BA')
+        setFeedback(true)
     }
 
     const dar_dislike = () => {
         setLike('#A6A8BA')
         setDislike('#FF155A')
+        setFeedback(true)
     }
 
     return (
         <div className="speech">
             {isUser}
-            <div className="speech-bubble" onClick = { () => setShow_likes( !show_likes) } >
+            <div className="speech-bubble" onClick = { () => !feedBack ? setShow_likes( !show_likes) : null } >
                 {
                     // For books
                     json.map( (item, i) => <div key={i} className="speech_image_book_container">

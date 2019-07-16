@@ -23,11 +23,13 @@ export default function Menu(props) {
         <FontAwesomeIcon style={styles} icon={faUser}/>
 
           <Offline><img src={voiceOff} className="iconGigaaaVoice" alt=""/></Offline>
-          <Online><img src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/></Online>
+          <Online>
+            <img src={iconGigaaa} onClick={(e) => props.pressOnVoice(e)} className="iconGigaaaVoice" alt=""/>
+          </Online>
 
         <FontAwesomeIcon style={styles} icon={faComment}></FontAwesomeIcon>
 
-        <Link to = "/user/device" className = "footer_link" >
+        <Link to = "/user/device/smart-home" className = "footer_link" >
           <img src = { devicesImage } className = "footer_icons"  />
         </Link>
       </nav>
