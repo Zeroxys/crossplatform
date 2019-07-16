@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import devicesImage from '../../../../public/images/all-devices-gray.png';
+import { Link } from 'react-router-dom'
 
 class AllDevice extends Component {
+
+    addDevice = () =>{
+
+    }
+
     render() {
         return (
             <div style = { styles.main } >
                 <img src = { devicesImage } style = { styles.image } />
-                <button style = { styles.button } > + Add Device </button>
+                {/* <button style = { styles.button } onClick = { this.addDevice } > + Add Device </button> */}
+                <Link component = "Button" style = { styles.button } to = "/user/device/allDevices/addDevice"> + Add Device </Link>
             </div>
         );
     }
@@ -28,6 +35,7 @@ const styles = ({
     },
     button:{
         textDecoration: 'none',
+        textAlign: 'center',
         padding: '10px',
         fontWeight: '600',
         fontZize: '20px',
