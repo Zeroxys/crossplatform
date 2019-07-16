@@ -176,16 +176,10 @@ export default class App extends Component {
       window.location.href= '/user'
       return <Redirect to={'/user'}></Redirect>
     }
-
-    console.log(window.localStorage.getItem('user'))
   }
 
   componentDidMount() {
     window.localStorage.getItem('welcome')
-  }
-
-  componentWillUnmount() {
-    console.log('adios welcome')
   }
 
   render() {

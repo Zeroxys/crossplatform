@@ -15,7 +15,6 @@ export default class Welcome extends Component {
                 'Hi, I am gigaaa Assistant.',
                 'I will be happy to become your new life companion and assist you with all kinds of tasks', 
                 "All you have to do is speak to me. First, let's see what I can do for you."
-                
             ],
             phrase : '',
         };
