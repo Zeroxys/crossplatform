@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from '../Main/Menu/Menu';
 import AllDevice from './AllDevice'
+import Add from './AllDevice/home.js'
 
 import '../Main/index.css'
 import './index.css'
@@ -34,6 +35,8 @@ const index = () => {
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
             <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
+            <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
+            <Route path = "/user/device/allDevices/add" exact component = { Add } />
             <Menu/>
         </div>
     );
