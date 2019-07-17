@@ -3,7 +3,10 @@ import React, {Component} from 'react';
 import logoLifeIsGigaaa from '../public/images/LifeIsGigaaa.png';
 import LoginForm from './Components/Login/Login';
 import Footer from './Components/Footer/Footer.js';
-import {Redirect, withRouter} from "react-router-dom";
+import {Redirect} from "react-router-dom";
+
+// Tips and tutorials must be show the first time
+
 import './App.css';
 import Helpers from './Helpers/Helpers';
 
@@ -12,25 +15,20 @@ export default class App extends Component {
     super()
     
     this.state = {
-      phrases : [
-        'I have something to tell you.',
-        'Hi, I am gigaaa Assistant.',
-        'I will be happy to become your new life companion and assist you with all kinds of tasks.',
-        "All you have to do is speak to me. First, let's see what I can do for you."
-      ],
       addPhrase : false,
-      montForm :  false, // change true for show loginForm
+      montForm :  true, // change true for show loginForm
       montCreateUser : false, // change true for show createUserform
       montForgotPassword : false, // change true for show createUserform
       showPassword : false,
       showArrowLogin: false,
+
+      welcomeComponent : false,
 
       isLogin : false,
 
       //When the user login
       name : '',
       password : '',
-
       errorMessage : '',
 
     }
@@ -178,8 +176,10 @@ export default class App extends Component {
       window.location.href= '/user'
       return <Redirect to={'/user'}></Redirect>
     }
+  }
 
-    console.log(window.localStorage.getItem('user'))
+  componentDidMount() {
+    window.localStorage.getItem('welcome')
   }
 
   render() {
@@ -209,10 +209,11 @@ export default class App extends Component {
                                           
     return this.state.isLogin ? <Redirect to={'/user'}></Redirect> : (
       <div className="mainContent">
-        <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""></img>
+        <img src={logoLifeIsGigaaa} className="logoGigaaa" alt=""/>
         {loginForm}
       </div>
     );
+
   }
 
 }

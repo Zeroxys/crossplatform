@@ -1,13 +1,14 @@
 import React from 'react';
 import Menu from '../Main/Menu/Menu';
-
-import { Route, Link } from 'react-router-dom'
-
 import AllDevice from './AllDevice'
 
 import '../Main/index.css'
 import './index.css'
 // import FilterList from './AllDevice/FilterList';
+
+import { Route, Link } from 'react-router-dom'
+
+
 
 import chargericon from '../../../public/images/devices/charger.svg'
 import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
