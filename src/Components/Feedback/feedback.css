@@ -10,11 +10,10 @@
     animation: slideUp 3s forwards;
     z-index: 99999;
     flex-direction: column;
-    display: none;
+    /*display: none;*/
 }
 
 .feedbackUp {
-    border:10px solid red;
     animation: slideDown 3s forwards;
 }
 

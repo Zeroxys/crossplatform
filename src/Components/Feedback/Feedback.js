@@ -10,6 +10,7 @@ import Menu from '../Main/Menu/Menu';
 export default class Feedback extends Component {
 
     constructor(props) {
+        console.log(props)
         super(props)
         
         this.state = {
@@ -86,6 +87,8 @@ export default class Feedback extends Component {
 
         let animate = this.state.close ? "feedbackUp" : "asd"
         let micImage = this.state.micListen ? <img src={voiceTill} className="voiceImage" onClick={ (e) => this.setMic(e)}/> : <img src={voice} className="voiceImage2" />
+
+        console.log('animate --->',animate)
 
         return (
             <div className={`feedbackContainer ${animate}`}>
