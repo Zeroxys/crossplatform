@@ -31,7 +31,6 @@ const index = () => {
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/smart-home" exact component = { SmartHome } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
-            <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
             <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
             <Menu/>
@@ -49,12 +48,14 @@ const infomations = [
     {
         id:1,
         title: 'Gigaaa Inside Devices',
-        text: <p> You can choose this device type if your device has <strong className = "text"> "gigaaa Inside" </strong> label on it. This means your device is powered by gigaaa assistant </p>
+        text: <p> You can choose this device type if your device has <strong className = "text"> "gigaaa Inside" </strong> label on it. This means your device is powered by gigaaa assistant </p>,
+        link: 'plugInDevice'
     },
     {
         id:2,
         title: 'Works with gigaaa Assistant',
-        text: <p> You can choose this device type if your device is compatible with gigaaa Assistant. </p>
+        text: <p> You can choose this device type if your device is compatible with gigaaa Assistant. </p>,
+        link: 'turnBluetooth'
     }
 ]
 
@@ -64,7 +65,7 @@ const addDevice = () => {
             <h3 className = "text" > Add device </h3>
             <h3 className = "text" > Select your device type </h3>
             {
-                infomations.map( information => <Information_div key = { information.id } title = { information.title } text = { information.text } /> )
+                infomations.map( information => <Information_div key = { information.id } title = { information.title } text = { information.text } link = { information.link } /> )
             }
         </div>
     )
@@ -94,13 +95,13 @@ const bluetooth_screen = () => {
     )
 }
 
-const Information_div = ( { title, text } ) => {
+const Information_div = ( { title, text, link } ) => {
     return (
-        <div className = "information_div">
+        <Link className = "information_div" to = { link }>
             <h3 className = "text" > { title } </h3>
             { text }
             <p> &nbsp; </p>
-        </div>
+        </Link>
     )
 }
 
