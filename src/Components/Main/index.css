@@ -15,3 +15,16 @@
     width: 100%;
   }
 }
+/* laptop large */
+@media (min-width: 1440px){
+  .interfaceContent{
+    width: 30%;
+  }
+
+  .burgerIcon{
+    position: fixed;
+    top: 3%;
+    left: 36%;
+  }
+  
+}
