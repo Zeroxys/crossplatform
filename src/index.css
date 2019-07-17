@@ -69,7 +69,7 @@ input, select, textarea {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1280px) {
 
   .mainContent {
     width: 50%;
@@ -85,6 +85,11 @@ input, select, textarea {
   }
   .loginForm {
     width: 30%!important;
+  }
+  .burgerIcon{
+    position: fixed;
+    top: 3%;
+    left: 27%;
   }
 }
 
@@ -144,6 +149,12 @@ input, select, textarea {
     bottom: -162%;
     position: absolute;
     width: 70%!important;
+  }
+
+  .burgerIcon{
+    position: fixed;
+    top: 3%;
+    left: 3%;
   }
   
 

@@ -48,7 +48,7 @@ ul.deviceMenu > li > a.active{
   margin-left: 15%;
 }
 
-.information_div > p{
+.information_div >a > p{
   margin-top: 5%;
   color: #292F58;
   margin-left: 10%;

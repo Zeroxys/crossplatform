@@ -13,6 +13,7 @@ import { Route, Link } from 'react-router-dom'
 
 import chargericon from '../../../public/images/devices/charger.svg'
 import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
+
 const Device_header = () => {
     return (
         <div className="deviceContent">
@@ -101,11 +102,13 @@ const bluetooth_screen = () => {
 
 const Information_div = ( { title, text, link } ) => {
     return (
-        <Link className = "information_div" to = { link }>
-            <h3 className = "text" > { title } </h3>
-            { text }
-            <p> &nbsp; </p>
-        </Link>
+        <div className = "information_div">
+            <Link to = { link }>
+                <h3 className = "text" > { title } </h3>
+                { text }
+                <p> &nbsp; </p>
+            </Link>
+        </div>
     )
 }
 
