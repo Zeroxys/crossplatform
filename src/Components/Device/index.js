@@ -2,16 +2,17 @@ import React from 'react';
 import Menu from '../Main/Menu/Menu';
 import AllDevice from './AllDevice'
 
-import '../Main/index.css'
-import './index.css'
-// import FilterList from './AllDevice/FilterList';
-
 import { Route, Link } from 'react-router-dom'
 
-
+import { CarouselProvider, Slider, Slide, ButtonNext, Dot, ButtonBack} from 'pure-react-carousel';
 
 import chargericon from '../../../public/images/devices/charger.svg'
 import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
+
+import logo from '../../../public/images/logo.png'
+
+import '../Main/index.css'
+import './index.css'
 
 const Device_header = () => {
     return (
@@ -33,8 +34,6 @@ const index = () => {
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/smart-home" exact component = { SmartHome } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
-            <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
-            <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
             <Menu/>
         </div>
     );
@@ -46,65 +45,84 @@ const SmartHome = () => {
     )
 }
 
-const infomations = [
-    {
-        id:1,
-        title: 'Gigaaa Inside Devices',
-        text: <p> You can choose this device type if your device has <strong className = "text"> "gigaaa Inside" </strong> label on it. This means your device is powered by gigaaa assistant </p>,
-        link: 'plugInDevice'
-    },
-    {
-        id:2,
-        title: 'Works with gigaaa Assistant',
-        text: <p> You can choose this device type if your device is compatible with gigaaa Assistant. </p>,
-        link: 'turnBluetooth'
-    }
-]
-
 const addDevice = () => {
     return (
-        <div >
-            <h3 className = "text" > Add device </h3>
-            <h3 className = "text" > Select your device type </h3>
-            {
-                infomations.map( information => <Information_div key = { information.id } title = { information.title } text = { information.text } link = { information.link } /> )
-            }
-        </div>
+        <CarouselProvider
+            naturalSlideWidth = { 100 }
+            naturalSlideHeight = { 125 }
+            totalSlides = { 3 }
+            dragEnabled={false}
+            style = { { height: '80%', width: '100%' } }
+        >
+            <Slider style = { { height: '100%' } } >
+                <Slide index = { 0 } > <InformationDiv/> </Slide>
+                <Slide index = { 1 } > <PluginYourDevice /> </Slide>
+                <Slide index = { 2 } > <BluetoothScreen/> </Slide>
+            </Slider>
+        </CarouselProvider>
     )
 }
 
-const plugin_your_device = () => {
+// Common screens
+
+const PluginYourDevice = () => {
     return (
-        <div style = { { marginTop: '25%', marginLeft: '0%', width: '75%' } } >
+        <div style = { { width: '70%' } } >
             <img src = { chargericon } style = { { marginLeft:'35%', width: '30%'} } />
             <h3 className = "text"> Plug-in Your device </h3>
             <p style = { { color:'#000000' } } >
                 Make sure your device is plugged in and is near you. You will hear the Assistant greet you.
             </p>
+            <div style = { { marginTop: '10%', display: 'flex', justifyContent: 'space-around', flex: '1' } } >
+                <ButtonBack style = { { width:'40%', border:'#707070', background: '#F4F4F6', borderRadius: '0.5em', minHeight: '30px', textAlign: 'center' } } > Cancel </ButtonBack>
+                <ButtonNext style = { { width:'40%', border:'#707070', background: '#292F58', color: '#ffffff', borderRadius: '0.5em', minHeight: '30px' } } >Continue</ButtonNext>
+            </div>
         </div>
     )
 }
 
-const bluetooth_screen = () => {
+const BluetoothScreen = () => {
     return (
-        <div style = { { marginTop: '25%', marginLeft: '0%', width: '75%' } } >
+        <div style = { { width: '70%' } } >
             <img src = { bluetoothicon } style = { { marginLeft:'45%', width: '10%'} } />
             <h3 className = "text"> Turn on bluetooth </h3>
             <p style = { { color:'#000000' } } >
                 Turned on your bluetooth is recomended for a quicked set up. Go to settings to enabled Bluetooth on your phone and return back here.
             </p>
+            <div style = { { marginTop: '10%', display: 'flex', justifyContent: 'space-around', flex: '1' } } >
+                <ButtonBack style = { { width:'40%', border:'#707070', background: '#F4F4F6', borderRadius: '0.5em', minHeight: '30px', textAlign: 'center' } } > Cancel </ButtonBack>
+                <ButtonNext style = { { width:'40%', border:'#707070', background: '#292F58', color: '#ffffff', borderRadius: '0.5em', minHeight: '30px' } } >Continue</ButtonNext>
+            </div>
         </div>
     )
 }
 
-const Information_div = ( { title, text, link } ) => {
+const InformationDiv = () => {
     return (
-        <div className = "information_div">
-            <Link to = { link }>
-                <h3 className = "text" > { title } </h3>
-                { text }
-                <p> &nbsp; </p>
-            </Link>
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center' } } >
+            <ButtonNext style = { { width: '70%', marginTop: '5%', border:'none' } } >
+                <div className = "information_div">
+                    <h3 className = "text" > Gigaaa Inside Devices </h3>
+                    <p> You can choose this device type if your device has <strong className = "text"> "gigaaa Inside" </strong> label on it. This means your device is powered by gigaaa assistant </p>
+                    <p> &nbsp; </p>
+                </div>
+            </ButtonNext>
+            <ButtonNext style = { { width: '70%', marginTop: '5%', border:'none' } } >
+                <div className = "information_div">
+                    <h3 className = "text" > Works with gigaaa Assistant </h3>
+                    <p> You can choose this device type if your device is compatible with gigaaa Assistant. </p>
+                    <p> &nbsp; </p>
+                </div>
+            </ButtonNext>
+        </div>
+    )
+}
+
+// gigaaa inside
+const Scanning = () => {
+    return (
+        <div style = { { width: '70%' } } >
+            
         </div>
     )
 }
