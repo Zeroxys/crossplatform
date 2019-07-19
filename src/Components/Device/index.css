@@ -128,4 +128,12 @@ ul.deviceMenu > li > a.active{
   width: 30%;
   border-radius: 5px;
   border:none;
+<<<<<<< HEAD
 }
+=======
+}
+
+.hide{
+  display:none;
+}
+>>>>>>> master-resp
