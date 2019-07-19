@@ -41,20 +41,27 @@ ul.deviceMenu > li > a.active{
 .information_div{
   margin-top: 5%;
   border-radius: 5px;
-  background-color: #F4F4F6;
+  /* background-color: #F4F4F6; */
   /* border: 1px darkslategrey solid; */
   align-items: center;
-  width: 70%;
-  margin-left: 15%;
+  /* width: 70%; */
+  border: none;
+  /* margin-left: 15%; */
 }
 
-.information_div >a > p{
+.information_div > p{
   margin-top: 5%;
   color: #292F58;
   margin-left: 10%;
   width: 80%;
 }
 
+/* clase carrucel */
+.slideInner___2mfX9{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .homeContent {
   flex:1;
@@ -128,12 +135,8 @@ ul.deviceMenu > li > a.active{
   width: 30%;
   border-radius: 5px;
   border:none;
-<<<<<<< HEAD
-}
-=======
 }
 
 .hide{
   display:none;
 }
->>>>>>> master-resp
