@@ -62,3 +62,81 @@ ul.deviceMenu > li > a.active{
   flex-direction: column;
   align-items: center;
 }
+
+.homeContent {
+  flex:1;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+} 
+
+.homeContent img{
+  width: 30%;
+} 
+
+.addHomeButton{
+  border:none;
+  margin-top: 25px;
+  color:white;
+  background-color: #292F58;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  font-family : inherit;
+  font-size: 1em;
+}
+
+.addHome{
+  margin-top: 20px;
+  color: #292F58;
+  font-size: 1.5em;
+}
+
+.addGroup{
+  font-family: 'Roboto', bold;
+}
+
+.addGroupForm{
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex:0.2;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+.addGroupForm input[type="text"]{
+  border-radius:5px;
+  border:1px solid black;
+  height: 1.7em;
+  font-size:1.3em;
+  font-weight: 600;
+}
+
+.buttonsContent{
+  display: flex;
+  justify-content: space-around;
+}
+
+.groupButtons {
+  font-weight: bold;
+  height: 30px;
+  width: 30%;
+  border-radius: 5px;
+  background-color:#F4F4F6;
+  border:none;
+}
+
+.groupButtonsConfirm {
+  font-weight: bold;
+  height: 30px;
+  width: 30%;
+  border-radius: 5px;
+  border:none;
+}
+
+.hide{
+  display:none;
+}

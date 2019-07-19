@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from '../Main/Menu/Menu';
 import AllDevice from './AllDevice'
+import Home from './AllDevice/home'
+import addHome from './AllDevice/addHome'
 
 import { Route, Link } from 'react-router-dom'
 
@@ -18,10 +20,10 @@ import './index.css'
 
 const Device_header = () => {
     return (
-        <div className="deviceContent">
+        <div className = "deviceContent hide">
             <h3 className = "text" > Summer House </h3>
             <ul className="deviceMenu">
-                <li><Link to = "/user/device/smart-home"> Smart Home </Link></li>
+                <li><Link to = "/user/device/smart-home"> Groups </Link></li>
                 <li><Link className = "active" to = "/user/device/allDevices"> All Devices </Link></li>
             </ul>
             {/* <FilterList/> */}
@@ -29,13 +31,24 @@ const Device_header = () => {
     )
 }
 
-const index = () => {
+const index = (props) => {
+
+    console.log('index params ---->', props.match)
+
     return (
         <div className="interfaceContent">
             <Device_header/>
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/smart-home" exact component = { SmartHome } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
+            
+            <Route path = "/user/device/allDevices/add" exact component = { Add } />
+                <Route path = "/user/device/allDevices" exact component = { AllDevice } />
+                <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
+                <Route path = "/user/device/addHome/" exac component = {  addHome } />
+                <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
+                <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
+                <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
             <Menu/>
         </div>
     );
