@@ -1,12 +1,8 @@
 import React from 'react';
 import Menu from '../Main/Menu/Menu';
 import AllDevice from './AllDevice'
-<<<<<<< HEAD
-import Add from './AllDevice/home.js'
-=======
 import Home from './AllDevice/home'
 import addHome from './AllDevice/addHome'
->>>>>>> master-resp
 
 import '../Main/index.css'
 //import './index.css'
@@ -40,22 +36,12 @@ const index = (props) => {
     return (
         <div className="interfaceContent">
             <Device_header/>
-<<<<<<< HEAD
-            <Route path = "/user/device/allDevices" exact component = { AllDevice } />
-            <Route path = "/user/device/smart-home" exact component = { SmartHome } />
-            <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
-            <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
-            <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
-            <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
-            <Route path = "/user/device/allDevices/add" exact component = { Add } />
-=======
                 <Route path = "/user/device/allDevices" exact component = { AllDevice } />
-                <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
+                <Route path = "/user/device/smart-home/:key1?" exac component = {  Home /*SmartHome*/ } />
                 <Route path = "/user/device/addHome/" exac component = {  addHome } />
                 <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
                 <Route path = "/user/device/allDevices/plugInDevice" exact component = { plugin_your_device } />
                 <Route path = "/user/device/allDevices/turnBluetooth" exact component = { bluetooth_screen } />
->>>>>>> master-resp
             <Menu/>
         </div>
     );
