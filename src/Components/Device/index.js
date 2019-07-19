@@ -10,6 +10,8 @@ import chargericon from '../../../public/images/devices/charger.svg'
 import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
 
 import logo from '../../../public/images/logo.png'
+import nounfound from '../../../public/images/nounfound.png'
+import ok from '../../../public/images/ok.png'
 
 import '../Main/index.css'
 import './index.css'
@@ -50,14 +52,18 @@ const addDevice = () => {
         <CarouselProvider
             naturalSlideWidth = { 100 }
             naturalSlideHeight = { 125 }
-            totalSlides = { 3 }
-            dragEnabled={false}
+            totalSlides = { 14 }
+            dragEnabled = { false }
             style = { { height: '80%', width: '100%' } }
         >
             <Slider style = { { height: '100%' } } >
-                <Slide index = { 0 } > <InformationDiv/> </Slide>
+                {/* <Slide index = { 0 } > <InformationDiv/> </Slide>
                 <Slide index = { 1 } > <PluginYourDevice /> </Slide>
                 <Slide index = { 2 } > <BluetoothScreen/> </Slide>
+                <Slide index = { 3 } > <Scanning/> </Slide> */}
+                <Slide index = { 4 } > <FoundDevice/> </Slide>
+                {/* <Slide index = { 5 } > <ConnectingDevice/> </Slide> */}
+                <Slide index = { 6 } > <ConncectedDevice/> </Slide>
             </Slider>
         </CarouselProvider>
     )
@@ -121,8 +127,50 @@ const InformationDiv = () => {
 // gigaaa inside
 const Scanning = () => {
     return (
-        <div style = { { width: '70%' } } >
-            
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '70%' } } >
+            <img src = { logo } style = { { width: '25%' } } />
+            <h3 className = "text"> Scanning for nearby devices </h3>
+            <p style = { { color: '#000000' } } > This may take a while... </p>
+        </div>
+    )
+}
+
+const FoundDevice = () => {
+    return (
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '70%' } } >
+            <img src = { nounfound } style = { { width: '25%' } } />
+            <h3 className = "text"> { '<device name> found' } </h3>
+            <p style = { { color: '#000000' } } > Is this the device you would like to set up? </p>
+            <div style = { { marginTop: '10%', display: 'flex', justifyContent: 'space-around', flex: '1', width: '100%' } } >
+                <ButtonBack style = { { width:'40%', border:'#707070', background: '#F4F4F6', borderRadius: '0.5em', minHeight: '30px', textAlign: 'center' } } > Cancel </ButtonBack>
+                <ButtonNext style = { { width:'40%', border:'#707070', background: '#292F58', color: '#ffffff', borderRadius: '0.5em', minHeight: '30px' } } > Yes </ButtonNext>
+            </div>
+        </div>
+    )
+}
+
+const ConnectingDevice = () => {
+    return (
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '70%' } } >
+            <img src = { logo } style = { { width: '25%' } } />
+            <h3 className = "text"> Connecting to </h3>
+            <h3 className = "text"> { '<device name>' } </h3>
+            <p style = { { color: '#000000' } } > Your phone may disconnect from Wi-Fi during setup. </p>
+        </div>
+    )
+}
+
+const ConncectedDevice = () => {
+    return (
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '70%' } } >
+            <img src = { ok } style = { { width: '25%' } } />
+            <h3 className = "text"> Connected to </h3>
+            <h3 className = "text"> { '<device name>' } </h3>
+            <p style = { { color: '#000000' } } > { ' You will hear a sound on <device-name> to make sure you’re connected to the right device. Didn’t hear the sound? Try again. ' } </p>
+            <div style = { { marginTop: '10%', display: 'flex', justifyContent: 'space-around', flex: '1',  width: '100%' } } >
+                <ButtonBack style = { { width:'40%', border:'#707070', background: '#F4F4F6', borderRadius: '0.5em', minHeight: '30px', textAlign: 'center' } } > Cancel </ButtonBack>
+                <ButtonNext style = { { width:'40%', border:'#707070', background: '#292F58', color: '#ffffff', borderRadius: '0.5em', minHeight: '30px' } } > Yes </ButtonNext>
+            </div>
         </div>
     )
 }
