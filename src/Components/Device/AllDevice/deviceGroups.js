@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react'
+import {withRouter, Link} from 'react-router-dom'
 import homeDevices from '../../../../public/images/homeGroup.png'
 import configDevices from '../../../../public/images/configCircle.png'
 import plusDevices from '../../../../public/images/plus.png'
@@ -22,7 +23,7 @@ const style = {
     },
 
     favDevices : {
-        border: '1px solid lightgray',
+        border: '2px solid #52FFEC',
         borderRadius : '10px',
         height : '25%',
         marginTop : '40px'
@@ -70,20 +71,20 @@ const deviceGroup = (props) => {
                 <div style={style.favDevices}>
                     <p style={style.text} > Favorite Devices <span style={{color : 'lightgray'}}>No Devices</span></p>
 
-                    <div style={style.buttons}>
-                       <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices}></img>
+                    <Link to = "/user/device/otherScreen" style={style.buttons}>
+                       <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices} alt=""></img>
                         <p style={{fontWeight : 'bold'}}> Add Favorite Devices</p>
-                    </div>
+                    </Link>
 
                 </div>
 
                 <div style={style.favDevices}>
-                    <p style={style.text}>Groups <span style={{color : 'lightgray'}}>No Groups</span></p>
+                    <p style={ { ...style.text ,...{width:'40%'} } }>Groups <span style={{color : 'lightgray'}}>No Groups</span></p>
                     
-                    <div style={style.buttons}>
-                        <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices}></img>
+                    <Link to = "/user/device/otherScreen" style={style.buttons}>
+                        <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices} alt=""></img>
                         <p style={{fontWeight : 'bold', color : '#fefefe'}}> Add Device Group</p>
-                    </div>
+                    </Link>
 
                 </div>
 

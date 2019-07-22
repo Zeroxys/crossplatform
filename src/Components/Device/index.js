@@ -27,7 +27,6 @@ const Device_header = (props) => {
     let params = new URLSearchParams(window.location.search)
     let myGroup = params.get('group')
     let show = "hide";
-    console.log(myGroup)
 
     if (myGroup ) {
         console.log('get Paramms !!!!', myGroup)
