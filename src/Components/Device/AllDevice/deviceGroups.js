@@ -79,9 +79,9 @@ const deviceGroup = (props) => {
                 </div>
 
                 <div style={style.favDevices}>
-                    <p style={ { ...style.text ,...{width:'40%'} } }>Groups <span style={{color : 'lightgray'}}>No Groups</span></p>
+                    <p style={ { ...style.text, ...{width:'40%'} } }>Groups <span style={{color : 'lightgray'}}>No Groups</span></p>
                     
-                    <Link to = "/user/device/otherScreen" style={style.buttons}>
+                    <Link to = "/user/device/allDevices/add-device-Group" style={style.buttons}>
                         <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices} alt=""></img>
                         <p style={{fontWeight : 'bold', color : '#fefefe'}}> Add Device Group</p>
                     </Link>

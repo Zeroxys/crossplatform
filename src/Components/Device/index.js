@@ -4,6 +4,7 @@ import AllDevice from './AllDevice'
 
 import Home from './AllDevice/home'
 import addHome from './AllDevice/addHome'
+import AddDeviceGroup from './AllDevice/adDeviceGroup'
 
 import { Route, Link } from 'react-router-dom'
 
@@ -54,7 +55,9 @@ const index = ({location}) => {
             <Device_header/>
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
-            
+            <Route path = "/user/device/allDevices/add-device-Group" exact component = { AddDeviceGroup } />
+
+
             <Route path='/user/device/deviceGroups' exac component={DeviceGroups} />
             <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
             <Route path = "/user/device/addHome/" exac component = {  addHome } />
