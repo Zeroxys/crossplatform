@@ -37,7 +37,7 @@ const SomeComponent = withRouter( ({ location }) => {
                 <input className="groupButtons" type="submit" value="Cancel"></input>
                 
 
-                <Link to={{pathname: "/user/device/smart-home", search: `?group=${switcher}`}}>
+                <Link to={{pathname: "/user/device/deviceGroups", search: `?group=${switcher}`}}>
                   <input className="groupButtonsConfirm" 
                       type="submit" 
                       style={{color: switcher ? '#fefefe': '#A6A8BA', background: switcher ? '#292F58' : '#F4F4F6'}} 

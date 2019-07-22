@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 import homeDevices from '../../../../public/images/homeGroup.png'
 import configDevices from '../../../../public/images/configCircle.png'
 import plusDevices from '../../../../public/images/plus.png'
@@ -54,7 +54,9 @@ const style = {
 
 }
 
+
 const deviceGroup = (props) => {
+
     return (
         <Fragment>
 
@@ -67,18 +69,22 @@ const deviceGroup = (props) => {
 
                 <div style={style.favDevices}>
                     <p style={style.text} > Favorite Devices <span style={{color : 'lightgray'}}>No Devices</span></p>
+
                     <div style={style.buttons}>
                        <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices}></img>
                         <p style={{fontWeight : 'bold'}}> Add Favorite Devices</p>
                     </div>
+
                 </div>
 
                 <div style={style.favDevices}>
                     <p style={style.text}>Groups <span style={{color : 'lightgray'}}>No Groups</span></p>
+                    
                     <div style={style.buttons}>
                         <img style={ {width : '18px', marginRight:'10px'}} src={plusDevices}></img>
                         <p style={{fontWeight : 'bold', color : '#fefefe'}}> Add Device Group</p>
                     </div>
+
                 </div>
 
             </div>

@@ -28,7 +28,7 @@ export default class AddHome extends Component {
         <div className="homeContent">
             <img src={Home}></img>
             <button className="addHomeButton">
-              <Link style = { { color: '#fefefe' } } to = "/user/device/addHome">+ Add Home</Link>              
+              { <Link style = { { color: '#fefefe' } } to = "/user/device/addHome">+ Add Home</Link> }
             </button>
         </div>
 
