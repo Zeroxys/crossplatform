@@ -67,7 +67,7 @@
 .groupButtonsConfirm {
   font-weight: bold;
   height: 30px;
-  width: 30%;
+  width: 100px!important;
   border-radius: 5px;
   border:none;
 }

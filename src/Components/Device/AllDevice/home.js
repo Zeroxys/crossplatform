@@ -9,11 +9,18 @@ import '../index.css'
 
 export default class AddHome extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
   }
 
   render() {
+
+    console.log(this.props.location.search)
+    let params = new URLSearchParams(this.props.location.search)
+    console.log(params.get('group'))
+
+    let getParam = params.get('group')
+
     return (
       <div className="interfaceContent">
 
@@ -21,9 +28,7 @@ export default class AddHome extends Component {
         <div className="homeContent">
             <img src={Home}></img>
             <button className="addHomeButton">
-              
-              <Link style = { { color: '#fefefe' } } to = "/user/device/addHome">+ Add Home</Link>
-              
+              <Link style = { { color: '#fefefe' } } to = "/user/device/addHome">+ Add Home</Link>              
             </button>
         </div>
 

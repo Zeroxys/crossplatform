@@ -19,9 +19,22 @@ import ok from '../../../public/images/ok.png'
 import '../Main/index.css'
 import './index.css'
 
-const Device_header = () => {
+const Device_header = (props) => {
+
+    let params = new URLSearchParams(window.location.search)
+    let myGroup = params.get('group')
+    let show = "hide";
+    console.log(myGroup)
+
+    if(myGroup ) {
+        console.log('get Paramms !!!!')
+        show = ""
+    }else {
+        console.log('-.-')
+    }
+
     return (
-        <div className = "deviceContent">
+        <div className = {`deviceContent ${show}`}>
             <h3 className = "text" > Summer House </h3>
             <ul className="deviceMenu">
                 <li><Link to = "/user/device/smart-home"> Groups </Link></li>
@@ -32,15 +45,12 @@ const Device_header = () => {
     )
 }
 
-const index = (props) => {
-
-    console.log('index params ---->', props.match)
+const index = ({location}) => {
 
     return (
         <div className="interfaceContent">
             <Device_header/>
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
-            <Route path = "/user/device/smart-home" exact component = { SmartHome } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             
             <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
@@ -49,12 +59,6 @@ const index = (props) => {
         </div>
     );
 };
-
-const SmartHome = () => {
-    return (
-        <h1>Smart home</h1>
-    )
-}
 
 const addDevice = () => {
     return (
