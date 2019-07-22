@@ -7,7 +7,7 @@ import addHome from './AllDevice/addHome'
 
 import { Route, Link } from 'react-router-dom'
 
-import { CarouselProvider, Slider, Slide, ButtonNext, Dot, ButtonBack} from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonNext, ButtonBack} from 'pure-react-carousel';
 
 import chargericon from '../../../public/images/devices/charger.svg'
 import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
@@ -15,6 +15,9 @@ import bluetoothicon from '../../../public/images/devices/bluetooth.svg'
 import logo from '../../../public/images/logo.png'
 import nounfound from '../../../public/images/nounfound.png'
 import ok from '../../../public/images/ok.png'
+
+import DeviceGroups from './AllDevice/deviceGroups'
+
 
 import '../Main/index.css'
 import './index.css'
@@ -26,11 +29,11 @@ const Device_header = (props) => {
     let show = "hide";
     console.log(myGroup)
 
-    if(myGroup ) {
-        console.log('get Paramms !!!!')
+    if (myGroup ) {
+        console.log('get Paramms !!!!', myGroup)
         show = ""
     }else {
-        console.log('-.-')
+        console.log('not params')
     }
 
     return (
@@ -53,6 +56,7 @@ const index = ({location}) => {
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             
+            <Route path='/user/device/deviceGroups' exac component={DeviceGroups} />
             <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
             <Route path = "/user/device/addHome/" exac component = {  addHome } />
             <Menu/>
