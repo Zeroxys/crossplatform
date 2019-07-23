@@ -5,6 +5,7 @@ import AllDevice from './AllDevice'
 import Home from './AllDevice/home'
 import addHome from './AllDevice/addHome'
 import AddDeviceGroup from './AllDevice/adDeviceGroup'
+import AddGroup  from './AllDevice/addGroup'
 
 import { Route, Link } from 'react-router-dom'
 
@@ -56,6 +57,8 @@ const index = ({location}) => {
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             <Route path = "/user/device/allDevices/add-device-Group" exact component = { AddDeviceGroup } />
+
+            <Route path = "/user/device/allDevices/add-group" exact component = { AddGroup } />
 
 
             <Route path='/user/device/deviceGroups' exac component={DeviceGroups} />
