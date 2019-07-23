@@ -22,7 +22,7 @@ export default class AddHome extends Component {
     let getParam = params.get('group')
 
     return (
-      <div className="interfaceContent">
+      <div className="">
 
 
         <div className="homeContent">
@@ -31,9 +31,6 @@ export default class AddHome extends Component {
               { <Link style = { { color: '#fefefe' } } to = "/user/device/addHome">+ Add Home</Link> }
             </button>
         </div>
-
-
-        <Menu/>
       </div>
     )
   }
