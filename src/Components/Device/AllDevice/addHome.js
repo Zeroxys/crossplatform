@@ -82,9 +82,6 @@ const SomeComponent = withRouter( ({ history }) => {
                 <input className="groupButtonsConfirm" type="submit" style={{color: switcher ? '#fefefe': '#A6A8BA', background: switcher ? '#292F58' : '#F4F4F6'}} disabled={!switcher} onClick={ (e) => history.push('/user/device/smart-home/?asdsad=asdasd') }></input>
               </div>
           </form>
-
-
-        <Menu/>
       </div>
     )
   }

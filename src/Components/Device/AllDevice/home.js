@@ -15,7 +15,7 @@ export default class AddHome extends Component {
 
   render() {
     return (
-      <div className="interfaceContent">
+      <div className="">
 
 
         <div className="homeContent">
@@ -26,9 +26,6 @@ export default class AddHome extends Component {
               
             </button>
         </div>
-
-
-        <Menu/>
       </div>
     )
   }
