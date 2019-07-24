@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import InputGroup from '../../Pages/inputGroup'
 
 
@@ -12,23 +12,23 @@ let style = {
         width : '100%'
 
     },
+
+    groupsContent : {
+        display : 'flex',
+        justifyContent : 'center',
+        flexDirection  : 'column',
+        width : '100%',
+        height :'43vh',
+    },
+
     box : {
         border: '2px solid lightgray',
         borderRadius : 8,
         display : 'flex',
         justifyContent : 'center',
         alignItems : 'center',
-        width : '25%',
-        height : '80'
-    },
-
-    groupsContent : {
-        display : 'flex',
-        justifyContent : 'center',
-        alignItems : 'center',
-        flexDirection  : 'column',
-        width : '100%',
-        height :'25%'
+        width : '40%',
+        height : '30px'
     }
 }
 
@@ -37,7 +37,7 @@ const AddGroup = () => {
     let groups = groupNames.map( (el, i) => {
         return (
             <div id={i} key={i} style={style.box}>
-                <p style={{color : 'black'}}>{el}</p>
+                <p style={{color : 'black', fontWeigsht:'bold'}}>{el}</p>
             </div>
         )
     })
@@ -46,10 +46,17 @@ const AddGroup = () => {
         <InputGroup>
 
             <div style={style.content}>
-                <h2>Add Group</h2>
-                <h3>Suggested Group Names</h3>
                 <div style={ style.groupsContent }>
-                    {groups}
+                <p style={{color : 'black', textAlign : 'left', fontWeight:'bold', color:'lightgray', margin:' 0 0 15px 36px'}}>Suggested Group Names</p>
+                    <div style={
+                        {
+                        display : 'flex',
+                        justifyContent : 'space-around',
+                        flexWrap : 'wrap',
+                        height : '25vh'
+                    }}>
+                        {groups}
+                    </div>
                 </div>
             </div>
 
