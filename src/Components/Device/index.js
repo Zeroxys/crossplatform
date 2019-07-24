@@ -23,6 +23,7 @@ import DeviceGroups from './AllDevice/deviceGroups'
 import '../Main/index.css'
 import './index.css'
 import AddGroup from './AllDevice/addGroup';
+import DeviceToGroup from './AllDevice/DeviceToGroup';
 
 const Device_header = (props) => {
 
@@ -59,7 +60,7 @@ const index = ({location}) => {
             <Route path = "/user/device/allDevices/add-device-Group" exact component = { AddDeviceGroup } />
 
             <Route path = "/user/device/allDevices/add-group" exact component = { AddGroup } />
-
+            <Route path = "/user/device/allDevices/add-device-to-group" exact component = { DeviceToGroup } />
 
             <Route path='/user/device/deviceGroups' exac component={DeviceGroups} />
             <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />
