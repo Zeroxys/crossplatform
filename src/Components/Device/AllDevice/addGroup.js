@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import InputGroup from '../../Pages/inputGroup'
 
 
@@ -34,16 +34,22 @@ let style = {
 
 const AddGroup = () => {
 
+    let [value, setValue] = useState('')
+
+
+
     let groups = groupNames.map( (el, i) => {
         return (
-            <div id={i} key={i} style={style.box}>
+            <div id={i} key={i} style={style.box} onClick = {() => setValue(value = el)}>
                 <p style={{color : 'black', fontWeigsht:'bold'}}>{el}</p>
             </div>
         )
     })
 
+    console.log(value)
+
     return (
-        <InputGroup>
+        <InputGroup newValue={value}>
 
             <div style={style.content}>
                 <div style={ style.groupsContent }>

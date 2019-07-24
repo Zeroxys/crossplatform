@@ -15,12 +15,15 @@ let style = {
     }
 }
 
-const InputGroup = ({children}) => {
+const InputGroup = ({newValue,children}) => {
+
+    console.log('setValue prop --->',newValue)
+
 
     return(
         <form className="addGroupForm">
             <label style={{color : '#A6A8BA', marginBottom:'10px'}} htmlFor="add">Name</label>
-            <input style={style.input} id="add" placeholder="House Name"></input>
+            <input style={style.input} id="add" placeholder={ newValue ? newValue : 'House Name '}></input>
 
             {children}
 
