@@ -1,5 +1,7 @@
 import React from 'react';
 import plugImage from '../../../../public/images/devices/plug.png'
+import addGroup from '../../../../public/images/addGroup.png'
+import cancelGroup from '../../../../public/images/cancelGroup.png'
 
 const allDevices = ['Aquarium Water Pump', 'LED Light Strip', 'Vierhaus Smart Mirror', 'Pet Food dispenser', 'Charger',]
 
@@ -17,7 +19,6 @@ const style = {
         display : 'flex',
         justifyContent : 'flex-start',
         alignItems : 'center',
-        border: '1px solid red',
         margin : '10px 10px',
         width : '100%'
     },
@@ -25,6 +26,13 @@ const style = {
     circle : {
         width : '60px',
         height : '60px ',
+        borderRadius : '100%',
+        margin : '10px 10px'
+    },
+
+    miniCircle : {
+        width : '30px',
+        height : '30px ',
         borderRadius : '100%',
         margin : '10px 10px'
     }
@@ -35,7 +43,7 @@ const DeviceToGroup = () => {
     let renderDevices = allDevices.map( (el, i) => {
         return(
             <div style= {style.devices} key={i}>
-                <p style={{color : 'black'}}>close icon</p>
+                <img style={style.miniCircle} src={addGroup}></img>
                 <img style={style.circle} src={plugImage}></img>
                 <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>{el}</p>
             </div>
@@ -43,11 +51,11 @@ const DeviceToGroup = () => {
     })
 
     return (
-        <div>
-            <h2>Add devices to your grop</h2>
+        <div style={ {width:'90%', marginTop:'50px'} } >
+            <h2 style={{textAlign : 'center', color : '#292F58', margin:'15px 15px '}}>Add devices to your grop</h2>
 
             <div>
-                <p style={{color : '#292F58', width: '100%', textAlign:'left', fontWeight:'bold'}}>All Devices</p>
+                <p style={{color : '#292F58', width: '100%', textAlign:'left', fontWeight:'bold', marginLeft:'60px'}}>All Devices</p>
 
                 <div style={style.devicesContent}>
                     {renderDevices}
