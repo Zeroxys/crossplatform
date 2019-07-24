@@ -41,12 +41,10 @@ const AddGroup = () => {
     let groups = groupNames.map( (el, i) => {
         return (
             <div id={i} key={i} style={style.box} onClick = {() => setValue(value = el)}>
-                <p style={{color : 'black', fontWeigsht:'bold'}}>{el}</p>
+                <p style={{color : '#292F58', fontWeight:'bold'}}>{el}</p>
             </div>
         )
     })
-
-    console.log(value)
 
     return (
         <InputGroup newValue={value}>

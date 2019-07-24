@@ -11,7 +11,9 @@ let style = {
         borderRadius : '8px',
         height : '32px',
         fontWeight : 'bold',
-        letterSpacing : '2'
+        letterSpacing : '2',
+        color : '#292F58',
+        paddingLeft : '10px'
     }
 }
 
@@ -23,7 +25,7 @@ const InputGroup = ({newValue,children}) => {
     return(
         <form className="addGroupForm">
             <label style={{color : '#A6A8BA', marginBottom:'10px'}} htmlFor="add">Name</label>
-            <input style={style.input} id="add" placeholder={ newValue ? newValue : 'House Name '}></input>
+            <input style={style.input} id="add" placeholder='House Name ' value={newValue ? newValue : undefined}></input>
 
             {children}
 
