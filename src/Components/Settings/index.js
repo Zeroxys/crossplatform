@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Route, Link } from 'react-router-dom'
 
+import BasicInfo from './Personal/BasicInfo'
+
 import { faBars, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import user from '../../../public/images/user.png'
 
@@ -20,7 +22,8 @@ import './index.css'
 
 const Index = () => {
 
-    const [isOpenSlide, setOpenSlide] = useState( false )
+    const [ isOpenSlide, setOpenSlide ] = useState( false )
+    const [ externalComponent, setComponent ] = useState( false )
 
     const logout = (e) => {
         e.preventDefault()
@@ -33,6 +36,19 @@ const Index = () => {
         }
     }
 
+    const Personal = ( ) => {
+        return (
+            <div style = { { width: '80%', marginTop: '5%'} } >
+                {
+                    list_personal.map( item => <div style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
+                        <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
+                        <p className = "text_list_secondary"> <strong> <Link onClick = { () => setComponent( true ) } to = { item.link } className = "text_title" > { item.title } </Link> </strong> <br/> { item.secondary } </p>
+                    </div> )
+                }
+            </div>
+        )
+    }
+
     return (
         <div className = "interfaceContent">
             <div className="burgerIcon" onClick={ () => setOpenSlide( !isOpenSlide ) }>
@@ -43,36 +59,30 @@ const Index = () => {
                 isOpen = { isOpenSlide }
                 // openfeedback = { this.openfeedback }
             />
-            <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' } } >
-                <h3 className = "text_settings" style = { { marginTop: '5%' } } > Settings </h3>
-                <img src = { user } style = { { width: '25%' } } />
-                <h4 className = "text_settings" > Jane Doe </h4>
-                <h5 className = "text_settings_secondary" > janedoe@icloud.com </h5>
-                <ul className = "content_menu">
-                    <Link to = "/settings/personal"  className = "active"> Personal </Link>
-                    <Link to = "/settings/assistant" > Assistant </Link>
-                    <Link to = "/settings/notifications" > Notifications </Link>
-                </ul>
-            </div>
-            <Route path = "/settings/personal" component = { Personal } />
-            <Route path = "/settings/assistant" component = { Assistant } />
+            <Route path = '/settings/personal/basic_info' exact component = { BasicInfo } />
+            {
+                externalComponent ? (null) : ( 
+                    <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' } } >
+                        <h3 className = "text_settings" style = { { marginTop: '5%' } } > Settings </h3>
+                        <img src = { user } style = { { width: '25%' } } />
+                        <h4 className = "text_settings" > Jane Doe </h4>
+                        <h5 className = "text_settings_secondary" > janedoe@icloud.com </h5>
+                        <ul className = "content_menu">
+                            <Link onClick = { () => setComponent( false ) } to = "/settings/personal"  className = "active"> Personal </Link>
+                            <Link onClick = { () => setComponent( false ) } to = "/settings/assistant" > Assistant </Link>
+                            <Link onClick = { () => setComponent( false ) } to = "/settings/notifications" > Notifications </Link>
+                        </ul>
+                        <Route path = "/settings/personal" exact component = { Personal } />
+                        <Route path = "/settings/assistant" exact component = { Assistant } />
+                    </div>
+                 )
+            }
             <Menu/>
         </div>
     );
 };
 
-const Personal = () => {
-    return (
-        <div style = { { width: '80%', marginTop: '3%'} } >
-            {
-                list_personal.map( item => <div style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
-                    <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
-                    <p className = "text_list_secondary"> <strong className = "text" > { item.title } </strong> <br/> { item.secondary } </p>
-                </div> )
-            }
-        </div>
-    )
-}
+
 
 const Assistant = () => {
     return ( 
@@ -93,42 +103,42 @@ const list_personal = [
         img: contacts,
         title: 'Contacts',
         secondary: 'Edit your contact list',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/contact'
     },
     {
         id: 3,
         img: wallet,
         title: 'Wallet',
         secondary: 'Payment Methods, Delivery, Billing…',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/wallet'
     },
     {
         id: 4,
         img: health,
         title: 'Health',
         secondary: 'Medical conditions, Allergies & Reactions…',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/health'
     },
     {
         id: 5,
         img: transportation,
         title: 'Transportation',
         secondary: 'Modes for getting around',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/transportation'
     },
     {
         id: 6,
         img: verification,
         title: 'Verification',
         secondary: 'For governmental operations',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/verification'
     },
     {
         id: 7,
         img: connected_accounts,
         title: 'Connected Accounts',
         secondary: 'Link accounts to your Assistant',
-        link: '/settings/personal/basic_info'
+        link: '/settings/personal/connected_accounts'
     },
 ]
 
