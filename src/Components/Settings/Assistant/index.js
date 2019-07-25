@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
 import language from '../../../../public/images/settings/language.png'
@@ -71,15 +71,19 @@ const list_personal = [
 
 
 
-const Assistant = () => {
+const Assistant = (props) => {
+
+    const [screen, setScreen] = useState(false)
+
+    console.log(screen)
+
     return(
         <div style = { { width: '80%', marginTop: '3%'} } >
             {
                 list_personal.map( (item,i) => {
 
                 
-                return (<Link key={i} to={item.link}> <div  style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
-
+                return (<Link onClick={ () => setScreen(!screen)} key={i} to={item.link}> <div  style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
                     <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
                     <p className = "text_list_secondary"> <strong className = "text" > { item.title } </strong> <br/> { item.secondary } </p>
                 </div></Link>)
