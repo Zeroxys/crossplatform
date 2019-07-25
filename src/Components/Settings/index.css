@@ -1,0 +1,38 @@
+.text_settings{
+    width: 100%;
+    text-align: center;
+    color: #292F58;
+}
+
+.text_settings_secondary{
+    width: 100%;
+    text-align: center;
+    color: #A6A8BA;
+}
+
+.content_menu{
+    margin-top: 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+ul.content_menu > li{
+    border-bottom: 2px solid #A6A8BA;
+    color: #A6A8BA;
+    /* margin-left: 5%; */
+}
+
+ul.content_menu > li.active{
+    border-bottom: 2px solid #52FFEC;
+    color: #292F58;
+}
+
+.text_list_secondary{
+    /* width: 100%; */
+    text-align: justify;
+    color: #A6A8BA;
+    /* border-bottom: 1px solid #000000; */
+    width: 100%;
+    margin-bottom: 1%;
+}

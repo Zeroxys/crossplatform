@@ -5,7 +5,7 @@ import Main from './Components/Main';
 import Tips from './Components/Tips';
 import Device from './Components/Device';
 import Welcome from './Components/Welcome/Welcome'
-
+import Settings from './Components/Settings'
 
 export default function Rooter () {
 
@@ -26,6 +26,7 @@ export default function Rooter () {
           <Route path="/user" exact component={Main} />
           <Route path = "/user/device" component = { Device } />
           <Route path="/Tips" exact component={Tips}/>
+          <Route path = "/Settings" exact component = { Settings } />
       </Router>
     )
 
