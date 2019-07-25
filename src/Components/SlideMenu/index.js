@@ -17,7 +17,7 @@ export default function(props) {
         { id:id++, text: 'Wallet', to: '/user' },
         { id:id++, text: 'Tips & Tutorials', to: '/Tips', line:true },
         { id:id++, text: 'Activity', to: '/user' },
-        { id:id++, text: 'Settings', to: '/settings' },
+        { id:id++, text: 'Settings', to: '/settings/personal' },
         { id:id++, text: 'Help & Feedback', to: '/user', action: props.openfeedback },
         { id:id++, text: 'About', to: '/user' },
         { id:id++, text: 'Log Out', to: '/', action: props.logout },

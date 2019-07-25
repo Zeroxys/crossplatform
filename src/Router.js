@@ -26,7 +26,7 @@ export default function Rooter () {
           <Route path="/user" exact component={Main} />
           <Route path = "/user/device" component = { Device } />
           <Route path="/Tips" exact component={Tips}/>
-          <Route path = "/Settings" exact component = { Settings } />
+          <Route path = "/Settings" component = { Settings } />
       </Router>
     )
 
