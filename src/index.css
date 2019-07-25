@@ -22,6 +22,12 @@ body {
   background-color: lightgray;
 }
 
+.toggleColor.react-toggle--checked .react-toggle-track {
+  background-color : #52FFEC!important;
+  padding : 10px
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

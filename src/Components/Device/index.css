@@ -142,3 +142,7 @@ ul.deviceMenu > li > a.active{
 .hide{
   display:none;
 }
+
+.toggleColor.react-toggle--checked .react-toggle-track {
+  background-color : 'red'
+}

@@ -24,8 +24,9 @@ import '../Main/index.css'
 import './index.css'
 import AddGroup from './AllDevice/addGroup';
 import DeviceToGroup from './AllDevice/DeviceToGroup';
+import GroupCreated from './AllDevice/groupCreated';
 
-const Device_header = (props) => {
+const DeviceHeader = (props) => {
 
     let params = new URLSearchParams(window.location.search)
     let myGroup = params.get('group')
@@ -54,13 +55,14 @@ const index = ({location}) => {
 
     return (
         <div className="interfaceContent">
-            <Device_header/>
+            <DeviceHeader/>
             <Route path = "/user/device/allDevices" exact component = { AllDevice } />
             <Route path = "/user/device/allDevices/addDevice" exact component = { addDevice } />
             <Route path = "/user/device/allDevices/add-device-Group" exact component = { AddDeviceGroup } />
 
             <Route path = "/user/device/allDevices/add-group" exact component = { AddGroup } />
             <Route path = "/user/device/allDevices/add-device-to-group" exact component = { DeviceToGroup } />
+            <Route path = "/user/device/allDevices/group-created" exact component = { GroupCreated } />
 
             <Route path='/user/device/deviceGroups' exac component={DeviceGroups} />
             <Route path = "/user/device/smart-home/" exac component = {  Home /*SmartHome*/ } />

@@ -52,7 +52,7 @@ const DeviceToGroup = () => {
 
     return (
         <div style={ {width:'90%', marginTop:'50px'} } >
-            <h2 style={{textAlign : 'center', color : '#292F58', margin:'15px 15px '}}>Add devices to your grop</h2>
+            <h2 style={{textAlign : 'center', color : '#292F58', margin:'15px 15px '}}>Add devices to your group</h2>
 
             <div>
                 <p style={{color : '#292F58', width: '100%', textAlign:'left', fontWeight:'bold', marginLeft:'60px'}}>All Devices</p>
