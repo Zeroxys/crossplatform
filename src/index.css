@@ -24,7 +24,16 @@ body {
 
 .toggleColor.react-toggle--checked .react-toggle-track {
   background-color : #52FFEC!important;
-  padding : 10px
+}
+
+.toggleColor .react-toggle-thumb{
+  top: 4px;
+  left: 5px;
+  width: 22px;
+}
+
+.toggleColor .react-toggle-track{
+  height: 30px;
 }
 
 

@@ -19,11 +19,10 @@ const style = {
     ,
     devices : {
         display : 'flex',
-        justifyContent : 'space-around',
+        justifyContent : 'space-between',
         alignItems : 'center',
-        margin : '10px 10px',
-        width : '50%',
-        border: '1px solid red',
+        margin : '10px 0 0 0',
+        width : '85%',
     },
 
     circle : {
@@ -47,15 +46,43 @@ const GroupCreated = () => {
 
         <div style={style.content}>
 
-            <div style = {{marginLeft : '30px'}}>
-                <h2>Lights</h2> <span>4 devices</span>
-                <Toggle/>
+            <div style = {{marginTop:'10px',marginLeft : '30px', display : 'flex', justifyContent:'space-between', width : '85%'}}>
+                <div style={{display:'flex', width:'40%', justifyContent:'space-around', alignItems : 'center'}}>
+                    <h2>Lights</h2> <span style={{color : 'lightgray'}}>4 devices</span>
+                </div>
+                <Toggle className="toggleColor" icons={false}/>
             </div>
 
 
             <div style= { {...style.devices, ...{marginLeft : '30px'}} }>
-                <img style={style.circle} src={plugImage}></img>
-                <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>asdad</p>
+                <div style={{display:'flex', alignItems : 'center',}}>
+                    <img style={style.circle} src={plugImage}></img>
+                    <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>Ceiling Light</p>
+                </div>
+                <Toggle className="toggleColor" icons={false}/>
+            </div>
+
+            <div style= { {...style.devices, ...{marginLeft : '30px'}} }>
+                <div style={{display:'flex', alignItems : 'center'}}>
+                    <img style={style.circle} src={plugImage}></img>
+                    <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>Ceiling Light</p>
+                </div>
+                <Toggle className="toggleColor" icons={false}/>
+            </div>
+
+            <div style= { {...style.devices, ...{marginLeft : '30px'}} }>
+                <div style={{display:'flex', alignItems : 'center'}}>
+                    <img style={style.circle} src={plugImage}></img>
+                    <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>Ceiling Light</p>
+                </div>
+                <Toggle className="toggleColor" icons={false}/>
+            </div>
+
+            <div style= { {...style.devices, ...{marginLeft : '30px'}} }>
+                <div style={{display:'flex', alignItems : 'center'}}>
+                    <img style={style.circle} src={plugImage}></img>
+                    <p style={{color : '#292F58', fontWeight : 'bold', fontSize : '18px'}}>Ceiling Light</p>
+                </div>
                 <Toggle className="toggleColor" icons={false}/>
             </div>
         </div>
