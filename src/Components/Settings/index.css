@@ -17,13 +17,13 @@
     width: 100%;
 }
 
-ul.content_menu > li{
+ul.content_menu > a{
     border-bottom: 2px solid #A6A8BA;
     color: #A6A8BA;
     /* margin-left: 5%; */
 }
 
-ul.content_menu > li.active{
+ul.content_menu > a.active{
     border-bottom: 2px solid #52FFEC;
     color: #292F58;
 }

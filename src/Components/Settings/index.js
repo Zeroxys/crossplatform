@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Menu from '../Main/Menu/Menu';
 import SlideMenu from '../SlideMenu';
+import Assistant  from './Assistant'
+import Language from './Assistant/language'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Route, Link } from 'react-router-dom'
@@ -56,6 +58,7 @@ const Index = () => {
             </div>
             <Route path = "/settings/personal" component = { Personal } />
             <Route path = "/settings/assistant" component = { Assistant } />
+            <Route path = "/settings/assistant/language" component = { Language } />
             <Menu/>
         </div>
     );
@@ -74,11 +77,6 @@ const Personal = () => {
     )
 }
 
-const Assistant = () => {
-    return ( 
-        <h1> Assistant </h1>
-    )
-}
 
 const list_personal = [
     {
