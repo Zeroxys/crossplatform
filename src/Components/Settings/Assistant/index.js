@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import ContinuedConversation from './continuedConversation'
 
 import language from '../../../../public/images/settings/language.png'
 import conversation from '../../../../public/images/settings/conversation.png'
@@ -23,14 +24,14 @@ const list_personal = [
         img: conversation,
         title: 'Continued Conversation',
         secondary: 'Edit your contact list',
-        link: '/settings/assistant/basic_info'
+        link: '/settings/assistant/continued-conversation'
     },
     {
         id: 3,
         img: location,
         title: 'Location',
         secondary: 'Payment Methods, Delivery, Billing…',
-        link: '/settings/assitant/basic_info'
+        link: '/settings/assistant/location'
     },
     {
         id: 4,
@@ -71,10 +72,14 @@ const list_personal = [
 
 
 
-const Assistant = (props) => {
+const Assistant = ({setComponent}) => {
+
+    console.log('miprop --->', setComponent)
+
+    //setComponent(false)
 
     const [screen, setScreen] = useState(false)
-
+    //console.log('---> this Props', props)
     console.log(screen)
 
     return(
@@ -83,7 +88,7 @@ const Assistant = (props) => {
                 list_personal.map( (item,i) => {
 
                 
-                return (<Link onClick={ () => setScreen(!screen)} key={i} to={item.link}> <div  style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
+                return (<Link onClick={ () => setComponent(true)} key={i} to={item.link}> <div  style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
                     <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
                     <p className = "text_list_secondary"> <strong className = "text" > { item.title } </strong> <br/> { item.secondary } </p>
                 </div></Link>)

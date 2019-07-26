@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 
-const lenguages = ['english', 'esp', 'polako']
+const lenguages = ['English', 'Spanish']
 const style = {
     color: '#292F58',
     fontWeight: 'bold',
-    width: '85%',
+    width: '100%',
     background: 'transparent',
     border: '1px solid #292F58',
     height: '35px',
-    borderRadius: '4px',
+    borderRadius: '10px',
+    fontSize : '20px',
+    textAlign : 'center'
 }
 
 const ComboBox = (props) => {
@@ -20,9 +22,12 @@ const ComboBox = (props) => {
     })
 
     return (
-        <select style= {style}>
-            {options}
-        </select>
+        <div style={{width : '85%', marginTop : '5%', display : 'flex', justifyContent : 'center', flexDirection : 'column'}}>
+            <h2 style={{textAlign : 'center', margin : '10px 0 30px 0',     color: '#292F58',}}>Language</h2>
+            <select style= {style}>
+                {options}
+            </select>
+        </div>
     )
 }
 

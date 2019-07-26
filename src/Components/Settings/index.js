@@ -3,6 +3,8 @@ import Menu from '../Main/Menu/Menu';
 import SlideMenu from '../SlideMenu';
 import Assistant  from './Assistant'
 import Language from './Assistant/language'
+import ContinuedConversation from './Assistant/continuedConversation'
+import Location from './Assistant/location'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Route, Link } from 'react-router-dom'
@@ -44,14 +46,38 @@ const Index = ({props, children}) => {
         return (
             <div style = { { width: '80%', marginTop: '5%'} } >
                 {
-                    list_personal.map( item => <div style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
+                    list_personal.map( (item, i) => <div key={i} style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
                         <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
-                        <p className = "text_list_secondary"> <strong> <Link onClick = { () => setComponent( true ) } to = { item.link } className = "text_title" > { item.title } </Link> </strong> <br/> { item.secondary } </p>
+                        <p className = "text_list_secondary"> <strong> 
+                            <Link onClick = { () => setComponent( true ) } to = { item.link } className = "text_title" > { item.title } </Link> 
+                        </strong> <br/> { item.secondary } </p>
                     </div> )
                 }
             </div>
         )
     }
+
+
+    let settingsHeader = (
+        <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' } } >
+                                <h3 className = "text_settings" style = { { marginTop: '5%' } } > Settings </h3>
+                                <img src = { user } style = { { width: '25%' } } />
+                                <h4 className = "text_settings" > Jane Doe </h4>
+                                <h5 className = "text_settings_secondary" > janedoe@icloud.com </h5>
+                                <ul className = "content_menu">
+
+                                    <Link onClick = { () => setComponent( false ) } to = "/settings/personal"  className = "active"> Personal </Link>
+                                    <Link onClick = { () => setComponent( false ) } to = "/settings/assistant" > Assistant </Link>
+                                    <Link onClick = { () => setComponent( false ) } to = "/settings/notifications" > Notifications </Link>
+                                </ul>
+        
+                                {<Route path = "/settings/personal" exact component = { Personal } />}
+                                
+                                {/*<Route path = "/settings/assistant" component = { Assistant } />*/}
+                                
+                                <Route path = "/settings/assistant" render = { () => <Assistant setComponent={setComponent} /> } />
+                            </div>
+        )
 
     return (
         <div className = "interfaceContent">
@@ -66,23 +92,11 @@ const Index = ({props, children}) => {
 
             <Route path = '/settings/personal/basic_info' exact component = { BasicInfo } />
             <Route path = "/settings/assistant/language" exact component = { Language } />
+            <Route path = "/settings/assistant/continued-conversation" exact component = { ContinuedConversation } />
+            <Route path = "/settings/assistant/location" exact component = { Location } />
 
             {
-                externalComponent ? (null) : ( 
-                    <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' } } >
-                        <h3 className = "text_settings" style = { { marginTop: '5%' } } > Settings </h3>
-                        <img src = { user } style = { { width: '25%' } } />
-                        <h4 className = "text_settings" > Jane Doe </h4>
-                        <h5 className = "text_settings_secondary" > janedoe@icloud.com </h5>
-                        <ul className = "content_menu">
-                            <Link onClick = { () => setComponent( false ) } to = "/settings/personal"  className = "active"> Personal </Link>
-                            <Link onClick = { () => setComponent( false ) } to = "/settings/assistant" > Assistant </Link>
-                            <Link onClick = { () => setComponent( false ) } to = "/settings/notifications" > Notifications </Link>
-                        </ul>
-                        <Route path = "/settings/personal" exact component = { Personal } />
-                        <Route path = "/settings/assistant"  component = { Assistant } />
-                    </div>
-                 )
+                externalComponent ? '' : settingsHeader
             }
             <Menu/>
         </div>
