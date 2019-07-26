@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Route, Link } from 'react-router-dom'
 
 import BasicInfo from './Personal/BasicInfo'
+import AddAddress from './Personal/AddAddress'
+import HomeAddress from './Personal/HomeAddress'
 
 import { faBars, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import user from '../../../public/images/user.png'
@@ -40,7 +42,7 @@ const Index = () => {
         return (
             <div style = { { width: '80%', marginTop: '5%'} } >
                 {
-                    list_personal.map( item => <div style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
+                    list_personal.map( item => <div key = { item.id } style = { { borderBottom: '1px solid #A6A8BA', display: 'flex', marginBottom: '2%' } } >
                         <img src = { item.img } style = { { width: '5.5%', height: '5.5%' } } />
                         <p className = "text_list_secondary"> <strong> <Link onClick = { () => setComponent( true ) } to = { item.link } className = "text_title" > { item.title } </Link> </strong> <br/> { item.secondary } </p>
                     </div> )
@@ -60,6 +62,8 @@ const Index = () => {
                 // openfeedback = { this.openfeedback }
             />
             <Route path = '/settings/personal/basic_info' exact component = { BasicInfo } />
+            <Route path = '/settings/personal/basic_info/addAddress' exact component = { AddAddress } />
+            <Route path = '/settings/personal/basic_info/homeAddress' exact component = { HomeAddress } />
             {
                 externalComponent ? (null) : ( 
                     <div style = { { display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' } } >

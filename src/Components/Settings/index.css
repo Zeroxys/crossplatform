@@ -55,5 +55,30 @@ a.text_title{
 .personal_div{
     color: rgb(166, 168, 186);
     width: 100%;
-    height: 100%
+    height: 100%;
+}
+
+.personal_select{
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 1.7em;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.button_settings{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background-color: rgb(41, 47, 88);
+    border-radius: 6px;
+    border: 1px solid rgb(41, 47, 88);
+    width: 35%;
+    margin-top: 3%;
+}
+
+.addGroupForm{
+    margin-left: 10%;
 }

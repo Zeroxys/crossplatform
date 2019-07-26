@@ -25,13 +25,13 @@ export default function Sliders (props) {
             <div className="titleContent" >
                 <h4>{props.title}</h4>
                 
-                <span onClick={() =>  setArrow(true)}>
+                <span onClick={() =>  setArrow( !showArrow )}>
                     {content}
                 </span>
 
             </div>
 
-            <div className="checkContent" style={{display : showContents}} > 
+            <div className="checkContent" style={{display : showArrow ? "block" : "none"}} > 
                 {chekboxs} 
             </div>
 
